@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_register"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#f6f6f6"
+  android:orientation="vertical">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="23dp"
+    android:background="@color/chead"
+    android:visibility="gone"/>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="25dp"
+    android:background="@color/title_background_blue">
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/add_bank_card"
+      android:textColor="#333333"
+      android:textSize="18sp"
+      android:background="@color/white"/>
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18.5dp"
+      android:layout_marginLeft="12dp"
+      android:layout_gravity="center_vertical"
+      android:src="@mipmap/icon_back_gray" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="30dp"
+      android:layout_marginLeft="12dp"
+      android:layout_gravity="center_vertical" />
+
+  </FrameLayout>
+
+  <LinearLayout
+    android:id="@+id/rl_add_card"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <LinearLayout
+      android:id="@+id/ll_user_name"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_marginTop="15dp"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/land_text_sty"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:gravity="center_vertical"
+        android:text="@string/card_ownner"
+        android:textColor="#333333"
+        android:textSize="12.5sp" />
+
+      <TextView
+        android:id="@+id/user_name_input"
+        style="@style/land_et_sty"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="18"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:textColor="#999999"
+        android:textSize="12.5sp" />
+      <ImageView
+        android:id="@+id/explain"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:src="@mipmap/icon_explain"
+        android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/line"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="15dp"
+      android:layout_below="@+id/ll_user_name"
+      android:background="#f6f6f6" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_below="@+id/line_account"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/land_text_sty"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:gravity="center_vertical"
+        android:text="@string/card_bank_name"
+        android:textColor="#333333"
+        android:textSize="12.5sp" />
+
+      <TextView
+        android:id="@+id/tv_bank_account_add_card"
+        style="@style/land_et_sty"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="18"
+        android:paddingRight="0dp"
+        android:background="@null"
+        android:drawableRight="@mipmap/down_2x_gray"
+        android:gravity="center_vertical"
+        android:hint="@string/select_card_bank_name"
+        android:textColor="#999999"
+        android:textSize="12.5sp" />
+
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/line_three1"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="15dp"
+      android:layout_below="@+id/ll_phone"
+      android:background="#f6f6f6" />
+
+
+    <LinearLayout
+      android:id="@+id/ll_phone"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+
+      <TextView
+        style="@style/land_text_sty"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:gravity="center_vertical"
+        android:text="@string/card_account"
+        android:textColor="#333333"
+        android:textSize="12.5sp" />
+
+      <EditText
+        android:id="@+id/et_card_number"
+        style="@style/land_et_sty"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="18"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="@string/card_account_hint"
+        android:textColor="#999999"
+        android:textSize="12.5sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+      android:id="@+id/line_three"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="15dp"
+      android:layout_below="@+id/ll_phone"
+      android:background="@color/cf6f6f6" />
+
+
+    <LinearLayout
+      android:id="@+id/ll_check_code"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_below="@+id/line_add"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+
+      <TextView
+        style="@style/land_text_sty"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:gravity="center_vertical"
+        android:text="@string/card_limited_time"
+        android:textColor="#333333"
+        android:textSize="12.5sp" />
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="18"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/user_check_code_input"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:gravity="center_vertical"
+          android:hint="@string/select_card_limited_time"
+          android:textColor="#999999"
+          android:textSize="12.5sp" />
+
+        <ImageView
+          android:id="@+id/iv_calendar"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:paddingLeft="10dp"
+          android:src="@mipmap/icon_calendar" />
+      </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <TextView
+      android:id="@+id/line_four"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginBottom="16dp"
+      android:layout_marginLeft="15dp"
+      android:layout_below="@+id/ll_check_code"
+      android:background="#f6f6f6" />
+
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:layout_marginBottom="40dp"
+      android:layout_above="@+id/btn_commit"
+      android:layout_below="@+id/line_four"
+      android:drawablePadding="4dp"
+      android:drawableTop="@mipmap/warm_color_2x"
+      android:gravity="center"
+      android:text="@string/complete_tips"
+      android:textColor="@color/cbbb"
+      android:textSize="11sp"
+      android:visibility="gone" />
+
+    <Button
+      android:id="@+id/btn_commit"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:layout_marginTop="35dp"
+      android:layout_marginLeft="55dp"
+      android:layout_marginRight="55dp"
+      android:background="@drawable/round_blue"
+      android:gravity="center"
+      android:text="@string/commit"
+      android:textColor="@color/cfff"
+      android:textSize="16sp" />
+  </LinearLayout>
+
+
+  <LinearLayout
+    android:id="@+id/rl_add_count"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
+    android:background="#f6f6f6"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/white"
+      android:orientation="vertical">
+      <LinearLayout
+        android:id="@+id/ll_user_name_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="6"
+          android:gravity="center_vertical"
+          android:text="@string/card_ownner"
+          android:textColor="#333333"
+          android:textSize="12.5sp" />
+
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="18"
+          android:orientation="horizontal">
+          <TextView
+            android:id="@+id/user_name_input_account"
+            style="@style/land_et_sty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:textColor="#333"
+            android:textSize="12.5sp" />
+          <ImageView
+            android:id="@+id/explain1"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/icon_explain"
+            android:visibility="gone" />
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/line_account"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/ll_user_name_account"
+        android:background="#f6f6f6" />
+
+      <LinearLayout
+        android:id="@+id/ll_pwd_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/line_account"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="6"
+          android:gravity="center_vertical"
+          android:text="@string/bank_name"
+          android:textColor="#333333"
+          android:textSize="12.5sp" />
+
+        <TextView
+          android:id="@+id/tv_choosen_bank_account"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="18"
+          android:background="@null"
+          android:drawableRight="@mipmap/next_gray_2x_5"
+          android:gravity="center_vertical"
+          android:hint="@string/select_bank_name"
+          android:textColor="#333"
+          android:textSize="12.5sp" />
+
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/line_two_account"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/ll_pwd_account"
+        android:background="#f6f6f6" />
+
+
+      <LinearLayout
+        android:id="@+id/ll_phone_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/line_two_account"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="6"
+          android:gravity="center_vertical"
+          android:text="@string/bank_account"
+          android:textColor="#333333"
+          android:textSize="12.5sp" />
+
+        <EditText
+          android:id="@+id/et_card_number_account"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="18"
+          android:background="@null"
+          android:gravity="center_vertical"
+          android:hint="@string/input_bank_account"
+          android:textColor="#333"
+          android:textSize="12.5sp" />
+
+      </LinearLayout>
+
+
+      <TextView
+        android:id="@+id/line_three_account"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/ll_phone_account"
+        android:background="#f6f6f6" />
+
+
+      <LinearLayout
+        android:id="@+id/ll_check_code_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/line_three_account"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="6"
+          android:gravity="center_vertical"
+          android:text="@string/bank_code"
+          android:textColor="#333333"
+          android:textSize="12.5sp" />
+
+        <EditText
+          android:id="@+id/user_check_code_input_account"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="18"
+          android:background="@null"
+          android:gravity="center_vertical"
+          android:hint="@string/input_bank_code"
+          android:textColor="#333"
+          android:textSize="12.5sp" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp">
+      <ImageView
+        android:id="@+id/iv"
+        android:layout_width="15dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@+id/tips"
+        android:src="@mipmap/warming" />
+
+      <TextView
+        android:id="@+id/tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="40dp"
+        android:layout_toRightOf="@+id/iv"
+        android:drawablePadding="4dp"
+        android:text="@string/complete_tips"
+        android:textColor="@color/c999"
+        android:textSize="11sp"
+        android:visibility="visible" />
+    </RelativeLayout>
+
+
+    <Button
+      android:id="@+id/btn_commit_account"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginBottom="100dp"
+      android:layout_marginLeft="55dp"
+      android:layout_marginRight="55dp"
+      android:background="@drawable/all_blue_shape_10"
+      android:gravity="center"
+      android:text="@string/commits"
+      android:textColor="@color/white"
+      android:textSize="16sp" />
+
+  </LinearLayout>
+
+
+</LinearLayout>

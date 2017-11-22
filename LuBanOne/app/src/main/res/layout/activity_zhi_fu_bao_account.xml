@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.example.administrator.lubanone.activity.home.ZhiFuBaoAccountActivity">
+
+  <TextView
+    android:id="@+id/tv_top"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/title_background_blue" />
+
+  <RelativeLayout
+    android:id="@+id/rl_top"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_below="@+id/tv_top"
+    android:background="@color/white">
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/ali_pay"
+      android:textColor="#333333"
+      android:textSize="18sp" />
+
+
+    <ImageView
+      android:id="@+id/back"
+      android:layout_width="22dp"
+      android:layout_height="18.5dp"
+      android:layout_marginLeft="15dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:background="@color/white"
+      android:gravity="center"
+      android:src="@mipmap/icon_back_gray"
+      android:textColor="@color/red"
+      android:textSize="15sp" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="30dp"
+      android:layout_marginLeft="15dp"
+      android:layout_centerVertical="true"
+      android:background="@color/transparenc_all"
+      android:visibility="gone" />
+
+    <ImageView
+      android:id="@+id/tv_save"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="15dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:background="@color/blue"
+      android:gravity="center"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/add_card"
+      android:textColor="@color/c697be1"
+      android:textSize="15sp"
+      android:visibility="gone" />
+
+    <ImageView
+      android:id="@+id/add_card"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="15dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:gravity="center"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/icon_addb_2x"
+      android:visibility="visible" />
+
+
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:id="@+id/real_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/rl_top">
+
+    <ImageView
+      android:id="@+id/iv_erweima"
+      android:layout_width="match_parent"
+      android:layout_height="290dp"
+      android:layout_marginTop="25dp"
+      android:layout_marginLeft="80dp"
+      android:layout_marginRight="80dp" />
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="13dp"
+      android:layout_below="@+id/iv_erweima"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+
+
+      <TextView
+        android:id="@+id/tv_change_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:text="@string/change_account"
+        android:textColor="@color/cEA5413"
+        android:textSize="12.5sp" />
+
+      <TextView
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginRight="29dp"
+        android:background="@color/cb6b6b6" />
+
+      <TextView
+        android:id="@+id/tv_delete_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/delete_account"
+        android:textColor="@color/cEA5413"
+        android:textSize="12.5sp" />
+
+    </LinearLayout>
+  </RelativeLayout>
+
+
+  <RelativeLayout
+    android:id="@+id/rl_empty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/rl_top"
+    android:gravity="center"
+    android:visibility="gone">
+
+    <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@mipmap/no_pay" />
+
+
+  </RelativeLayout>
+
+
+</RelativeLayout>

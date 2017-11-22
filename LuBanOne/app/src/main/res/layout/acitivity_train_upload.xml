@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+  <TextView
+    android:id="@+id/no"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/blue"/>
+
+  <RelativeLayout
+    android:id="@+id/train_upload_rl"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_below="@id/no"
+    android:background="@color/blue">
+
+    <LinearLayout
+      android:id="@+id/train_upload_back_icon"
+      android:layout_width="40dp"
+      android:layout_height="match_parent"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true">
+      <ImageView
+        android:layout_width="9dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="12dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/back_left_white"/>
+    </LinearLayout>
+    <TextView
+      style="@style/font_fff_16"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:text="@string/upload_train_title"/>
+  </RelativeLayout>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingLeft="12dp"
+      android:paddingRight="12dp"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:gravity="center"
+          android:text="@string/upload_train_theme"
+          android:textColor="#000"/>
+        <EditText
+          android:id="@+id/train_upload_theme"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:layout_marginTop="12dp"
+          android:layout_marginBottom="7dp"
+          android:layout_marginLeft="12dp"
+          android:paddingLeft="5dp"
+          android:background="@drawable/train_apply_edit_shap"
+          android:minLines="1"
+          android:textCursorDrawable="@drawable/edit_text_cursor_style"
+          android:textSize="14sp"/>
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+        <TextView
+          android:id="@+id/textView12"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:text="@string/upload_train_content_summary"
+          android:textColor="#000"/>
+        <EditText
+          android:id="@+id/train_upload_summary"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:layout_marginBottom="12dp"
+          android:layout_marginLeft="12dp"
+          android:paddingLeft="5dp"
+          android:background="@drawable/train_apply_edit_shap"
+          android:gravity="top"
+          android:hint="@string/upload_train_content_summary_hint"
+          android:textCursorDrawable="@drawable/edit_text_cursor_style"
+          android:textSize="14sp"/>
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:gravity="center"
+          android:text="@string/upload_train_upload_text"
+          android:textColor="#000"/>
+        <TextView
+          android:id="@+id/train_upload_select"
+          style="@style/font_fff_14"
+          android:layout_width="100dp"
+          android:layout_height="match_parent"
+          android:layout_marginTop="12dp"
+          android:layout_marginBottom="12dp"
+          android:layout_marginLeft="12dp"
+          android:paddingLeft="5dp"
+          android:background="@drawable/apply_training_btn_shape"
+          android:gravity="center"
+          android:text="@string/upload_train_upload_btn"
+          />
+
+      </LinearLayout>
+      <TextView
+        android:id="@+id/train_upload_media_name"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textColor="#000"/>
+      <include
+        android:id="@+id/train_test1"
+        layout="@layout/train_upload_test"/>
+
+      <include
+        android:id="@+id/train_test2"
+        layout="@layout/train_upload_test"/>
+
+      <include
+        android:id="@+id/train_test3"
+        layout="@layout/train_upload_test"/>
+
+      <include
+        android:id="@+id/train_test4"
+        layout="@layout/train_upload_test"/>
+
+      <include
+        android:id="@+id/train_test5"
+        layout="@layout/train_upload_test"/>
+
+      <TextView
+        android:id="@+id/train_upload_commit"
+        android:layout_width="163dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/apply_training_btn_shape"
+        android:gravity="center"
+        android:text="@string/upload_train_summit"
+        android:textColor="@color/white"
+        android:textSize="14sp"/>
+
+    </LinearLayout>
+  </ScrollView>
+
+
+</LinearLayout>

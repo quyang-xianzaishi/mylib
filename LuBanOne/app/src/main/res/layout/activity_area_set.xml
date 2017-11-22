@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_user_info_set"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:background="#191C61"
+  tools:context="com.example.administrator.lubanone.activity.home.UserInfoSetActivity">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/title_background_blue"/>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/area_string"
+      android:textColor="@color/c333"
+      android:textSize="18sp"/>
+
+
+    <ImageView
+      android:id="@+id/back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:background="@color/white"
+      android:gravity="center"
+      android:src="@mipmap/icon_close" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="24dp"
+      android:layout_marginLeft="12dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:background="@color/transparenc_all"
+      />
+
+
+    <TextView
+      android:id="@+id/tv_save"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="12dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:background="@color/blue"
+      android:visibility="gone"
+      android:gravity="center"
+      android:text="@string/save"
+      android:textColor="@color/c697be1"
+      android:textSize="15sp"/>
+
+    <TextView
+      android:id="@+id/pre_info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="12dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:layout_toRightOf="@+id/back"
+      android:paddingRight="15dp"
+      android:gravity="center"
+      android:text=""
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      android:visibility="invisible"/>
+
+  </RelativeLayout>
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f2"
+    android:orientation="vertical">
+
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:paddingLeft="12dp"
+    android:gravity="center_vertical"
+    android:text="@string/all_area"
+    android:textColor="@color/c666"
+    android:textSize="14sp"
+    android:visibility="gone"
+    android:background="#f6f6f6"/>
+
+  <ListView
+    android:id="@+id/lv"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:dividerHeight="0dp"
+    android:divider="@color/white">
+
+  </ListView>
+    </LinearLayout>
+
+
+</LinearLayout>

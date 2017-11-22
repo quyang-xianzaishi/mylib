@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <TextView
+    android:id="@+id/no"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/blue"/>
+
+  <RelativeLayout
+    android:id="@+id/task_upload_image_rl"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_below="@id/no"
+    android:background="@color/title_background_blue">
+
+    <LinearLayout
+      android:id="@+id/task_upload_image_back_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true">
+      <ImageView
+        android:layout_width="22dp"
+        android:layout_height="18.5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/icon_back_white"/>
+    </LinearLayout>
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:text="@string/upload_complain_evidence_title"
+      android:textColor="@color/white"
+      android:textSize="18sp"/>
+
+  </RelativeLayout>
+
+  <LinearLayout
+    android:id="@+id/task_upload_image_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp"
+    android:layout_marginBottom="25dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_below="@+id/task_upload_image_rl"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:src="@mipmap/warn"/>
+
+    <TextView
+      style="@style/font_bbb_13"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:layout_marginLeft="10dp"
+      android:text="@string/complain_result_hint"
+      android:textColor="@color/c999"
+      android:textSize="12.5sp"/>
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/task_upload_image_tv"
+    style="@style/font_000_14"
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_below="@+id/task_upload_image_ll"
+    android:text="@string/task_upload_add_picture"/>
+
+  <TextView
+    android:id="@+id/task_upload_image_tv1"
+    style="@style/font_666_11"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="15dp"
+    android:layout_below="@+id/task_upload_image_tv"
+    android:text="@string/task_upload_add_picture_hint"/>
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/task_upload_picture_recyclerView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:layout_below="@+id/task_upload_image_tv1"/>
+
+  <TextView
+    android:id="@+id/task_upload_picture_commit"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_marginBottom="50dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/blue_white_round_selector"
+    android:layout_marginRight="55dp"
+    android:layout_marginLeft="55dp"
+    android:gravity="center"
+    android:text="@string/task_upload_picture_commit"
+    android:textColor="@color/blue_white_selector"
+    android:textSize="16sp"/>
+</RelativeLayout>

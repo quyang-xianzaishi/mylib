@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.CheckCodeActivity">
+
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="23dp"
+    android:background="@color/chead" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/check_account"
+      android:textColor="@color/c333"
+      android:textSize="17sp" />
+
+
+    <ImageView
+      android:id="@+id/back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="12dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:gravity="center"
+      android:src="@mipmap/icon_back_gray" />
+
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="30dp"
+      android:layout_centerVertical="true"
+      android:background="@color/transparenc_all" />
+
+
+  </RelativeLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:paddingLeft="15dp"
+      android:gravity="center_vertical"
+      android:text="@string/phone_numbers"
+      android:textColor="@color/c333"
+      android:textSize="12.5sp" />
+
+
+    <TextView
+      android:id="@+id/tv_phone"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="2.5"
+      android:background="@null"
+      android:gravity="center_vertical"
+      android:textColor="@color/c333"
+      android:textSize="12.5sp" />
+
+
+    <TextView
+      android:id="@+id/tv_indicator"
+      android:layout_width="75dp"
+      android:layout_height="27dp"
+      android:layout_marginRight="15dp"
+      android:background="@drawable/get_check_code_shape"
+      android:gravity="center"
+      android:text="@string/get_check_code"
+      android:textColor="@color/cEA5412"
+      android:textSize="11sp" />
+
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="1px">
+    <TextView
+      android:layout_width="15dp"
+      android:layout_height="match_parent"
+      android:background="@color/white" />
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="@color/cf6f6f6" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:paddingLeft="15dp"
+      android:gravity="center_vertical"
+      android:text="@string/check_code_one"
+      android:textColor="@color/c333"
+      android:textSize="12.5sp" />
+
+
+    <EditText
+      android:id="@+id/tv_code"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="2.5"
+      android:background="@null"
+      android:hint="@string/please_input_check"
+      android:gravity="center_vertical"
+      android:textColor="@color/c333"
+      android:textSize="12.5sp" />
+
+
+    <TextView
+      android:layout_width="75dp"
+      android:layout_height="27dp"
+      android:layout_marginRight="15dp" />
+
+
+  </LinearLayout>
+
+
+  <Button
+    android:id="@+id/btn_commit"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="55dp"
+    android:layout_marginRight="55dp"
+    android:background="@drawable/all_blue_shape_10"
+    android:text="@string/commits"
+    android:textColor="@color/white" />
+
+</LinearLayout>

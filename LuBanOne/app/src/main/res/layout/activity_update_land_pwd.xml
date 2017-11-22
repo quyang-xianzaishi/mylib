@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_update_land_pwd"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.UpdateLandPwdActivity">
+
+  <!--<TextView
+    android:layout_width="match_parent"
+    android:layout_height="23dp"
+    android:background="@color/chead" />-->
+
+  <FrameLayout
+    android:id="@+id/one"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="25dp"
+    android:background="@color/title_background_blue">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/update_land_pwd"
+      android:textColor="#333333"
+      android:textSize="18sp"
+      android:background="@color/white"/>
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18.5dp"
+      android:layout_marginLeft="15dp"
+      android:layout_gravity="center_vertical"
+      android:src="@mipmap/icon_back_gray" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="24dp"
+      android:layout_marginLeft="12dp"
+      android:layout_gravity="center_vertical"
+      android:background="@color/transparenc_all" />
+
+
+  </FrameLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:paddingLeft="15dp"
+      android:background="@color/white"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+
+      <TextView
+        android:id="@+id/up"
+        style="@style/home_page_update_land_pwd_style"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="@string/old_pwd"
+        android:textColor="#333"
+        android:textSize="12.5sp"
+         />
+
+      <EditText
+        android:id="@+id/tv_old_land_pwd"
+        style="@style/home_page_update_land_pwd_style"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_weight="17"
+        android:background="@null"
+        android:hint="@string/old_land_pwd"
+        android:textColorHint="@color/c888"
+        android:inputType="textPassword"
+        android:textColor="#333333"
+        android:textSize="12.5sp" />
+
+      <RelativeLayout
+        android:id="@+id/rl_old_eye"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:paddingRight="15dp"
+        android:gravity="end|center_vertical">
+        <ImageView
+          android:id="@+id/iv_old_eye"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:src="@mipmap/eye_close_2x"
+          android:visibility="visible" />
+      </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="15dp"
+      android:background="#f6f6f6" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:paddingLeft="15dp"
+      android:background="@color/white"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_update_land_pwd_style"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="@string/new_pwd"
+        android:textColor="#333"
+        android:textSize="12.5sp"
+         />
+
+      <EditText
+        android:id="@+id/tv_new_land_pwd"
+        style="@style/home_page_update_land_pwd_style"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="17"
+        android:textColorHint="@color/c888"
+        android:background="@null"
+        android:hint="@string/new_land_pwd"
+        android:inputType="textPassword"
+        android:textColor="#333333"
+        android:textSize="12.5sp" />
+
+      <RelativeLayout
+        android:id="@+id/rl_new_eye"
+        android:layout_width="30dp"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingRight="15dp"
+        android:gravity="end|center_vertical">
+        <ImageView
+          android:id="@+id/iv_new_eye"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:src="@mipmap/eye_close_2x"
+          android:visibility="visible" />
+      </RelativeLayout>
+
+    </LinearLayout>
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="15dp"
+      android:background="#f6f6f6" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:paddingLeft="15dp"
+      android:background="@color/white"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_update_land_pwd_style"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="@string/confim_pwd"
+        android:textColor="#333"
+        android:textSize="12.5sp" />
+
+      <EditText
+        android:id="@+id/tv_new_land_pwd_second"
+        style="@style/home_page_update_land_pwd_style"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="17"
+        android:background="@null"
+        android:textColorHint="@color/c888"
+        android:hint="@string/new_land_pwd_second"
+        android:inputType="textPassword"
+        android:textColor="#333333"
+        android:textSize="12.5sp" />
+
+      <RelativeLayout
+        android:id="@+id/rl_new_second_eye"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingRight="15dp"
+        android:visibility="gone"
+        android:gravity="end|center_vertical">
+        <ImageView
+          android:id="@+id/iv_new_second_eye"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:src="@mipmap/eye_close_2x"
+          android:visibility="visible" />
+      </RelativeLayout>
+
+    </LinearLayout>
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:paddingLeft="15dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+      android:id="@+id/tv_phone_check"
+      style="@style/home_page_update_land_pwd_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="7"
+      android:paddingLeft="0dp"
+      android:paddingRight="0dp"
+      android:text="@string/phone_check"
+      android:textColor="#999999"
+      android:textSize="12.5sp"
+      android:visibility="gone" />
+
+
+    <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="17"
+      android:orientation="horizontal">
+      <EditText
+        android:id="@+id/et_check_code"
+        style="@style/home_page_update_land_pwd_style"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textColor="@color/c333"
+        android:background="@null"
+        android:textColorHint="@color/c888"
+        android:hint="@string/phone_check"
+        android:inputType="number" />
+
+      <TextView
+        android:id="@+id/tv_send"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/cEA5412"
+        android:background="@drawable/get_check_code_shape"
+        android:text="@string/send_code"
+        android:textSize="12.5sp" />
+    </LinearLayout>
+
+  </LinearLayout>
+
+
+  <Button
+    android:id="@+id/btn_confirm"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_marginTop="47dp"
+    android:layout_marginLeft="55dp"
+    android:layout_marginRight="55dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/gray_bg"
+    android:text="@string/update_login_password_confirm"
+    android:textColor="@color/white" />
+
+</LinearLayout>

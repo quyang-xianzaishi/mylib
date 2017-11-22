@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="1px"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="15dp"
+      android:layout_height="1px"
+      android:background="@color/white" />
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="1px"
+      android:layout_weight="1"
+      android:background="@color/cf6f6f6" />
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/tv_tips"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:gravity="center"
+    android:text="@string/no_receive_money_info"
+    android:textColor="@color/c666"
+    android:textSize="15sp" />
+
+</LinearLayout>

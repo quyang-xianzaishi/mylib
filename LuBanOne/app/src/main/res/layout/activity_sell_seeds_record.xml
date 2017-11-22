@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_buy_seeds_record"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.BuySeedsRecordActivity">
+
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/title_background_blue"/>
+
+  <RelativeLayout
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+      android:id="@+id/tv_title"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:textColor="@color/c333"
+      android:textSize="18sp"/>
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18.5dp"
+      android:layout_marginLeft="15dp"
+      android:layout_centerVertical="true"
+      android:src="@mipmap/icon_back_gray"/>
+
+    <TextView
+      android:id="@+id/tv_finance_center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dp"
+      android:layout_centerVertical="true"
+      android:layout_toRightOf="@+id/iv_back"
+      android:text="@string/finance_center"
+      android:textColor="@color/white"
+      android:visibility="gone"/>
+
+  </RelativeLayout>
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/empty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:visibility="gone"
+    >
+    <com.jingchen.pulltorefresh.PullableImageView
+      android:id="@+id/task_fragment_no_data_image"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="130dp"
+      android:src="@mipmap/no_date"/>
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/pull"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <com.jingchen.pulltorefresh.PullableListView
+      android:id="@+id/lv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:divider="#fff"
+      android:dividerHeight="0px"
+      android:scrollbars="none"
+      />
+
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white">
+
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+  <TextView
+    android:id="@+id/integration_record_item_time"
+    android:layout_width="0dp"
+    android:layout_weight="5"
+    android:layout_height="30dp"
+    android:textColor="#666666"
+    android:textSize="14dp"
+    android:text="@string/integration_record_time"
+    android:gravity="center"/>
+  <TextView
+    android:id="@+id/integration_record_item_way"
+    android:layout_width="0dp"
+    android:layout_weight="2"
+    android:layout_height="30dp"
+    android:textColor="#666666"
+    android:textSize="14dp"
+    android:text="@string/integration_record_way"
+    android:gravity="center"/>
+  <TextView
+    android:id="@+id/integration_record_item_score"
+    android:layout_width="0dp"
+    android:layout_weight="2"
+    android:layout_height="30dp"
+    android:textColor="#666666"
+    android:textSize="14dp"
+    android:text="@string/integration_record_score"
+    android:gravity="center"/>
+    </LinearLayout>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#BBBBBB"/>
+
+
+</LinearLayout>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#f6f6f6"
+  android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/no"
+    android:layout_width="match_parent"
+    android:layout_height="23dp"
+    android:background="@color/chead" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@color/white">
+
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/account_set"
+      android:textColor="@color/c333"
+      android:textSize="18sp" />
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18.5dp"
+      android:layout_marginLeft="15dp"
+      android:layout_centerVertical="true"
+      android:src="@mipmap/icon_back_gray" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_toRightOf="@+id/iv_back"
+      android:gravity="center"
+      android:text="@string/user_center"
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      android:visibility="invisible" />
+
+    <ImageView
+      android:id="@+id/tv_main_page"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="15dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:paddingTop="2dp"
+      android:paddingBottom="2dp"
+      android:paddingLeft="5dp"
+      android:paddingRight="5dp"
+      android:background="@mipmap/house_2x_87"
+      android:scaleType="centerCrop"
+      android:visibility="gone" />
+
+
+  </RelativeLayout>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+      android:id="@+id/activity_account_center"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingTop="10dp"
+      android:orientation="vertical">
+
+
+      <include
+        android:id="@+id/head_picture"
+        layout="@layout/account_center" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginLeft="15dp"
+          android:background="@color/cf6f6f6" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <include
+          android:id="@+id/user_name"
+          style="@style/home_page_account_line_style"
+          layout="@layout/account_center_two" />
+
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+
+        <include
+          android:id="@+id/real_name"
+          layout="@layout/account_center_two" />
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="10dp"
+          android:background="@color/cf6f6f6" />
+
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+
+        <include
+          android:id="@+id/phone"
+          layout="@layout/account_center_two" />
+
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+
+        <include
+          android:id="@+id/user_level"
+          layout="@layout/account_center_two" />
+
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+
+        <include
+          android:id="@+id/nick_name"
+          layout="@layout/account_center_one" />
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+        <include
+          android:id="@+id/sex"
+          layout="@layout/account_center_one" />
+
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+
+        <include
+          android:id="@+id/area"
+          layout="@layout/account_center_one" />
+
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+
+        <include
+          android:id="@+id/assign"
+          layout="@layout/account_center_one" />
+
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="10dp"
+          android:background="#f6f6f6" />
+
+
+        <include
+          android:id="@+id/my_car"
+          layout="@layout/account_center_one" />
+
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+
+        <include
+          android:id="@+id/ali_pay"
+          layout="@layout/account_center_one" />
+
+        <TextView
+          style="@style/home_page_account_line_style"
+          android:layout_width="match_parent"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="0dp" />
+
+        <include
+          android:id="@+id/pwd_manager"
+          layout="@layout/account_center_one" />
+
+
+
+
+      </LinearLayout>
+
+
+      <TextView
+        android:id="@+id/btn_safe_out"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="@string/safe_out"
+        android:textColor="#EA5412"
+        android:textSize="12.5sp" />
+
+
+    </LinearLayout>
+  </ScrollView>
+
+
+</LinearLayout>
+

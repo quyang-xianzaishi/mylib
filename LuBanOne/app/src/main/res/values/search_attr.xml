@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--搜索图标左边margin-->
+    <attr name="SearchBarIconMarginLeft" format="dimension"/>
+    <!--搜索图标右边margin-->
+    <attr name="SearchBarIconMarginRight" format="dimension"/>
+    <!--搜索图标-->
+    <attr name="SearchBarIconSrc" format="reference"/>
+    <!--清除图标左边margin-->
+    <attr name="ClearIconMarginLeft" format="dimension"/>
+    <!--清除图标右边margin-->
+    <attr name="ClearIconMarginRight" format="dimension"/>
+    <!--清除图标-->
+    <attr name="ClearIconSrc" format="reference"/>
+    <!--搜索文字大小-->
+    <attr name="SearchTextSize" format="dimension"/>
+    <!--搜索文字颜色-->
+    <attr name="SearchTextColor" format="color"/>
+    <declare-styleable name="MySearchView">
+        <attr name="SearchBarIconMarginLeft"/>
+        <attr name="SearchBarIconMarginRight"/>
+        <attr name="SearchBarIconSrc"/>
+        <attr name="ClearIconMarginLeft"/>
+        <attr name="ClearIconMarginRight"/>
+        <attr name="ClearIconSrc"/>
+        <attr name="SearchTextSize"/>
+        <attr name="SearchTextColor"/>
+    </declare-styleable>
+
+</resources>

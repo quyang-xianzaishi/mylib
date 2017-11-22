@@ -1,0 +1,550 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+  </style>
+
+  <style name="splash_sty" parent="android:Theme.Material.Light">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
+  </style>
+
+  <style name="full_screen" parent="android:Theme.Material.Light">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
+  </style>
+
+  <style name="land_et_sty" parent="android:Theme.Material.Light">
+    <item name="android:textColorHint">@color/_888888</item>
+    <item name="android:textSize">12.5sp</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:textColor">@color/c333</item>
+    <item name="android:paddingLeft">15dp</item>
+  </style>
+
+  <style name="land_text_sty" parent="android:Theme.Material.Light">
+    <item name="android:textColor">@color/c333</item>
+    <item name="android:textSize">12.5sp</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:layout_gravity">center</item>
+
+  </style>
+
+  <style name="center_sty" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center</item>
+    <item name="android:layout_gravity">center</item>
+  </style>
+
+  <!-- 首页 卖出种子和买入种子文字的样式 -->
+  <style name="home_page_buy_sell_sty" parent="android:Theme.Material.Light">
+    <item name="android:textSize">11sp</item>
+    <item name="android:textColor">#353535</item>
+  </style>
+
+  <!-- 首页 卖出种子和买入按钮的样式 -->
+  <style name="home_page_middle_sty" parent="android:Theme.Material.Light">
+    <item name="android:textSize">11sp</item>
+    <item name="android:textColor">#353535</item>
+    <item name="android:gravity">center</item>
+    <item name="android:drawablePadding">8dp</item>
+  </style>
+
+
+  <!-- 首页 卖出种子和买入红点的样式 -->
+  <style name="home_page_red_dot_sty" parent="android:Theme.Material.Light">
+    <item name="android:layout_gravity">end</item>
+    <item name="android:layout_marginRight">25dp</item>
+    <item name="android:background">@drawable/red_dot</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">10sp</item>
+    <item name="android:gravity">center</item>
+
+  </style>
+
+  <!-- 首页 卖出种子和买入红点的样式 -->
+  <style name="home_page_red_dot_sty_new" parent="android:Theme.Material.Light">
+    <item name="android:layout_gravity">end</item>
+    <item name="android:background">@drawable/red_dot</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">10sp</item>
+    <item name="android:gravity">center</item>
+
+  </style>
+
+
+  <!-- 买入卖出种子4个按钮下面文字样式 -->
+  <style name="buy_sell_process_text_sty" parent="android:Theme.Material.Light">
+    <item name="android:layout_marginTop">9dp</item>
+    <item name="android:textColor">@color/c333</item>
+    <item name="android:textSize">12.5sp</item>
+  </style>
+
+  <!-- 买入卖出种子4个按钮下面文字样式 -->
+  <style name="buy_sell_process_text_sty_new" parent="android:Theme.Material.Light">
+    <item name="android:layout_marginTop">3dp</item>
+    <item name="android:textColor">@color/c333</item>
+    <item name="android:textSize">12.5sp</item>
+  </style>
+
+  <!-- 首页 卖出种子和买入红点的样式 -->
+  <style name="home_page_red_dot_sty_one" parent="android:Theme.Material.Light">
+    <item name="android:layout_gravity">end</item>
+    <item name="android:layout_marginRight">20dp</item>
+    <item name="android:background">@drawable/red_dot</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">10sp</item>
+    <item name="android:gravity">center</item>
+
+  </style>
+
+  <!-- 首页 下面lv的文字的样式 -->
+  <style name="home_page_lv_item_sty" parent="android:Theme.Material.Light">
+    <item name="android:textColor">@color/cbbb</item>
+    <item name="android:textSize">11sp</item>
+    <item name="android:gravity">center_vertical</item>
+  </style>
+
+
+  <!-- 首页 个人中心 会员信息文字的样式 -->
+  <style name="home_page_user_center_sty" parent="android:Theme.Material.Light">
+    <item name="android:textColor">@color/c191c61</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:background">@color/white</item>
+    <item name="android:paddingLeft">15dp</item>
+    <item name="android:paddingRight">15dp</item>
+  </style>
+
+
+  <!-- 首页 成长中的种子的文字的样式 -->
+  <style name="home_page_seed_red_text_style" parent="android:Theme.Material.Light">
+    <item name="android:textColor">#ea5541</item>
+    <item name="android:textSize">10sp</item>
+  </style>
+
+
+  <!-- 首页 添加银行卡的文字的样式 -->
+  <style name="home_page_bank_text_style" parent="android:Theme.Material.Light">
+    <item name="android:textColor">@color/black</item>
+    <item name="android:textSize">12sp</item>
+    <item name="android:layout_marginRight">15dp</item>
+    <item name="android:paddingLeft">15dp</item>
+    <item name="android:paddingRight">15dp</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:layout_centerVertical">true</item>
+  </style>
+
+
+  <!-- 首页 账户中心横线的的样式 -->
+  <style name="home_page_account_line_style" parent="android:Theme.Material.Light">
+    <item name="android:layout_marginLeft">14dp</item>
+    <item name="android:layout_marginRight">14dp</item>
+    <item name="android:background">@color/cf6f6f6</item>
+    <item name="android:layout_height">1dp</item>
+  </style>
+
+
+  <!-- 首页 账户修改密码文字的的样式 -->
+  <style name="home_page_update_land_pwd_style" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:textColor">@color/c000</item>
+    <item name="android:textSize">13sp</item>
+    <item name="android:paddingRight">15dp</item>
+  </style>
+
+  <!-- 首页 总览 梦想背包的下面的按钮的文字的的样式 带圆角 -->
+  <style name="home_page_btn5_style" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:background">@mipmap/bule_new</item>
+  </style>
+
+  <!-- 首页 总览 梦想背包的下面的按钮的文字的的样式 带圆角 -->
+  <style name="home_page_btn4_style" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:background">@drawable/blue_white_round_one_selector</item>
+  </style>
+
+  <!-- 首页 总览 梦想背包的下面的按钮的文字的的样式 无圆角 -->
+  <style name="home_page_btn_no_round_style" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">@color/blue_white_selector</item>
+    <item name="android:textSize">12sp</item>
+    <item name="android:background">@color/blue</item>
+  </style>
+
+  <!-- popupwindow -->
+  <style name="menu_anim_bottombar" parent="android:Theme.Material.Light">
+    <item name="android:windowEnterAnimation">@anim/menu_bottombar_in</item>
+    <item name="android:windowExitAnimation">@anim/menu_bottombar_out</item>
+  </style>
+
+
+  <!-- 按钮和自身文字的选择器 蓝色背景  白色文字-->
+  <style name="btn_selector" parent="android:Theme.Material.Light">
+    <item name="android:background">@drawable/blue_white_round_one_selector</item>
+    <item name="android:textColor">@color/blue_white_selector</item>
+  </style>
+
+  <!-- 按钮和自身文字的选择器 蓝色背景  白色文字 无圆角-->
+  <style name="btn_no_round_selector" parent="android:Theme.Material.Light">
+    <item name="android:background">@drawable/blue_white_round_no_round_selector</item>
+    <item name="android:textColor">@color/blue_white_selector</item>
+  </style>
+
+
+  <!-- 按钮和自身文字的选择器 白色背景 蓝色文字-->
+  <style name="btn_one_selector" parent="android:Theme.Material.Light">
+    <item name="android:background">@drawable/white_text_blue_back_blue_line_selector</item>
+    <item name="android:textColor">@color/blue_white_selector_two_t</item>
+  </style>
+
+  <!-- 按钮和自身文字的样式 蓝色文字 蓝色边框  按钮-->
+  <style name="btn_blue_selector" parent="android:Theme.Material.Light">
+    <item name="android:background">@drawable/round_line_blue_shape</item>
+    <item name="android:textColor">@color/blue</item>
+  </style>
+
+  <!-- 按钮和自身文字的样式 橘色文字 橘色边框  按钮-->
+  <style name="btn_juse_selector" parent="android:Theme.Material.Light">
+    <item name="android:background">@drawable/round_line_orange_shape</item>
+    <item name="android:textColor">@color/cEA5514</item>
+  </style>
+
+  <!-- 梦想催化剂页面进入任务平台按钮-->
+  <style name="enter_renwu_selector" parent="android:Theme.Material.Light">
+    <item name="android:background">@drawable/white_text_blue_back_blue_line_selector</item>
+    <item name="android:textColor">@color/blue_white_selector_two_t</item>
+  </style>
+
+
+  <!-- 会员级别制度文字样式-->
+  <style name="user_level_system_text_selector" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center</item>
+    <item name="android:paddingBottom">10dp</item>
+    <item name="android:paddingTop">10dp</item>
+    <item name="android:textColor">@color/c000</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+
+  <!-- 总览的样式 -->
+  <style name="all_scan_style" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:paddingLeft">19dp</item>
+    <item name="android:paddingRight">19dp</item>
+    <item name="android:paddingTop">3dp</item>
+    <item name="android:paddingBottom">3dp</item>
+  </style>
+
+  <!-- 总览的样式 -->
+  <style name="all_scan_style_two" parent="android:Theme.Material.Light">
+    <item name="android:gravity">end</item>
+    <item name="android:textSize">13sp</item>
+    <item name="android:textColor">@color/c666</item>
+  </style>
+
+  <!-- 总览的样式 -->
+  <style name="all_scan_style_three" parent="android:Theme.Material.Light">
+    <item name="android:gravity">end</item>
+    <item name="android:layout_marginLeft">5dp</item>
+    <item name="android:textSize">13sp</item>
+    <item name="android:textColor">@color/c666</item>
+  </style>
+
+
+  <!-- 奖金背包的文字的样式 -->
+  <style name="dream_package_text_style_three" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center</item>
+    <item name="android:textSize">13sp</item>
+    <item name="android:paddingLeft">5dp</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:paddingRight">5dp</item>
+    <item name="android:textColor">@color/c000</item>
+  </style>
+
+
+  <!-- 激活码的tip文字的样式 -->
+  <style name="active_code_first_text_style_three" parent="android:Theme.Material.Light">
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:textSize">12sp</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:paddingRight">13dp</item>
+    <item name="android:paddingLeft">13dp</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+  </style>
+
+  <style name="AnimTools" parent="@android:style/Animation">
+    <item name="android:windowEnterAnimation">@anim/push_in</item>
+    <item name="android:windowExitAnimation">@anim/push_out</item>
+  </style>
+
+
+  <!-- 激活码的input文字的样式 -->
+  <style name="active_code_first_input_text_style_three" parent="android:Theme.Material.Light">
+    <item name="android:textSize">12sp</item>
+    <item name="android:textColor">@color/cbbb</item>
+    <item name="android:paddingLeft">12dp</item>
+    <item name="android:paddingRight">10dp</item>
+    <item name="android:background">@null</item>
+    <item name="android:paddingTop">17dp</item>
+    <item name="android:paddingBottom">11dp</item>
+  </style>
+
+  <!-- 梦想背包的itme文字的样式 -->
+  <style name="dream_package_item_text_style_three" parent="android:Theme.Material.Light">
+    <item name="android:textSize">10sp</item>
+    <item name="android:textColor">@color/c666</item>
+    <item name="android:gravity">center</item>
+    <item name="android:paddingTop">12dp</item>
+    <item name="android:paddingBottom">11dp</item>
+  </style>
+
+  <style name="MyDialog" parent="@android:style/Theme.Dialog">
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+
+
+  <style name="buy_seeds_lv_item_text_style" parent="@android:style/Theme.Dialog">
+    <item name="android:textColor">@color/c000</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:textSize">10sp</item>
+    <item name="android:layout_marginBottom">2dp</item>
+    <item name="android:layout_marginTop">2dp</item>
+    <item name="android:paddingLeft">12dp</item>
+  </style>
+
+  <!-- 带确认页的文字的样式上 -->
+  <style name="buy_seeds_no_money_text_style" parent="@android:style/Theme.Dialog">
+    <item name="android:textColor">@color/c666</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:textSize">12.5sp</item>
+    <item name="android:paddingLeft">15dp</item>
+    <item name="android:paddingRight">15dp</item>
+  </style>
+
+
+  <!--photoPicker样式-->
+  <style name="ActionMenuTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
+    <item name="android:textSize">@dimen/action_text_size</item>
+    <item name="android:textStyle">normal</item>
+  </style>
+
+  <style name="PhotoPickerTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowBackground">@color/photopicker_background</item>
+    <item name="actionMenuTextAppearance">@style/ActionMenuTextStyle</item>
+    <!--<item name="actionBarTheme">@style/actionBarTheme</item>-->
+    <!--<item name="actionBarPopupTheme">@style/actionBarPopupTheme</item>-->
+  </style>
+
+
+  <!-- 按钮和自身文字的选择器 白色背景  蓝色文字 有边框 无圆角-->
+  <style name="btn_border_selector" parent="android:Theme.Material.Light">
+    <item name="android:background">@drawable/blue_white_round_no_round_selector</item>
+    <item name="android:textColor">@color/blue_white_selector</item>
+  </style>
+
+  <!--列表内标和内容题字体颜色-->
+  <style name="list_title_text_color_size">
+    <item name="android:textColor">#000000</item>
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="list_content_text_color_size">
+    <item name="android:textSize">12sp</item>
+    <item name="android:textColor">#666666</item>
+  </style>
+
+  <style name="page_title">
+    <item name="android:layout_height">44dp</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:background">#191d61</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">17sp</item>
+    <item name="android:gravity">center</item>
+  </style>
+
+  <!--us spread pop动画-->
+  <style name="pop_bottom_anim" parent="android:Animation">
+    <item name="android:windowEnterAnimation">@anim/pop_bottom_enter_anim</item>
+    <item name="android:windowExitAnimation">@anim/pop_bottom_exit_anim</item>
+  </style>
+
+  <!--字体大小颜色-->
+  <style name="font_000_14">
+    <item name="android:textColor">#000</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="font_000_15">
+    <item name="android:textSize">15sp</item>
+    <item name="android:textColor">#000</item>
+  </style>
+
+  <style name="font_fff_16">
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColor">#fff</item>
+  </style>
+
+  <style name="font_fff_14">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">#fff</item>
+  </style>
+
+  <style name="font_666_11">
+    <item name="android:textColor">#666</item>
+    <item name="android:textSize">11sp</item>
+  </style>
+
+  <style name="font_666_12">
+    <item name="android:textColor">#666</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+
+  <style name="font_666_13">
+    <item name="android:textColor">#666</item>
+    <item name="android:textSize">13sp</item>
+  </style>
+
+  <style name="font_666_14">
+    <item name="android:textColor">#666</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="font_bbb_13">
+    <item name="android:textColor">#bbb</item>
+    <item name="android:textSize">13sp</item>
+  </style>
+
+  <style name="font_191c61_16">
+    <item name="android:textColor">#191c61</item>
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="comment_dialog" parent="android:Theme.Dialog">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    <!-- 显示对话框时当前的屏幕是否变暗 -->
+    <item name="android:backgroundDimEnabled">true</item>
+  </style>
+
+  <style name="progress_style" parent="@android:style/Theme.Light.NoTitleBar">
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    <item name="android:backgroundDimEnabled">true</item>
+    <item name="android:windowSoftInputMode">adjustPan</item>
+  </style>
+
+  <style name="social_pop_anim" parent="android:Animation">
+    <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+    <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
+  </style>
+
+  <style name="time_dialog" parent="android:style/Theme.Dialog">
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowBackground">@color/white</item>
+  </style>
+  <!--任务添加图片-->
+  <style name="actionBarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <!--<item name="android:textColorPrimary">@android:color/primary_text_light</item>-->
+    <item name="android:textColorPrimary">#fff</item>
+    <item name="actionBarSize">@dimen/actionBarSize</item>
+  </style>
+
+  <style name="customTheme" parent="android:Theme.Material.Light">
+    <item name="actionBarTheme">@style/actionBarTheme</item>
+    <item name="colorPrimary">#191c61</item>
+    <item name="actionBarSize">@dimen/actionBarSize</item>
+    <item name="colorPrimaryDark">#191c61</item>
+  </style>
+
+
+  <style name="progress_dialog" parent="Theme.AppCompat.Light.Dialog">
+    <!--<item name="android:windowFrame">@null</item>-->
+    <!--<item name="android:windowIsFloating">true</item>-->
+    <!--<item name="android:windowIsTranslucent">true</item>-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+    <!--<item name="android:backgroundDimEnabled">true</item>-->
+    <!--<item name="android:windowContentOverlay">@null</item>-->
+    <item name="android:textSize">15sp</item>
+  </style>
+
+  <style name="rationg_bar_style" parent="Base.Widget.AppCompat.RatingBar">
+    <item name="android:numColumns">20</item>
+    <!--<item name="android:maxHeight">17dip</item>-->
+    <!--<item name="android:stepSize">0.1</item>-->
+    <!--<item name="android:isIndicator">true</item>-->
+    <item name="android:progressDrawable">@drawable/rationg_selector</item>
+    <!--<item name="android:backgroundDimEnabled">true</item>-->
+    <!--<item name="android:windowContentOverlay">@null</item>-->
+    <!--  <item name="android:textSize">15sp</item>-->
+  </style>
+
+  <!--培训上传试题-->
+  <style name="train_upload_test_edit">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:layout_marginLeft">80dp</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:background">@null</item>
+    <item name="android:textCursorDrawable">@drawable/edit_text_cursor_style</item>
+    <item name="android:textSize">12.5sp</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:lines">1</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:layout_marginRight">15dp</item>
+    <item name="android:textColor">@color/black_333333</item>
+    <item name="android:textColorHint">@color/gray_888888</item>
+  </style>
+
+  <style name="train_upload_test_text">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textColor">#000</item>
+  </style>
+
+  <style name="SeekBarAppTheme">
+    <item name="android:indeterminateOnly">false</item>
+    <item name="android:focusable">true</item>
+    <item name="android:progressDrawable">
+      @drawable/simple_player_progress_horizontal_holo_dark
+    </item>
+    <item name="android:indeterminateDrawable">
+      @drawable/simple_player_progress_horizontal_holo_dark
+    </item>
+    <item name="android:thumb">@drawable/simple_player_control_selector_holo_dark</item>
+    <item name="android:minHeight">13dip</item>
+    <item name="android:maxHeight">13dip</item>
+    <item name="android:paddingLeft">15.0dip</item>
+    <item name="android:paddingRight">15.0dip</item>
+  </style>
+
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+  <string name="CRASH_TIP">抱歉，应用开小差了</string>
+  <string name="NET_ERROR">请求网络失败，请检查网络</string>
+  <string name="loading">数据加载中...</string>
+  <string name="please_choosen_bank_card">请选择银行卡</string>
+  <string name="shen_qing_success">申请成功</string>
+</resources>

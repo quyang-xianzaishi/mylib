@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_train_system"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/cf6f6f6"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.TrainSystemActivity">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/chead" />
+
+  <RelativeLayout
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/train_credit_system"
+      android:textColor="@color/c000"
+      android:textSize="17sp" />
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_centerVertical="true"
+      android:src="@mipmap/icon_back_gray" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="24dp"
+      android:layout_marginLeft="12dp"
+      android:layout_gravity="center_vertical"
+      android:background="@color/transparenc_all" />
+
+
+  </RelativeLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:orientation="vertical">
+
+<LinearLayout
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal"
+  android:layout_marginTop="20dp">
+  <ImageView
+    android:layout_width="15dp"
+    android:layout_height="15dp"
+    android:src="@mipmap/icon_help"
+    android:scaleType="fitCenter"
+    android:visibility="gone"/>
+    <TextView
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_height="15dp"
+      android:layout_marginLeft="5dp"
+      android:drawablePadding="6dp"
+      android:text="@string/train_system_new"
+      android:textColor="@color/c333"
+      android:textSize="13sp"
+      android:gravity="center_vertical"
+      android:layout_gravity="center_vertical"/>
+</LinearLayout>
+
+    <TextView
+      android:id="@+id/tv_tip_one"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="18dp"
+      android:layout_marginLeft="25dp"
+      android:lineSpacingMultiplier="1.5"
+      android:text="@string/train_system1"
+      android:textColor="#555555"
+      android:textSize="11sp" />
+
+    <TextView
+      android:id="@+id/tv_tip_two"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="25dp"
+      android:lineSpacingMultiplier="1.5"
+      android:text="@string/train_system2"
+      android:textColor="#555555"
+      android:textSize="11sp" />
+
+    <TextView
+      android:id="@+id/tv_tip_three"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="25dp"
+      android:lineSpacingMultiplier="1.5"
+      android:text="@string/train_system3"
+      android:textColor="#555555"
+      android:textSize="11sp" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="96dp"
+      android:gravity="center"
+      android:orientation="vertical">
+
+      <Button
+        android:id="@+id/btn_exam"
+        android:layout_width="215dp"
+        android:layout_height="44dp"
+        android:background="@drawable/new_gray_line"
+        android:text="@string/go_to_exam"
+        android:textColor="@color/title_background_blue"
+        android:textSize="15sp" />
+
+      <Button
+        android:id="@+id/btn_train"
+        android:layout_width="215dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/new_blue_line"
+        android:text="@string/go_to_train"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="visible"/>
+
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

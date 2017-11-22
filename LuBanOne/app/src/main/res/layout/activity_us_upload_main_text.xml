@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/us_spread_upload_main_text_layout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#f0f0f2"
+  android:orientation="vertical">
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    android:background="@color/blue">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/us_spread_upload_main_text_pager_title"
+      android:textColor="@color/white"
+      android:textSize="17sp"/>
+    <LinearLayout
+      android:id="@+id/us_spread_upload_main_text_back"
+      android:layout_width="40dp"
+      android:layout_height="match_parent"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:layout_gravity="center_vertical">
+      <ImageView
+        android:layout_width="9dp"
+        android:layout_height="17dp"
+        android:layout_marginLeft="12dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/back_left_white"/>
+    </LinearLayout>
+  </FrameLayout>
+  <LinearLayout
+    android:id="@+id/us_spread_upload_main_text_focusable"
+    android:layout_width="0px"
+    android:layout_height="0px"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal"/>
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:orientation="vertical">
+    <EditText
+      android:id="@+id/us_spread_upload_main_text_edit"
+      android:layout_width="match_parent"
+      android:layout_height="150dp"
+      android:padding="10dp"
+      android:background="@null"
+      android:gravity="top"
+      android:hint="@string/us_spread_upload_main_text_hint"
+      android:textColor="#000"
+      android:textCursorDrawable="@drawable/edit_text_cursor_style"
+      android:textSize="12sp"/>
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"
+      android:background="#bbb"/>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/font_000_15"
+      android:layout_marginTop="7dp"
+      android:layout_marginLeft="12dp"
+      android:text="我的上传:"/>
+
+    <GridView
+      android:id="@+id/us_spread_upload_main_text_gv"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:padding="5dp"
+      android:columnWidth="80dp"
+      android:gravity="center"
+      android:horizontalSpacing="5dp"
+      android:numColumns="4"
+      android:stretchMode="columnWidth"
+      android:verticalSpacing="5dp"/>
+
+    <ImageView
+      android:id="@+id/us_spread_upload_main_text_video_picture"
+      android:layout_width="80dp"
+      android:layout_height="80dp"
+      android:scaleType="fitXY"
+      android:layout_margin="12dp"/>
+
+    <TextView
+      android:id="@+id/us_spread_upload_main_text_show_video"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"
+      style="@style/font_666_14"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+      android:id="@+id/us_spread_upload_main_text_add_picture"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="@color/white"
+      android:gravity="center"
+      android:orientation="horizontal">
+
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/us_spread_upload_add_pic" />
+
+      <TextView
+        style="@style/font_191c61_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="添加图片/视频" />
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/us_spread_upload_main_text_complete"
+      style="@style/font_fff_16"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="#191c61"
+      android:gravity="center"
+      android:text="完成" />
+  </LinearLayout>
+
+</LinearLayout>

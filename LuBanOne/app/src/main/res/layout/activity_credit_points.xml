@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.CreditPointsActivity">
+
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="23dp"
+    android:background="@color/chead"
+    android:visibility="gone"/>
+
+  <FrameLayout
+    android:id="@+id/one"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="25dp"
+    android:background="@color/title_background_blue">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/credit_grade_record_title"
+      android:textColor="#333333"
+      android:textSize="18sp"
+      android:background="@color/white"/>
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18.5dp"
+      android:layout_marginLeft="15dp"
+      android:layout_gravity="center_vertical"
+      android:src="@mipmap/icon_back_gray" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="44dp"
+      android:layout_centerVertical="true"
+      android:background="@color/transparenc_all" />
+
+  </FrameLayout>
+
+  <TextView
+    android:id="@+id/tv_my_credit"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="17dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="12dp"
+    android:gravity="center_vertical"
+    android:textColor="@color/c000"
+    android:textSize="13sp"
+    android:visibility="gone" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="10dp"
+    android:background="@color/cf6f6f6" />
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/empty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:visibility="gone">
+    <com.jingchen.pulltorefresh.PullableImageView
+      android:id="@+id/task_fragment_no_data_image"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="130dp"
+      android:src="@mipmap/no_date" />
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/pull"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <com.jingchen.pulltorefresh.PullableListView
+      android:id="@+id/lv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:divider="@color/white"
+      android:dividerHeight="1px"
+      android:scrollbars="none" />
+
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  android:id="@+id/us_spread_pop_ll"
+  android:background="@color/white">
+
+  <TextView
+    android:id="@+id/us_spread_pop_add_picture"
+    style="@style/font_000_15"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center"
+    android:text="添加图片"/>
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#bbb"/>
+  <TextView
+    android:id="@+id/us_spread_pop_add_video"
+    style="@style/font_000_15"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center"
+    android:text="添加视频"/>
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="5dp"
+    android:background="#bbb"/>
+  <TextView
+    android:id="@+id/us_spread_pop_cancel"
+    style="@style/font_000_15"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center"
+    android:text="取消"/>
+
+</LinearLayout>

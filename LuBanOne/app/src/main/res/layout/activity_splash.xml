@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_splash"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.register.SplashActivity">
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+      android:id="@+id/view_pager"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+
+    <RelativeLayout
+      android:id="@+id/rl_last"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/transparenc_all"
+      android:orientation="vertical"
+      android:visibility="visible">
+
+
+      <ImageView
+        android:id="@+id/iv_btn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/red"
+        android:orientation="horizontal" />
+
+      <!--<Button
+          android:id="@+id/register_btn"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@color/blue"
+          android:gravity="center"
+          android:text="@string/register"
+          android:textColor="@color/white"
+          android:textSize="18sp"/>
+
+      <TextView
+          android:layout_width="1dp"
+          android:layout_height="match_parent"
+          android:background="@color/white"/>-->
+
+      <!--<Button
+          android:id="@+id/land_btn"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@color/blue"
+          android:gravity="center"
+          android:text="@string/land"
+          android:textColor="@color/white"
+          android:textSize="18sp"/>-->
+
+    </RelativeLayout>
+
+    <!-- <LinearLayout
+         android:id="@+id/container"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/bottom"
+         android:layout_centerHorizontal="true"
+         android:src="@color/__picker_black_40" >
+
+     </LinearLayout>-->
+
+  </FrameLayout>
+
+
+  <LinearLayout
+    android:id="@+id/bottom"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentBottom="true"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+    <Button
+      android:id="@+id/register_btn"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="@drawable/gray_blue_selector"
+      android:gravity="center"
+      android:text="@string/register"
+      android:textColor="@color/white"
+      android:textSize="18sp" />
+
+    <TextView
+      android:layout_width="1dp"
+      android:layout_height="match_parent"
+      android:background="@color/white" />
+
+    <Button
+      android:id="@+id/land_btn"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="@drawable/gray_blue_selector"
+      android:gravity="center"
+      android:text="@string/land"
+      android:textColor="@color/white"
+      android:textSize="18sp" />
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="50dp"
+    android:layout_above="@+id/bottom"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal">
+
+  </LinearLayout>
+
+
+</RelativeLayout>

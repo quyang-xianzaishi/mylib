@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:id="@+id/album_item_time"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:text="@string/complain"
+        android:textColor="@color/black"/>
+    
+    <com.example.administrator.lubanone.customview.MyGridView
+        android:id="@+id/album_item_girdview"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"/>
+    <FrameLayout
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:layout_marginRight="10dp">
+
+        <ImageView
+          android:id="@+id/album_item_img"
+          android:layout_width="70dp"
+          android:layout_height="70dp"
+          android:scaleType="fitXY"/>
+
+        <TextView
+          android:id="@+id/album_img_num"
+          android:layout_width="match_parent"
+          android:layout_height="20dp"
+          android:layout_gravity="bottom"
+          android:gravity="end"
+          android:textColor="@color/white"
+          android:textSize="14sp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/album_item_content"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/account_bank_name"/>
+
+
+
+</LinearLayout>

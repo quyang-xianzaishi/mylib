@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="1px"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="15dp"
+      android:layout_height="1px"
+      android:background="@color/white" />
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="1px"
+      android:layout_weight="1"
+      android:background="@color/cf6f6f6" />
+  </LinearLayout>
+
+
+  <TextView
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:paddingLeft="15dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:text="@string/receive_money_info"
+    android:textColor="@color/c333"
+    android:textSize="12.5sp" />
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+      style="@style/buy_sell_member_info_left_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="@string/receive_person"
+      android:textColor="#555555" />
+
+    <TextView
+      android:id="@+id/tv_receiver"
+      style="@style/buy_sell_member_info_right_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="3"
+      android:text=""
+      android:textColor="#555555" />
+  </LinearLayout>
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+      style="@style/buy_sell_member_info_left_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="@string/bank_name"
+      android:textColor="#555555" />
+
+    <TextView
+      android:id="@+id/tv_open_bank"
+      style="@style/buy_sell_member_info_right_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="3"
+      android:text=""
+      android:textColor="#555555" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+      style="@style/buy_sell_member_info_left_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="@string/car_code"
+      android:textColor="#555555" />
+
+    <TextView
+      android:id="@+id/tv_bank_account"
+      style="@style/buy_sell_member_info_right_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="3"
+      android:text=""
+      android:textColor="#555555" />
+  </LinearLayout>
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+      style="@style/buy_sell_member_info_left_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="@string/bank_code"
+      android:textColor="#555555" />
+
+    <TextView
+      android:id="@+id/tv_bank_code"
+      style="@style/buy_sell_member_info_right_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="3"
+      android:text=""
+      android:textColor="#555555" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+      style="@style/buy_sell_member_info_left_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="@string/lianxi_phone"
+      android:textColor="#555555" />
+
+    <TextView
+      android:id="@+id/tv_phone"
+      style="@style/buy_sell_member_info_right_style"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="3"
+      android:text=""
+      android:textColor="#555555" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="15dp"
+      android:layout_height="1dp"
+      android:background="@color/white" />
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="1dp"
+      android:layout_weight="1"
+      android:background="@color/cf6f6f6" />
+  </LinearLayout>
+
+</LinearLayout>

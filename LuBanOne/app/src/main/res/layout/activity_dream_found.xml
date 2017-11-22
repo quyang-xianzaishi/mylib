@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_dream_found"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.DreamFoundActivity">
+  <TextView
+    android:id="@+id/top"
+    android:layout_width="match_parent"
+    android:layout_height="23dp"
+    android:background="#222E9F" />
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_below="@+id/top"
+    android:orientation="horizontal"
+    android:background="#222E9F"
+    android:gravity="center_vertical">
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18.5dp"
+      android:layout_marginLeft="15dp"
+      android:foregroundGravity="center_vertical"
+      android:src="@mipmap/icon_back_white" />
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/dream_found_chi_one"
+      android:textColor="@color/white"
+      android:layout_marginRight="37dp"
+      android:textSize="18sp" />
+
+  </LinearLayout>
+
+
+
+
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/empty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:visibility="gone">
+    <com.jingchen.pulltorefresh.PullableImageView
+      android:id="@+id/task_fragment_no_data_image"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="110dp"
+      android:src="@mipmap/empty_new" />
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/task_fragment_pullToRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:visibility="visible">
+
+    <com.jingchen.pulltorefresh.PullableScrollView
+      android:id="@+id/lv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:divider="#F0F0F2"
+      android:dividerHeight="0dp"
+      android:scrollbars="none" >
+
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@mipmap/finance_bg">
+
+          <RelativeLayout
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/transparenc_all">
+
+            <TextView
+              android:id="@+id/tv_back"
+              android:layout_width="40dp"
+              android:layout_height="30dp"
+              android:layout_centerVertical="true"
+              android:background="@color/transparenc_all"
+              android:visibility="gone" />
+
+            <RelativeLayout
+              android:id="@+id/rl_container"
+              android:layout_width="match_parent"
+              android:gravity="center|bottom"
+              android:paddingBottom="25dp"
+              android:layout_height="match_parent">
+
+              <TextView
+                android:id="@+id/tv_dream_found"
+                android:layout_width="wrap_content"
+                android:text=""
+                android:textSize="50sp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content" />
+
+              <TextView
+                android:layout_below="@+id/tv_dream_found"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/dream_found_chi_two"
+                android:textColor="@color/white"
+                android:textSize="12.5sp"
+                android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+          </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+          android:layout_width="match_parent"
+          android:background="@mipmap/mxjj_bg"
+          android:gravity="bottom"
+          android:layout_marginBottom="10dp"
+          android:paddingBottom="15dp"
+          android:layout_height="325dp">
+
+          <Button
+            android:id="@+id/btn_commit"
+
+            android:layout_width="match_parent"
+            android:layout_marginRight="55dp"
+            android:background="@mipmap/bule_new"
+            android:layout_marginLeft="55dp"
+            android:text="@string/donate"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_height="44dp" />
+
+
+        </RelativeLayout>
+
+        <TextView
+          android:layout_width="match_parent"
+          android:text="@string/hot_new"
+          android:gravity="center_vertical"
+          android:paddingLeft="15dp"
+          android:textColor="@color/c333"
+          android:background="@color/white"
+          android:textSize="12.5sp"
+          android:layout_height="40dp" />
+
+
+        <LinearLayout
+          android:id="@+id/ll_container"
+          android:layout_width="match_parent"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+      </LinearLayout>
+    </com.jingchen.pulltorefresh.PullableScrollView>
+
+
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:background="@color/white"
+    >
+
+    <TextView
+      android:id="@+id/train_upload_test_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:text="@string/upload_train_test_name"
+      android:textColor="@color/black_333333"
+      android:textSize="12.5sp"/>
+
+    <EditText
+      android:id="@+id/train_upload_test_name"
+      style="@style/train_upload_test_edit"
+      android:hint="@string/edit_test_content"
+      />
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/gray_e7e7e7"/>
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:background="@color/white"
+    >
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:text="@string/upload_train_answer_a"
+      android:textColor="@color/black_333333"
+      android:textSize="12.5sp"/>
+
+    <EditText
+      android:id="@+id/train_upload_test_a"
+      style="@style/train_upload_test_edit"
+      android:hint="@string/edit_test_answer"/>
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/gray_e7e7e7"/>
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:background="@color/white"
+    >
+
+    <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:text="@string/upload_train_answer_b"
+      android:textColor="@color/black_333333"
+      android:textSize="12.5sp"/>
+
+    <EditText
+      android:id="@+id/train_upload_test_b"
+      style="@style/train_upload_test_edit"
+      android:hint="@string/edit_test_answer"
+      />
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/gray_e7e7e7"/>
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:background="@color/white"
+    >
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:text="@string/upload_train_answer_c"
+      android:textColor="@color/black_333333"
+      android:textSize="12.5sp"/>
+
+    <EditText
+      android:id="@+id/train_upload_test_c"
+      style="@style/train_upload_test_edit"
+      android:hint="@string/edit_test_answer"
+      />
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/gray_e7e7e7"/>
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:background="@color/white"
+    >
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:text="@string/upload_train_answer_d"
+      android:textColor="@color/black_333333"
+      android:textSize="12.5sp"/>
+
+    <EditText
+      android:id="@+id/train_upload_test_d"
+      style="@style/train_upload_test_edit"
+      android:hint="@string/edit_test_answer"
+      />
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/gray_e7e7e7"/>
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+
+    android:background="@color/white"
+    >
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:text="@string/upload_train_answer_correct"
+      android:textColor="@color/black_333333"
+      android:textSize="12.5sp"/>
+
+    <TextView
+      android:id="@+id/train_upload_test_answer"
+      style="@style/train_upload_test_edit"
+      android:layout_marginRight="50dp"
+      android:hint="@string/edit_test_correct"
+      />
+
+    <RelativeLayout
+      android:id="@+id/train_upload_test_select"
+      android:layout_width="50dp"
+      android:layout_height="match_parent"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:paddingRight="15dp">
+
+
+      <ImageView
+        android:layout_width="8.5dp"
+        android:layout_height="14dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/next_gray_2x_5"
+        />
+    </RelativeLayout>
+  </RelativeLayout>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="10dp"
+    android:background="@color/cf6f6f6"/>
+
+</LinearLayout>

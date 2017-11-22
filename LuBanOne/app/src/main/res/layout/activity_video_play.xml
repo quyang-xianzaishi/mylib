@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <SurfaceView
+    android:id="@+id/video_play_surfaceView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
+
+  <!--重新播放-->
+  <LinearLayout
+    android:id="@+id/video_play_replay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#33000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone">
+    <!-- 播放状态-->
+    <TextView
+      android:id="@+id/video_play_status_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/small_problem"
+      android:textColor="@android:color/white"
+      android:textSize="14dp"/>
+
+    <ImageView
+      android:id="@+id/video_play_replay_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="8dp"
+      android:src="@drawable/simple_player_center_play"/>
+  </LinearLayout>
+
+  <!--加载中-->
+  <LinearLayout
+    android:id="@+id/video_play_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <ProgressBar
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:indeterminateBehavior="repeat"
+      android:indeterminateOnly="true"/>
+    <TextView
+      android:id="@+id/video_play_speed"
+      android:layout_width="wrap_content"
+      android:layout_marginTop="4dp"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:visibility="gone"
+      android:text="188Kb/s"
+      android:textColor="@android:color/white"/>
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/video_play_line1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone"
+    >
+    <include
+      layout="@layout/simple_player_controlbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+
+  </LinearLayout>
+
+</RelativeLayout>

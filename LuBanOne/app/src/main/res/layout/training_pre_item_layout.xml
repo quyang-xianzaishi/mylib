@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="12dp">
+
+    <ImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/em_chat_video_normal"
+        android:id="@+id/training_pre_item_image"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/training_pre_item_title"
+            android:text="@string/active_four_step"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:textColor="#666"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/training_pre_item_time"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/active_four_step"
+            android:textSize="12sp"
+            android:maxLines="2"
+            android:gravity="bottom"
+            android:textColor="#666"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/training_pre_item_remind"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom"
+        android:background="@color/gray"
+        android:text="@string/training_start_hint"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#666"/>
+
+</LinearLayout>

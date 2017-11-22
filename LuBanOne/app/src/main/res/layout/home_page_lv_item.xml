@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white">
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp"
+    android:paddingLeft="17dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/order_code" />
+
+      <TextView
+        android:id="@+id/tv_order_id"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/seed_count" />
+
+      <TextView
+        android:id="@+id/tv_seed_count"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/match_time" />
+
+      <TextView
+        android:id="@+id/tv_peisong_time"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/money_time" />
+
+      <TextView
+
+
+        android:id="@+id/tv_give_money_time"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/money_recever" />
+
+      <TextView
+        android:id="@+id/tv_receiver"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/discuss_credit" />
+
+      <TextView
+        android:id="@+id/tv_get_pingfeng"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/give_credit" />
+
+      <TextView
+        android:id="@+id/tv_give_pingfeng"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <RelativeLayout
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+          android:id="@+id/one"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="5dp"
+          android:orientation="horizontal">
+
+          <TextView
+            style="@style/home_page_lv_item_sty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/complete_time" />
+
+
+          <TextView
+            android:id="@+id/tv_complete_time"
+            style="@style/home_page_lv_item_sty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+          android:id="@+id/one1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="5dp"
+          android:layout_below="@+id/one"
+          android:orientation="horizontal">
+
+          <TextView
+            style="@style/home_page_seed_red_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/seed_status" />
+
+          <TextView
+            android:id="@+id/tv_seed_status"
+            style="@style/home_page_seed_red_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+        </LinearLayout>
+
+
+        <LinearLayout
+          android:id="@+id/one2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="5dp"
+          android:layout_below="@+id/one1"
+          android:orientation="horizontal">
+
+          <TextView
+            style="@style/home_page_seed_red_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/grow_days" />
+
+          <TextView
+            android:id="@+id/tv_growing_days"
+            style="@style/home_page_seed_red_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+        </LinearLayout>
+
+      </RelativeLayout>
+
+      <Button
+        android:id="@+id/btn_reap"
+        style="@style/btn_one_selector"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/reap_seed"
+        android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="14dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_seed_red_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/grow_get_seeds" />
+
+      <TextView
+        android:id="@+id/tv_growing_get_seeds"
+        style="@style/home_page_seed_red_text_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginRight="12dp"
+      android:background="@color/cf6f6f6" />
+  </LinearLayout>
+
+</FrameLayout>

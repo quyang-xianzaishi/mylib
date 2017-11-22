@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_buy_seed_process"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.lubanone.activity.home.BuySeedProcessActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/blue"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+
+        <ImageView
+            android:id="@+id/iv_back_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/back__white_2x"/>
+
+        <ImageView
+            android:id="@+id/iv_delete_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/iv_back_click"
+            android:src="@mipmap/wrong_2x"/>
+
+        <ImageView
+            android:id="@+id/icon_click"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/iv_delete_click"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/head_2x"/>
+
+        <TextView
+            android:id="@+id/user_name_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/icon_click"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="1"
+            android:text="曲洋！\n1582330759@qq.com"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_finance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_finance_center_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/money_center_2x"/>
+
+            <TextView
+                android:id="@+id/tv_finance_center_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_finance_center_click"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/finance_center"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_toLeftOf="@+id/rl_finance">
+
+            <ImageView
+                android:id="@+id/iv_my_team_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="24dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/my_team2x"/>
+
+            <TextView
+                android:id="@+id/tv_my_team_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_my_team_click"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/my_team"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/buy_layout"
+        layout="@layout/home_page_buy_sell"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

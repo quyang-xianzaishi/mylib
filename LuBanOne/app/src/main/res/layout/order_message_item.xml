@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:background="#f6f6f6"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/white_gray_round_shape"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="10dp"
+      android:paddingBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/order_message_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/account"
+        android:textColor="@color/c333"
+        android:textSize="12.5sp" />
+    </LinearLayout>
+
+    <TextView
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:id="@+id/order_message_item_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:text="@string/account"
+      android:textColor="#888888"
+      android:textSize="11sp" />
+
+    <TextView
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:id="@+id/order_message_item_content"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingTop="20dp"
+      android:paddingBottom="15dp"
+      android:maxLines="5"
+      android:text="@string/account"
+      android:textColor="@color/c333"
+      android:textSize="11sp"
+      android:lineSpacingExtra="5dp"/>
+
+    <LinearLayout
+      android:id="@+id/order_message_item_member_linear"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:orientation="horizontal"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp">
+      <TextView
+        android:id="@+id/order_message_item_member_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account"
+        android:textColor="@color/c333"
+        android:textSize="11sp" />
+      <TextView
+        android:id="@+id/order_message_item_member"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account"
+        android:textColor="@color/cEA5412"
+        android:textSize="11sp" />
+    </LinearLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:orientation="horizontal"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp">
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单编号："
+        android:textColor="#888888"
+        android:textSize="11sp" />
+    <TextView
+      android:id="@+id/order_message_item_order_number"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/account"
+      android:textColor="#888888"
+      android:textSize="11sp" />
+    </LinearLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="5dp"
+      android:paddingBottom="10dp"
+      android:orientation="horizontal"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp">
+      <TextView
+        android:id="@+id/order_message_item_expect_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account"
+        android:textColor="#888888"
+        android:textSize="11sp" />
+    <TextView
+      android:id="@+id/order_message_item_expect_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/account"
+      android:textColor="#888888"
+      android:textSize="11sp" />
+      </LinearLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:id="@+id/item_click_linear">
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@color/gray_e7e7e7"/>
+    <TextView
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:paddingBottom="10dp"
+      android:id="@+id/order_message_item_click"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:paddingTop="10dp"
+      android:maxLines="1"
+      android:text="@string/account"
+      android:textColor="@color/c333"
+      android:textSize="12.5sp"
+      android:visibility="visible"
+      android:drawableEnd="@mipmap/next_gray_2x_5"/>
+    </LinearLayout>
+  </LinearLayout>
+
+
+</LinearLayout>

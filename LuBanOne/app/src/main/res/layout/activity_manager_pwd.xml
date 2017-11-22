@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_manager_pwd"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/cf6f6f6"
+  tools:context="com.example.administrator.lubanone.activity.home.ManagerPwdActivity">
+
+
+  <TextView
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:background="@color/chead"
+    android:layout_height="23dp"
+    android:visibility="gone"/>
+
+
+  <FrameLayout
+    android:id="@+id/one"
+    android:layout_width="match_parent"
+    android:layout_below="@+id/tv"
+    android:layout_height="wrap_content"
+    android:paddingTop="25dp"
+    android:background="@color/title_background_blue">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/pwd_manager"
+      android:textColor="@color/c333"
+      android:textSize="18sp"
+      android:background="@color/white"/>
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_gravity="center_vertical"
+      android:src="@mipmap/icon_back_gray" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="30dp"
+      android:layout_centerVertical="true"
+      android:background="@color/transparenc_all"
+      android:visibility="gone" />
+
+
+  </FrameLayout>
+
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="11dp"
+    android:layout_below="@+id/one"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+    <TextView
+      android:id="@+id/up"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:background="@color/white"
+      android:drawableRight="@mipmap/next_gray_2x_5"
+      android:gravity="center_vertical"
+      android:text="@string/update_land_pwd"
+      android:textColor="@color/c333"
+      android:textSize="12.5sp" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="#f6f6f6"
+      android:layout_above="@+id/down"
+      android:layout_toRightOf="@+id/up"
+      android:layout_alignParentLeft="true" />
+
+
+    <TextView
+      android:id="@+id/down"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_below="@+id/up"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:background="@color/white"
+      android:drawableRight="@mipmap/next_gray_2x_5"
+      android:gravity="center_vertical"
+      android:text="@string/update_safe_pwd"
+      android:textColor="@color/c333"
+      android:textSize="12.5sp" />
+
+  </RelativeLayout>
+
+
+</RelativeLayout>

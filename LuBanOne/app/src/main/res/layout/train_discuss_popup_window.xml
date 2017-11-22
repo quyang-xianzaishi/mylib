@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/apply_training_success_dialog_bg">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp"
+    android:gravity="center"
+    android:text="@string/train_discuss"
+    android:textColor="@color/black"
+    android:textSize="14sp"/>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginTop="15dp">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/red"
+      android:textSize="12sp"
+      android:text="*"
+      android:gravity="center_vertical"
+      android:layout_gravity="center"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="@string/train_discuss_hint"
+    android:textColor="@color/c000"
+    android:textSize="12sp"/>
+  </LinearLayout>
+
+  <RatingBar
+    android:id="@+id/rating_bar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="10dp"
+    android:numStars="5"/>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/discuss_text"
+    android:textColor="@color/c000"
+    android:layout_marginLeft="30dp"
+    android:textSize="14sp"/>
+  <EditText
+    android:id="@+id/et_ping_lun"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/blue_line_shape"
+    android:gravity="start"
+    android:padding="5dp"
+    android:textSize="14sp"/>
+
+
+  <Button
+    android:id="@+id/btn"
+    style="@style/btn_selector"
+    android:layout_width="130dp"
+    android:layout_height="37dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="15dp"
+    android:text="@string/commit"
+    android:textColor="@color/blue_white_selector"
+    android:layout_marginBottom="10dp"/>
+
+</LinearLayout>

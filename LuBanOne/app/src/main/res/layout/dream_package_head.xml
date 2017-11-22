@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/blue">
+
+    <TextView
+      android:id="@+id/tv_dream_package_seeds"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="61dp"
+      android:layout_centerHorizontal="true"
+      android:text="0.00"
+      android:textColor="@color/white"
+      android:textSize="30sp" />
+
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:layout_below="@+id/tv_dream_package_seeds"
+      android:layout_centerHorizontal="true"
+      android:gravity="center"
+      android:text="@string/dream_seeds_count"
+      android:textColor="@color/white"
+      android:textSize="11sp" />
+  </RelativeLayout>
+
+  <Button
+    android:id="@+id/sell_seeds_btn"
+    style="@style/home_page_btn5_style"
+    android:layout_width="130dp"
+    android:layout_height="37dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
+    android:layout_gravity="center_horizontal"
+    android:text="@string/sell"
+    android:textColor="@color/blue_white_selector" />
+
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:background="@color/cbbb"
+    android:orientation="horizontal">
+
+    <TextView
+      android:id="@+id/tv_data_click"
+      style="@style/dream_package_text_style_three"
+      android:layout_width="130dp"
+      android:layout_height="match_parent"
+      android:maxLines="1"
+      android:text="@string/data" />
+
+
+    <TextView
+      android:id="@+id/tv_order_id_click"
+      style="@style/dream_package_text_style_three"
+      android:layout_width="130dp"
+      android:layout_height="match_parent"
+      android:maxLines="1"
+      android:text="@string/order_id" />
+
+    <TextView
+      android:id="@+id/tv_trade_vip_click"
+      style="@style/dream_package_text_style_three"
+      android:layout_width="130dp"
+      android:layout_height="match_parent"
+      android:text="@string/trade_vip" />
+
+    <TextView
+      android:id="@+id/tv_trade_type_click"
+      style="@style/dream_package_text_style_three"
+      android:layout_width="130dp"
+      android:layout_height="match_parent"
+      android:text="@string/trade_type" />
+
+    <TextView
+      android:id="@+id/tv_seeds_click"
+      style="@style/dream_package_text_style_three"
+      android:layout_width="130dp"
+      android:layout_height="match_parent"
+      android:text="@string/sow_seeds" />
+
+
+    <TextView
+      android:id="@+id/tv_growing_seeds"
+      style="@style/dream_package_text_style_three"
+      android:layout_width="130dp"
+      android:layout_height="match_parent"
+      android:text="@string/growing_gain_seeds" />
+
+
+    <TextView
+      android:id="@+id/tv_trade_seeds"
+      style="@style/dream_package_text_style_three"
+      android:layout_width="130dp"
+      android:layout_height="match_parent"
+      android:text="@string/trade_seeds" />
+
+  </LinearLayout>
+</LinearLayout>

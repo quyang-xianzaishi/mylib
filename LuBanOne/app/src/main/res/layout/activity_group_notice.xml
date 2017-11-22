@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cf6f6f6">
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="25dp"
+      android:background="@color/title_background_blue"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/title_background_blue"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="0dp"
+            android:background="@color/title_background_blue"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="@string/cancels"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@color/title_background_blue"
+            android:gravity="center"
+            android:text="@string/group_notice_set_title"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+        <TextView
+          android:id="@+id/save"
+          android:text="@string/group_notice_save"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:textColor="@color/_888888"
+          android:textSize="15dp"
+          android:clickable="false"/>
+
+    </LinearLayout>
+
+    <EditText
+      android:layout_marginTop="10dp"
+      android:id="@+id/group_notice_edit"
+      android:layout_width="match_parent"
+      android:layout_height="210dp"
+      android:hint="@string/set_group_notice_hint"
+      android:gravity="start"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:paddingTop="19dp"
+      android:paddingBottom="19dp"
+      android:textSize="12.5sp"
+      android:textColor="@color/c333"
+      android:textColorHint="@color/_888888"
+      android:background="@color/white"/>
+
+    <TextView
+      android:background="@color/white"
+      android:layout_marginTop="10dp"
+      android:id="@+id/group_notice_text"
+      android:layout_width="match_parent"
+      android:layout_height="210dp"
+      android:gravity="start"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:visibility="gone"
+      android:textSize="12.5sp"
+      android:textColor="@color/c333"
+      android:paddingTop="19dp"
+      android:paddingBottom="19dp"/>
+
+
+</LinearLayout>

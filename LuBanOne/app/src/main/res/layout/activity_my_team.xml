@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/activity_my_team"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/blue"
+    android:paddingLeft="12dp"
+    android:paddingRight="22dp">
+    <TextView
+      android:id="@+id/my_team_back"
+      android:layout_width="10dp"
+      android:layout_height="15dp"
+      android:layout_gravity="center_vertical"
+      android:background="@drawable/back_left_white"
+      android:textColor="@color/white"/>
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:background="@color/blue"
+      android:textSize="18sp"
+      android:text="我的团队"
+      android:gravity="center"
+      android:textStyle="bold"
+      android:textColor="@color/white"/>
+  </LinearLayout>
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_marginTop="15dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp">
+
+      <TextView
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:text="@string/my_team_num"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"/>
+
+      <TextView
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:background="@color/gray"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"/>
+
+      <TextView
+        android:id="@+id/my_team_number"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:textSize="14sp"/>
+    </LinearLayout>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@color/gray"
+      android:layout_gravity="center"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"/>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp">
+
+      <TextView
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:text="@string/my_team_choose"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"/>
+
+      <TextView
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:background="@color/gray"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"/>
+
+      <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/choose_team_spinner"
+        android:entries="@array/spingarr"
+        android:background="@color/white"
+        android:layout_gravity="center_vertical"
+        android:padding="0dp"
+        android:textSize="14sp"/>
+    </LinearLayout>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@color/gray"
+      android:layout_gravity="center"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"/>
+
+    <ListView
+      android:id="@+id/my_team_tree"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"
+      android:layout_marginTop="30dp"
+      android:divider="#aaa"
+      android:dividerHeight="1px"
+      android:scrollbars="none"/>
+
+    <TextView
+      android:layout_width="150dp"
+      android:layout_height="50dp"
+      android:padding="10dp"
+      android:id="@+id/my_team_commit"
+      android:background="@drawable/apply_training_btn_shape"
+      android:textColor="@color/white"
+      android:textSize="14sp"
+      android:text="发        送"
+      android:gravity="center"
+      android:layout_gravity="center"
+      android:layout_marginTop="20dp"
+      android:layout_marginBottom="20dp"/>
+
+  </LinearLayout>
+</LinearLayout>

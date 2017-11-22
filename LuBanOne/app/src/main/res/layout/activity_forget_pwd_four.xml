@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_register"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/cf6f6f6"
+  android:orientation="vertical">
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="23dp">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/reset_forget_pwd"
+      android:textColor="@color/c333"
+      android:textSize="17sp" />
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_gravity="center_vertical"
+      android:src="@mipmap/icon_back_gray" />
+
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="24dp"
+      android:layout_marginLeft="12dp"
+      android:layout_gravity="center_vertical"
+      android:background="@color/transparenc_all"
+      android:visibility="gone" />
+
+
+  </FrameLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="168dp"
+    android:gravity="center">
+
+    <ImageView
+      android:id="@+id/icon"
+      android:layout_width="match_parent"
+      android:layout_height="46dp"
+      android:layout_marginLeft="98dp"
+      android:layout_marginRight="98dp"
+      android:src="@mipmap/logo_new" />
+
+  </RelativeLayout>
+
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <LinearLayout
+      android:id="@+id/ll_pwd"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:paddingLeft="15dp"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+      <TextView
+        android:id="@+id/textView4"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="@string/pwd"
+        android:textColor="@color/c333"
+        android:textSize="12.5sp" />
+
+
+      <EditText
+        android:id="@+id/user_pwd_input"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="@string/input_pwd_new"
+        android:textColor="@color/c333"
+        android:textColorHint="@color/_888888"
+        android:textSize="12.5sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/line_two"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_below="@+id/ll_pwd">
+
+      <TextView
+        android:layout_width="15dp"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cf6f6f6" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:id="@+id/ll_phone"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_below="@+id/line_two"
+      android:paddingLeft="15dp"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+      <TextView
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="@string/confirm_pwd"
+        android:textColor="@color/c333"
+        android:textSize="12.5sp" />
+
+      <EditText
+        android:id="@+id/user_phone_input"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="@string/input_pwd_again"
+        android:textColor="@color/c333"
+        android:textColorHint="@color/_888888"
+        android:textSize="12.5sp" />
+
+    </LinearLayout>
+
+
+    <Button
+      android:id="@+id/btn_land"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:layout_marginTop="80dp"
+      android:layout_marginLeft="55dp"
+      android:layout_marginRight="55dp"
+      android:layout_below="@+id/ll_phone"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/round_blue"
+      android:text="@string/confirm"
+      android:textColor="@color/white"
+      android:textSize="16sp" />
+  </RelativeLayout>
+
+
+</LinearLayout>

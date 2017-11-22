@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.example.administrator.lubanone">
+
+  <uses-sdk
+    android:targetSdkVersion="14"
+    tools:overrideLibrary="com.yalantis.ucrop" />
+
+  <permission
+    android:name="com.example.administrator.lubanone.permission.JPUSH_MESSAGE"
+    android:protectionLevel="signature" />
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+  <uses-feature android:name="android.hardware.camera" />
+  <uses-feature android:name="android.hardware.camera.autofocus" />
+
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+  <uses-permission android:name="com.example.administrator.lubanone.permission.JPUSH_MESSAGE" />
+  <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+  <!-- Optional. Required for location feature -->
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.GET_TASKS" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+  <uses-permission android:name="com.example.administrator.lubanone.permission.JPUSH_MESSAGE" />
+  <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+  <!-- Optional. Required for location feature -->
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.GET_TASKS" />
+
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/logo"
+    android:label="@string/app_name"
+    android:largeHeap="true"
+    android:name=".MyApplication"
+    android:supportsRtl="true"
+    android:theme="@style/BaseTheme">
+
+    <!-- 使用友盟分享需要的key -->
+    <meta-data
+      android:name="UMENG_APPKEY"
+      android:value="595318ad07fe6514530026e7" />
+
+    <activity
+      android:launchMode="singleTask"
+      android:name=".activity.register.MainActivity"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan">
+
+      <!-- <intent-filter> -->
+      <!-- <action android:name="android.intent.action.MAIN"/> -->
+      <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+      <!-- </intent-filter> -->
+    </activity>
+    <activity
+      android:name=".activity.register.RegisterActivity"
+      android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" />
+    <activity
+      android:name=".activity.register.RegisterSuccessActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.register.RegisterOneActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.register.RegisterTwoActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.register.PwdComfimActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.register.RegisterThreeActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.register.RegisterFourActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:launchMode="singleTask"
+      android:name=".activity.land.LandActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.register.SplashActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.land.ForgetPwdActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.land.ForgetPwdThreeActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.land.ForgetPwdFourActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.task.TaskCollectActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:configChanges="orientation|screenSize|keyboardHidden"
+      android:hardwareAccelerated="true"
+      android:name=".activity.task.TaskDetailsActivity" />
+    <activity android:name=".activity.task.TaskUploadPictureActivity" />
+    <activity
+      android:hardwareAccelerated="true"
+      android:name=".activity.us.UsMainActivity" />
+    <activity
+      android:name=".activity.us.UsSpreadUploadActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.us.UploadMainTextActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:configChanges="orientation|screenSize|keyboardHidden"
+      android:hardwareAccelerated="true"
+      android:name=".activity.us.CommonListDetailsActivity" />
+    <!-- ======= -->
+    <!-- android:name=".activity.us.CommonListDetailsActivity" -->
+    <!-- android:screenOrientation="portrait" /> -->
+    <!-- &gt;>>>>>> 398a67c6b419d022c944619c501ef705ac221333 -->
+    <activity
+      android:name=".activity.us.MoreUploadRecordActivity"
+      android:screenOrientation="portrait" />
+    <activity android:name=".activity.land.TestActivity" />
+    <activity
+      android:name=".activity.train.TrainActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.train.TrainUploadRecordActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.train.TrainRecordDetailsActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.train.UploadTrainActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.TrainingBackPlayActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.ApplyTrainingActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.ExaminationActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.TrainingInfoDetailActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.MyTeamActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:configChanges="orientation|screenSize|keyboardHidden"
+      android:hardwareAccelerated="true"
+      android:name=".activity.training.activity.TrainDetailsActivity" />
+    android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.TrainUploadActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UserCenterActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.AccountCenterActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:configChanges="keyboardHidden|orientation|screenSize"
+      android:exported="true"
+      android:name=".wxapi.WXEntryActivity"
+      android:screenOrientation="portrait"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    <activity
+      android:configChanges="orientation|keyboard"
+      android:label="@string/app_name"
+      android:name="com.umeng.socialize.editorpage.ShareActivity"
+      android:screenOrientation="portrait"
+      android:theme="@android:style/Theme.Black.NoTitleBar" />
+    <activity
+      android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+      android:label="@string/app_name"
+      android:name="com.umeng.facebook.FacebookActivity"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+    <provider
+      android:authorities="com.facebook.app.FacebookContentProvider487692214752558"
+      android:exported="true"
+      android:name="com.umeng.facebook.FacebookContentProvider" />
+
+    <meta-data
+      android:name="com.facebook.sdk.ApplicationId"
+      android:value="@string/facebook_app_id" />
+
+    <activity
+      android:name="me.iwf.photopicker.PhotoPickerActivity"
+      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity
+      android:name="me.iwf.photopicker.PhotoPagerActivity"
+      android:theme="@style/Theme.AppCompat.NoActionBar" />
+    <activity
+      android:configChanges="orientation|screenSize"
+      android:name="com.foamtrace.photopicker.PhotoPickerActivity"
+      android:theme="@style/PhotoPickerTheme" />
+    <activity
+      android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
+      android:theme="@style/PhotoPickerTheme" />
+    <activity
+      android:name=".activity.home.Main2Activity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UserInfoSetActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UserSexSetActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.AreaSetActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UserAssignActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.BankCardSetActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UserBankAccountActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.AddBankCardActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.CardAccountActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.BankAccountDetailsActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.ManagerPwdActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UpdateLandPwdActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UpdatePayPwdActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:launchMode="singleTask"
+      android:name=".activity.home.UserDreamsActivity" />
+    <activity
+      android:name=".activity.message.MessageActivity"
+      android:launchMode="singleTask"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+
+        <data
+          android:host="com.example.administrator.lubanone"
+          android:pathPrefix="/conversationlist"
+          android:scheme="rong" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:name=".activity.message.AddFriendActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.ChooseFriendActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.GroupChatActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.MyTeamActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.BuySeedsActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.SellSeedsActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.BuySeedsRecordActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.SellSeedsRecordActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:launchMode="singleTask"
+      android:name=".activity.home.BuySeedProcessActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:launchMode="singleTask"
+      android:name=".activity.home.SellSeedsProcessActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.ComplainActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.GroupNameActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.FriendTestActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.SystemMessageActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.ConversationActivity"
+      android:launchMode="singleTop"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+
+        <data
+          android:host="com.example.administrator.lubanone"
+          android:pathPrefix="/conversation/"
+          android:scheme="rong" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:name=".activity.home.PlatformSystemActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.ConversationInfoActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.GroupNoticeActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.DatumSetActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.FriendInfoActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.MemberInfoActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.AlbumActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.PingLunActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.TrainCreditActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.task.TaskUploadAddPicProcessActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.TrainSystemActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.AlwaysProblemsActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.CreditRecordActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.DreamFoundActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.ThankActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UserLevelActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.UserLevelSystemActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.CreditGradeActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.CreditGradeSystemActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.ProtocolActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.SystemMessageListActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.OrderMessageActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.land.UpdatePwdStepOneActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.TrainingNoticeActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.TeamMessageActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.CustomMessageActivity"
+      android:screenOrientation="portrait"
+      android:windowSoftInputMode="stateHidden|adjustResize" />
+    <activity
+      android:name=".activity.training.activity.TrainingMoreActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.TrainPreparationMoreActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.TrainPlayBackMoreActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.MomentsActivity"
+      android:screenOrientation="portrait" />
+    <activity android:name=".activity.message.CameraActivity" />
+    <activity
+      android:name=".activity.message.ImagePagerActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.register.AccountActiveActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.TrainingIntegrationRecordActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.training.activity.TrainingIntegrationActivity"
+      android:screenOrientation="portrait" />
+    <activity android:name=".activity.training.activity.VideoPlayActivity" />
+    <activity
+      android:configChanges="orientation|keyboardHidden|screenSize"
+      android:name=".activity.training.activity.PlayerActivity" />
+    <activity
+      android:hardwareAccelerated="true"
+      android:name=".activity.training.activity.TrainContentActivity" />
+    <activity
+      android:name="com.yalantis.ucrop.UCropActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.VIPInfoActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.BankCardListActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.CardDetailsActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.home.ActivateActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.NewFriendActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.GroupMemberActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.AddGroupMemberActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.RecommendFriendListActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:name=".activity.message.TrainMessageActivity"
+      android:screenOrientation="portrait" />
+    <activity
+      android:launchMode="singleTask"
+      android:name=".activity.message.UploadComplainEvidenceActivity"
+      android:screenOrientation="portrait" />
+
+    <!-- Rich push 核心功能 since 2.0.6 -->
+    <activity
+      android:exported="false"
+      android:name="cn.jpush.android.ui.PopWinActivity"
+      android:theme="@style/MyDialogStyle" />
+    <!-- Required SDK核心功能 -->
+    <activity
+      android:configChanges="orientation|keyboardHidden"
+      android:exported="false"
+      android:name="cn.jpush.android.ui.PushActivity"
+      android:theme="@android:style/Theme.NoTitleBar">
+      <intent-filter>
+        <action android:name="cn.jpush.android.ui.PushActivity" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="com.example.administrator.lubanone" />
+      </intent-filter>
+    </activity>
+    <!-- Required SDK 核心功能 -->
+    <!-- 可配置android:process参数将PushService放在其他进程中 -->
+    <service
+      android:exported="false"
+      android:name="cn.jpush.android.service.PushService"
+      android:process=":mult">
+      <intent-filter>
+        <action android:name="cn.jpush.android.intent.REGISTER" />
+        <action android:name="cn.jpush.android.intent.REPORT" />
+        <action android:name="cn.jpush.android.intent.PushService" />
+        <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+      </intent-filter>
+    </service>
+    <service
+      android:enabled="true"
+      android:exported="false"
+      android:name="cn.jpush.android.service.DownloadService" />
+
+    <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+    <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+    <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+    <service
+      android:enabled="true"
+      android:exported="true"
+      android:name="cn.jpush.android.service.DaemonService">
+      <intent-filter>
+        <action android:name="cn.jpush.android.intent.DaemonService" />
+
+        <category android:name="com.example.administrator.lubanone" />
+      </intent-filter>
+    </service>
+    <!-- Required SDK核心功能 -->
+    <receiver
+      android:enabled="true"
+      android:exported="false"
+      android:name="cn.jpush.android.service.PushReceiver">
+      <intent-filter android:priority="1000">
+        <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
+        <category android:name="com.example.administrator.lubanone" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.USER_PRESENT" />
+        <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+      </intent-filter>
+      <!-- Optional -->
+      <intent-filter>
+        <action android:name="android.intent.action.PACKAGE_ADDED" />
+        <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+        <data android:scheme="package" />
+      </intent-filter>
+    </receiver>
+    <!-- User defined.  For test only  用户自定义的广播接收器 -->
+    <receiver
+      android:enabled="true"
+      android:exported="false"
+      android:name=".broadcastreceiver.MyReceiver">
+      <intent-filter>
+        <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+        <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+        <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+        <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+        <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+        <category android:name="com.example.administrator.lubanone" />
+      </intent-filter>
+    </receiver>
+    <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
+    <receiver android:name=".broadcastreceiver.MyJPushMessageReceiver">
+
+      <!--
+      <intent-filter>
+        <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+        <category android:name="com.example.administrator.lubanone" />
+      </intent-filter>
+            -->
+    </receiver>
+
+    <meta-data
+      android:name="JPUSH_CHANNEL"
+      android:value="developer-default" />
+    <meta-data
+      android:name="JPUSH_APPKEY"
+      android:value="0b5c2ac821e178257d9aa371" /> <!-- </>值来自开发者平台取得的AppKey -->
+
+    <activity android:name=".activity.home.CreditPointsActivity" />
+    <activity android:name=".activity.home.DreamFoundNewsDetailsActivity" />
+    <activity android:name=".activity.land.StartActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <!--
+    <receiver android:name="com.example.administrator.lubanone.receiver.NetWorkStateReceiver">
+      <intent-filter>
+        //检测网络变化的acton
+        <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </receiver>
+        -->
+
+    <provider
+      android:authorities="com.example.administrator.lubanone.fileProvider"
+      android:exported="false"
+      android:grantUriPermissions="true"
+      android:name=".utils.MyFileProvider">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+    </provider>
+    <provider
+      android:authorities="com.example.administrator.lubanone.FileProvider"
+      android:exported="false"
+      android:grantUriPermissions="true"
+      android:name="android.support.v4.content.FileProvider">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/rc_file_path" />
+    </provider>
+
+    <activity android:name=".activity.home.kotlin.UserLevelsActivity" />
+
+    <service android:name=".net.UpdateService" />
+
+    <activity android:name=".activity.land.Test3Activity" />
+    <activity android:name=".activity.home.GrowingActivity" />
+    <activity android:name=".activity.home.NewAlwaysProblemsActivity" />
+    <activity android:name=".activity.home.NewHomeH5Activity" />
+    <activity android:name=".activity.home.GrowingSeedsActivity" />
+    <activity android:name=".activity.home.AlwaysProblemDetailsActivity" />
+    <activity android:name=".activity.home.SellSeedsRecordDetailActivity" />
+    <activity android:name=".activity.home.kotlin.Main3Activity" />
+    <activity android:name=".activity.home.BuySeedsRecordDetailsActivity" />
+    <activity android:name=".activity.home.MatchFramentDEtailsActivity" />
+    <activity android:name=".activity.home.NoMoneyDetailsActivity" />
+    <activity android:name=".activity.home.SeedsMemberInfoActivity" />
+    <activity android:name=".activity.home.BuySeedsMemberInfoActivity" />
+    <activity android:name=".activity.home.SellConfirmDetailsActivity" />
+    <activity android:name=".activity.home.ConfirmDetailActivity" />
+    <activity android:name=".activity.home.SellMatchFramentDEtailsActivity" />
+    <activity android:name=".activity.home.SellNoMoneyDetailsActivity" />
+    <activity android:name=".activity.home.CheckCodeActivity" />
+    <activity android:name=".activity.message.SearchFriendActivity" />
+
+    <service android:name=".net.UpdateService" />
+
+    <activity android:name=".activity.home.MyNewTeamActivity" />
+    <activity android:name=".activity.home.MyTeamActivityNew" />
+    <activity android:name=".activity.home.GuiZeActivity" />
+    <activity android:name=".activity.home.AliActivity"></activity>
+
+    <receiver
+      android:exported="true"
+      android:name=".Listener.DemoNotificationReceiver">
+      <intent-filter>
+        <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+        <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
+        <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+        <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
+      </intent-filter>
+    </receiver>
+    <activity android:name=".activity.home.ZhiFuBaoAccountActivity"></activity>
+  </application>
+
+</manifest>

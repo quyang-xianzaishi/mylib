@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue"
+    android:orientation="horizontal"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <TextView
+      android:id="@+id/activity_back"
+      android:layout_width="10dp"
+      android:layout_height="15dp"
+      android:layout_gravity="center_vertical"
+      android:background="@drawable/back_left_white"
+      android:textColor="@color/white"
+      android:layout_marginRight="25dp"/>
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="50dp"
+      android:layout_weight="1"
+      android:background="@color/blue"
+      android:gravity="center"
+      android:text="培训积分"
+      android:textColor="@color/white"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      android:id="@+id/activity_title"/>
+    <TextView
+      android:id="@+id/activity_obtain_integration"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:textColor="#697BE1"
+      android:text="@string/obtain_integration"
+      android:textSize="14sp"/>
+
+  </LinearLayout>
+
+</LinearLayout>

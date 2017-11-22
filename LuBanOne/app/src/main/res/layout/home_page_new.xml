@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="23dp"
+    android:background="@color/blue"/>
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/white"/>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue"
+    android:orientation="vertical">
+
+    <include
+      android:id="@+id/head_layout"
+      layout="@layout/home_page_user_icon"/>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="2px"
+      android:layout_marginBottom="11dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"
+      android:background="@color/red"/>
+
+    <include
+      android:id="@+id/dream_package"
+      layout="@layout/home_page_icon"/>
+
+    <include
+      android:id="@+id/bonus_package"
+      layout="@layout/home_page_icon"/>
+
+    <include
+      android:id="@+id/active_code"
+      layout="@layout/home_page_icon"/>
+
+    <include
+      android:id="@+id/catalyst"
+      layout="@layout/home_page_icon"/>
+
+  </LinearLayout>
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/pull"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <com.example.administrator.lubanone.customview.NewHomeFragmentListView
+      android:id="@+id/lv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:divider="#fff"
+      android:dividerHeight="1px"
+      android:scrollbars="none"/>
+
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:layout_marginBottom="6dp"
+    android:visibility="gone">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/white"
+      android:orientation="vertical">
+
+      <include
+        android:id="@+id/buy_sell_btn"
+        layout="@layout/home_page_btn"/>
+
+      <include
+        android:id="@+id/buy_layout"
+        layout="@layout/home_page_buy_sell"/>
+
+      <include
+        android:id="@+id/sell_layout"
+        layout="@layout/home_page_buy_sell"/>
+
+
+      <TextView
+        android:id="@+id/tv_growing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:text="@string/growind_seed"
+        android:textColor="#353535"
+        android:textSize="11sp"/>
+
+
+      <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/tip_text"
+        android:background="@color/transparency_light_black"/>
+
+      <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:orientation="vertical">
+
+      </LinearLayout>
+
+
+    </LinearLayout>
+  </ScrollView>
+
+
+</LinearLayout>

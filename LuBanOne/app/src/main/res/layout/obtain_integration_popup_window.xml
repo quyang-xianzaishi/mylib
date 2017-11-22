@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="400dp"
+  android:layout_height="300dp"
+  android:background="@color/white"
+  android:orientation="vertical">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#666"/>
+  <LinearLayout
+    android:id="@+id/complete_exam"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:padding="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:layout_marginLeft="20dp"
+      android:gravity="center_vertical"
+      android:text="@string/complete_exam"/>
+  </LinearLayout>
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#666"/>
+  <LinearLayout
+    android:id="@+id/apply_train"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:padding="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:layout_marginLeft="20dp"
+      android:gravity="center_vertical"
+      android:text="@string/apply_train"/>
+  </LinearLayout>
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#666"/>
+  <LinearLayout
+    android:id="@+id/upload_material"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:padding="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:layout_marginLeft="20dp"
+      android:gravity="center_vertical"
+      android:text="@string/upload_material"/>
+  </LinearLayout>
+
+
+</LinearLayout>

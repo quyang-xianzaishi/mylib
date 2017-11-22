@@ -1,0 +1,15 @@
+   Glide.with(this)
+                .load("http://192.168.191.1:8080/a.JPG")
+                .asBitmap()
+                .diskCacheStrategy(DiskCacheStrategy.ALL) //设置缓存
+                .into(new BitmapImageViewTarget(iv) {
+                    @Override
+                    protected void setResource(Bitmap resource) {
+                        RoundedBitmapDrawable circularBitmapDrawable =
+                                RoundedBitmapDrawableFactory.create(getApplicationContext().getResources(), resource);
+//                        circularBitmapDrawable.setCircular(true);//是否设置为园，如果要，还要设置抗锯齿
+                        circularBitmapDrawable.setCornerRadius(50f);//像素
+                        circularBitmapDrawable.setAlpha(200);//透明度，0-255之间，越大越接近原图
+                        iv.setImageDrawable(circularBitmapDrawable);
+                    }
+                });

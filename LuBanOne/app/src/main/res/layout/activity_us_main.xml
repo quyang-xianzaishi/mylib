@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <com.example.administrator.lubanone.customview.UnScrollViewPager
+    android:id="@+id/us_main_viewpager"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    />
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:background="@color/gray_e7e7e7"/>
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <LinearLayout
+      android:id="@+id/us_table_iac"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="vertical">
+      <ImageView
+        android:id="@+id/us_main_ib_iac"
+        android:layout_width="17.5dp"
+        android:layout_height="19dp"
+        android:src="@drawable/selector_us_table_iac"/>
+
+      <TextView
+        android:id="@+id/us_main_table_iac_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/us_table_iac_title"
+        android:textColor="@drawable/selector_bottom_table_text"
+        android:textSize="12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/us_table_vip"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="vertical">
+      <ImageView
+        android:id="@+id/us_main_ib_vip"
+        android:layout_width="23dp"
+        android:layout_height="19dp"
+        android:src="@drawable/selector_us_table_vip"/>
+
+      <TextView
+        android:id="@+id/us_main_table_vip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/us_table_vip_title"
+        android:textColor="@drawable/selector_bottom_table_text"
+        android:textSize="12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/us_table_customer"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="vertical">
+      <ImageView
+        android:id="@+id/us_main_ib_customer"
+        android:layout_width="22dp"
+        android:layout_height="18dp"
+        android:src="@drawable/selector_us_table_customer"/>
+
+      <TextView
+        android:id="@+id/us_main_table_customer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/us_table_customer_title"
+        android:textColor="@drawable/selector_bottom_table_text"
+        android:textSize="12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/us_table_fund"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="vertical">
+      <ImageView
+        android:id="@+id/us_main_ib_fund"
+        android:layout_width="16dp"
+        android:layout_height="19dp"
+        android:src="@drawable/selector_us_table_fund"/>
+
+      <TextView
+        android:id="@+id/us_main_table_fund_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/us_table_fund_title"
+        android:textColor="@drawable/selector_bottom_table_text"
+        android:textSize="12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/us_table_spread"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="vertical">
+      <ImageView
+        android:id="@+id/us_main_ib_spread"
+        android:layout_width="21dp"
+        android:layout_height="19dp"
+        android:src="@drawable/selector_us_table_spread"/>
+
+      <TextView
+        android:id="@+id/us_main_table_spread_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/us_table_spread_title"
+        android:textColor="@drawable/selector_bottom_table_text"
+        android:textSize="12sp"/>
+    </LinearLayout>
+
+
+  </LinearLayout>
+</LinearLayout>

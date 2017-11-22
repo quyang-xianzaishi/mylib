@@ -1,0 +1,19 @@
+
+1, 使用dialog的时候要使用v7包中的，这样可以兼容到低版本，不然在低版本上的弹窗是黑色的；
+  final AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setTitle("quyang")
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ToastUtil.showShort("ok",getApplicationContext());
+                    }
+                })
+                .setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ToastUtil.showShort("no",getApplicationContext());
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.setCancelable(false);
+        alertDialog.show();

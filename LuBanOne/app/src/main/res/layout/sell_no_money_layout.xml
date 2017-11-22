@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingTop="10dp"
+  android:paddingBottom="10dp"
+  android:background="@color/white"
+  android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/tv_order_id"
+    style="@style/buy_seeds_no_money_text_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <TextView
+    android:id="@+id/tv_apply_time"
+    style="@style/buy_seeds_no_money_text_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
+  <TextView
+    android:id="@+id/tv_seeds_count"
+    style="@style/buy_seeds_no_money_text_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <TextView
+    android:id="@+id/tv_match_time"
+    style="@style/buy_seeds_no_money_text_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <RelativeLayout
+    android:id="@+id/rl_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/tv_seller"
+        style="@style/buy_seeds_no_money_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="9dp"
+        android:drawableRight="@mipmap/blue_i_2x"
+        android:textColor="@color/blue"/>
+
+      <TextView
+        android:id="@+id/tv_have_time"
+        style="@style/buy_seeds_no_money_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"/>
+
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/tv_tousu"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="40dp"
+      android:layout_alignParentRight="true"
+      android:layout_gravity="center_vertical"
+      android:paddingTop="2dp"
+      android:paddingBottom="2dp"
+      android:background="@drawable/yellow_round_shape"
+      android:gravity="center"
+      android:text="我要投诉"
+      android:textColor="@color/white"
+      android:visibility="gone"/>
+
+  </RelativeLayout>
+
+
+  <TextView
+    android:id="@+id/tv_order_status"
+    style="@style/buy_seeds_no_money_text_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+  <RelativeLayout
+    android:id="@+id/rl_long_pay_time"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible">
+
+    <TextView
+      android:id="@+id/tv_yangchang"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:gravity="center"
+      android:text="@string/longer_pay_time" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="15dp"
+      android:layout_below="@+id/tv_yangchang"
+      android:paddingLeft="50dp"
+      android:paddingRight="50dp"
+      android:text="@string/long_pay_time_tip"
+      android:textColor="@color/gray" />
+
+  </RelativeLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <TextView
+      android:id="@+id/tv_tips"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="12dp"
+      android:paddingRight="12dp"
+      android:drawableLeft="@mipmap/warm_color_2x"
+      android:drawablePadding="10dp"
+      android:text="@string/have_time_tips"
+      android:textColor="@color/c666"
+      android:textSize="10sp"/>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1px"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="10dp"
+      android:background="@color/transparency_light_black"/>
+
+
+    <RelativeLayout
+      android:id="@+id/rl_cuiyicui"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_vertical">
+
+      <TextView
+        android:id="@+id/tv_pay_long_time"
+        android:layout_width="125dp"
+        android:layout_height="34dp"
+        android:layout_toLeftOf="@+id/tv_upload_proof"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:gravity="center"
+        android:text="@string/long_pay_time"
+        android:textSize="12sp"
+        />
+
+      <TextView
+        android:id="@+id/tv_upload_proof"
+        android:layout_width="125dp"
+        android:layout_height="34dp"
+        style="@style/btn_juse_selector"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="12dp"
+        android:layout_alignParentRight="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:gravity="center"
+        android:text="@string/uuload_pay_proof"
+        android:textSize="12sp"/>
+
+    </RelativeLayout>
+  </LinearLayout>
+
+
+</LinearLayout>

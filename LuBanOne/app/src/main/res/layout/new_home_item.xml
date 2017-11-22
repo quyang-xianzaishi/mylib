@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:padding="15dp"
+    android:gravity="center_vertical">
+
+    <TextView
+      android:id="@+id/red_line"
+      android:layout_width="2dp"
+      android:layout_height="10dp"
+      android:layout_marginRight="7dp"
+      android:layout_centerVertical="true"
+      android:background="@color/cEA5412" />
+
+    <TextView
+      android:id="@+id/tv_tag"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_toRightOf="@+id/red_line"
+      android:text="@string/seed_count_new"
+      android:textColor="@color/c404040"
+      android:textSize="12.5sp" />
+
+    <FrameLayout
+      android:id="@+id/iv_next_page"
+      android:layout_width="wrap_content"
+      android:layout_height="20dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true">
+
+      <TextView
+        style="@style/new_home_load_more_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/look_more" />
+
+    </FrameLayout>
+
+  </RelativeLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="7dp"
+    android:paddingLeft="15dp"
+    android:orientation="horizontal">
+
+    <TextView
+      android:id="@+id/no_match"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="26dp"
+      android:text="@string/buy_text_one"
+      android:textColor="@color/c333"
+      android:textSize="12sp" />
+
+    <TextView
+      android:id="@+id/no_pay"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="26dp"
+      android:text="@string/buy_text_two"
+      android:textColor="@color/c333"
+      android:textSize="12sp" />
+
+    <TextView
+      android:id="@+id/no_confrim"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="26dp"
+      android:text="@string/buy_text_three"
+      android:textColor="@color/c333"
+      android:textSize="12sp" />
+
+    <TextView
+      android:id="@+id/no_pingjia"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/buy_text_four"
+      android:textColor="@color/c333"
+      android:textSize="12sp" />
+
+  </LinearLayout>
+
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/recyclerview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+  </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

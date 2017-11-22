@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_user_assign"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/cf6f6f6"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.UserAssignActivity">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/title_background_blue" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/user_assign"
+      android:textColor="@color/c333"
+      android:textSize="17sp" />
+
+
+    <ImageView
+      android:id="@+id/back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:background="@color/white"
+      android:gravity="center"
+      android:src="@mipmap/icon_back_gray"
+      android:textSize="15sp" />
+
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="24dp"
+      android:layout_marginLeft="15dp"
+      android:layout_gravity="center_vertical"
+      android:background="@color/transparenc_all"
+      android:visibility="gone" />
+
+
+    <TextView
+      android:id="@+id/pre_info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:layout_toRightOf="@+id/back"
+      android:paddingRight="15dp"
+      android:background="@color/blue"
+      android:gravity="center"
+      android:text="@string/account_set"
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      android:visibility="gone" />
+
+    <TextView
+      android:id="@+id/tv_complete"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="15dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:text="@string/save"
+      android:textColor="@color/c333"
+      android:textSize="14sp" />
+
+  </RelativeLayout>
+
+  <EditText
+    android:id="@+id/et_assign"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:layout_marginTop="10dp"
+    android:paddingTop="20dp"
+    android:paddingLeft="15dp"
+    android:background="@color/cfff"
+    android:gravity="start"
+    android:textColorHint="@color/c999"
+    android:hint="@string/text_number"
+    android:textColor="@color/c333"
+    android:textSize="14sp" />
+</LinearLayout>

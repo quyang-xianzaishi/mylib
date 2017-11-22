@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.AliActivity">
+
+  <TextView
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:layout_height="23dp"
+    android:background="@color/chead"
+    android:visibility="gone" />
+
+
+  <FrameLayout
+    android:id="@+id/one"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tv"
+    android:paddingTop="25dp"
+    android:background="@color/title_background_blue">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:background="@color/white"
+      android:gravity="center"
+      android:text="@string/add_count"
+      android:textColor="@color/c333"
+      android:textSize="18sp" />
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_gravity="center_vertical"
+      android:src="@mipmap/icon_back_gray" />
+
+  </FrameLayout>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/cf6f6f6" />
+
+  <TextView
+    android:id="@+id/tv_name"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:text="@string/zhifubao_account"
+    android:textColor="#3C3C3C"
+    android:textSize="15sp" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="1dp">
+    <TextView
+      android:layout_width="15dp"
+      android:layout_height="match_parent"
+      android:background="@color/white" />
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="@color/cf6f6f6" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_container"
+    android:layout_width="match_parent"
+    android:layout_height="151dp"
+    android:paddingTop="15dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+      android:id="@+id/add"
+      android:layout_width="75dp"
+      android:layout_height="75dp"
+      android:background="@color/cf6f6f6">
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/us_spread_upload_image_add" />
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/add_erweima"
+        android:textColor="@color/gray_888888"
+        android:textSize="12.5dp" />
+    </RelativeLayout>
+
+  </LinearLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="18dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginLeft="15dp">
+
+    <ImageView
+      android:id="@+id/iv_waring"
+      android:layout_width="15dp"
+      android:layout_height="13dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginRight="10dp"
+      android:src="@mipmap/warming" />
+
+    <TextView
+      android:id="@+id/tv_tips"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="19dp"
+      android:layout_marginEnd="15dp"
+      android:layout_marginRight="15dp"
+      android:layout_toEndOf="@+id/iv_waring"
+      android:layout_toRightOf="@+id/iv_waring"
+      android:lineSpacingMultiplier="1.2"
+      android:text="@string/erweima_tips"
+      android:textColor="@color/_888888"
+      android:textSize="11sp" />
+
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="15dp"
+    android:gravity="bottom">
+
+    <Button
+      android:id="@+id/btn_commit"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:layout_marginLeft="55dp"
+      android:layout_marginRight="55dp"
+      android:background="@drawable/all_blue_shape_10"
+      android:text="@string/commits"
+      android:textColor="@color/white"
+      android:textSize="16sp" />
+
+
+  </RelativeLayout>
+
+
+
+
+</LinearLayout>

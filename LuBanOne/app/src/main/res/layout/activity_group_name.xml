@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cf6f6f6">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="25dp"
+      android:background="@color/title_background_blue"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/title_background_blue"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/title_background_blue"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="@string/cancels"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@color/title_background_blue"
+            android:gravity="center"
+            android:text="@string/group_name_set_title"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:id="@+id/title"/>
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@color/title_background_blue"
+          android:gravity="end"
+          android:text="@string/group_name_save"
+          android:textColor="@color/_888888"
+          android:textSize="15sp"
+          android:id="@+id/group_name_set"
+          android:clickable="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@color/white"
+      android:layout_marginTop="10dp"
+      android:paddingRight="15dp"
+      android:paddingLeft="15dp">
+    <EditText
+        android:id="@+id/group_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:hint="@string/group_name_set_hint"
+        android:background="@color/white"
+        android:textColor="@color/c333"
+        android:textColorHint="@color/_888888"
+        android:textSize="12.5sp"/>
+        
+        <ImageView
+          android:id="@+id/edit_clear"
+          android:layout_width="12dp"
+          android:layout_height="match_parent"
+          android:src="@drawable/icon_close"
+          android:visibility="gone"/>
+    </LinearLayout>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"
+      android:background="@color/blue"
+      android:visibility="gone"/>
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/group_name_text"
+      android:visibility="gone"/>
+
+    <!--<TextView
+        android:id="@+id/group_name_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/training_play_back_bg"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/group_name_set"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:layout_marginTop="60dp"/>-->
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+  >
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/empty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:visibility="gone">
+    <com.jingchen.pulltorefresh.PullableImageView
+      android:id="@+id/task_fragment_no_data_image"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="130dp"
+      android:src="@mipmap/no_order" />
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/task_fragment_pullToRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <com.jingchen.pulltorefresh.PullableListView
+      android:id="@+id/lv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:divider="#F0F0F2"
+      android:dividerHeight="10dp"
+      android:scrollbars="none" />
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+</LinearLayout>

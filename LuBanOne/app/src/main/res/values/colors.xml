@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
+  <color name="blue">#191C61</color>
+  <color name="cf9f9f9">#F9F9F9</color>
+  <color name="light_blue">#3f51b3</color>
+  <color name="white">#fff</color>
+  <color name="c6b6b6b">#888888</color>
+  <color name="cfefefe">#FEFEFE</color>
+  <color name="cfff">#fff</color>
+  <color name="gray">#bbb</color>
+  <color name="cF4AD8D">#F4AD8D</color>
+  <color name="cbbb">#bbb</color>
+  <color name="cbbbfd">#20000000</color>
+  <color name="cBBB">#BBB</color>
+  <color name="cf6410b">#f6410b</color>
+  <color name="cb6b6b6">#b6b6b6</color>
+  <color name="cf6f6f6">#f6f6f6</color>
+  <color name="transparency_light_black">#33000000</color>
+  <color name="lighter_gray">#11000000</color>
+  <color name="c353535">#353535</color>
+  <color name="c333">#333</color>
+  <color name="c1A227A">#1A227A</color>
+  <color name="c404040">#404040</color>
+  <color name="cf77523">#f77523</color>
+  <color name="cff">#11000000</color>
+  <color name="c727274">#727274</color>
+  <color name="c393939">#393939</color>
+  <color name="transparenc_all">#00000000</color>
+  <color name="black">#000</color>
+  <color name="cff0000">#ff0000</color>
+  <color name="light_gray">#949494</color>
+  <color name="btn_blue">#191c61</color>
+  <color name="c191c61">#191c61</color>
+  <color name="c1e257c">#1e257c</color>
+  <color name="c666">#666</color>
+  <color name="cb4b4b4">#b4b4b4</color>
+  <color name="c444">#444444</color>
+  <color name="c697be1">#697be1</color>
+  <color name="c000">#000</color>
+  <color name="c999">#888888</color>
+  <color name="c888">#888</color>
+  <color name="cf0f0f2">#F0F0F2</color>
+  <color name="cEA5514">#EA5514</color>
+  <color name="cEA5412">#EA5412</color>
+  <color name="cEA5413">#EA5413</color>
+  <color name="basic_color_primary">#373b3e</color>
+  <color name="cE74113">#E74113</color>
+
+  <color name="photopicker_background">#181819</color>
+
+  <color name="praise_item_default">#333333</color>
+  <color name="praise_item_selector_default">#cccccc</color>
+  <color name="praise_item">#8290AF</color>
+
+  <color name="default_clickable_color">#cccccc</color>
+
+  <color name="color_8290AF">#8290AF</color>
+  <color name="color_232323">#232323</color>
+  <color name="color_aeaeae">#aeaeae</color>
+  <color name="im_social_dig_name_bg">#DDDDDD</color>
+  <color name="im_font_color_text_hint">#abb1b6</color>
+  <color name="im_line_color">#dadada</color>
+  <color name="name_selector_color">#cccccc</color>
+  <color name="transparent">#00000000</color>
+  <color name="bg_no_photo">#EEEEEE</color>
+  <color name="title_bg">#373B3E</color>
+  <color name="video_bg">#ededed</color>
+
+  <color name="_FF0000">#FF0000</color>
+  <color name="_FF9800">#FF9800</color>
+
+  <color name="kprogresshud_default_color">#b1000000</color>
+  <color name="kprogresshud_grey_color">#449E9E9E</color>
+
+  <color name="chead">#171C61</color>
+  <color name="cl_default">#424242</color>
+  <color name="cl_error">#ffffff</color>
+  <color name="Grey_50">#FAFAFA</color>
+  <color name="Grey_100">#F5F5F5</color>
+  <color name="Grey_200">#EEEEEE</color>
+  <color name="Grey_300">#E0E0E0</color>
+  <color name="Grey_400">#BDBDBD</color>
+  <color name="Grey_500">#9E9E9E</color>
+  <color name="Grey_600">#757575</color>
+  <color name="Grey_700">#616161</color>
+  <color name="Grey_800">#424242</color>
+  <color name="Grey_900">#212121</color>
+  <color name="simple_player_stream_name_playing">#ff0043bd</color>
+  <color name="simple_player_stream_name_normal">#ffffffff</color>
+  <color name="title_background_blue">#171C61</color>
+  <color name="gray_b6b6b6">#b6b6b6</color>
+  <color name="gray_e7e7e7">#e7e7e7</color>
+  <color name="gray_999999">#999999</color>
+  <color name="gray_888888">#888888</color>
+  <color name="gray_bbbbbb">#bbbbbb</color>
+  <color name="gray_666666">#666666</color>
+  <color name="black_333333">#333333</color>
+  <color name="orange_ea5412">#ea5412</color>
+  <color name="green_2c4a44">#2c4a44</color>
+  <color name="_888888">#888888</color>
+</resources>

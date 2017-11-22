@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_user_info_set"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/cf6f6f6"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.UserInfoSetActivity">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/title_background_blue" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:gravity="center"
+      android:text="@string/nickname"
+      android:textColor="@color/c333"
+      android:textSize="18sp" />
+
+
+    <TextView
+      android:id="@+id/save"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="15dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:background="@color/white"
+      android:gravity="end|center"
+      android:text="@string/save"
+      android:textColor="@color/c333"
+      android:textSize="15sp" />
+
+    <ImageView
+      android:id="@+id/back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_centerVertical="true"
+      android:background="@mipmap/icon_back_gray"
+      android:gravity="center" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="24dp"
+      android:layout_marginLeft="12dp"
+      android:layout_gravity="center_vertical"
+      android:visibility="gone" />
+
+  </RelativeLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:gravity="bottom"
+    android:orientation="horizontal">
+
+    <EditText
+      android:id="@+id/info"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      android:background="@color/white"
+      android:gravity="center_vertical"
+      android:hint="@string/your_nickname"
+      android:textColor="@color/c333"
+      android:textCursorDrawable="@color/cf6f6f6"
+      android:textSize="13sp" />
+
+    <ImageView
+      android:id="@+id/iv_delete"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="15dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:visibility="gone"
+      android:src="@mipmap/wrong_2x" />
+
+  </RelativeLayout>
+
+</LinearLayout>

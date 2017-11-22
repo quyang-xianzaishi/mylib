@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/cf6f6f6"
+  android:orientation="vertical">
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/train_center_common_no_data_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:visibility="gone">
+
+    <com.jingchen.pulltorefresh.PullableImageView
+      android:id="@+id/train_center_common_no_data_image"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="130dp"
+      android:background="@color/white"
+      android:src="@drawable/loading_fail"/>
+
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+
+  <com.jingchen.pulltorefresh.PullToRefreshLayout
+    android:id="@+id/train_center_common_pull_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jingchen.pulltorefresh.PullableListView
+      android:id="@+id/train_center_common_list_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      android:divider="@drawable/task_list_view_divider"
+      android:dividerHeight="0.5dp"
+      />
+  </com.jingchen.pulltorefresh.PullToRefreshLayout>
+
+</LinearLayout>

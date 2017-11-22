@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_train_credit"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.TrainCreditActivity">
+
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+      android:id="@+id/tv_look"
+      android:layout_width="match_parent"
+      android:layout_height="25dp"
+      android:background="#1083C1" />
+
+    <RelativeLayout
+      android:layout_below="@+id/tv_look"
+      android:id="@+id/frameLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#1083C1">
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="@string/train_credit"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+      <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="22dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/icon_back" />
+
+      <TextView
+        android:id="@+id/tv_back"
+        android:layout_width="40dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="12dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/transparenc_all" />
+
+
+      <TextView
+        android:id="@+id/iv_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:enabled="false"
+        android:text="@string/get"
+        android:textColor="@color/c697be1"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="180dp"
+      android:layout_below="@+id/frameLayout"
+      android:background="@mipmap/integral_bg"
+      android:gravity="top">
+
+      <TextView
+        android:id="@+id/tv_train_credits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="0.00"
+        android:textColor="@color/white"
+        android:textSize="50sp" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_train_credits"
+        android:layout_centerHorizontal="true"
+        android:text="@string/current_train_credit"
+        android:textColor="@color/cfff"
+        android:textSize="13sp" />
+
+    </RelativeLayout>
+
+  </RelativeLayout>
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="5"
+      android:paddingLeft="12dp"
+      android:gravity="center_vertical"
+      android:text="@string/my_current_train_credit"
+      android:textColor="@color/c191c61"
+      android:textSize="14sp" />
+
+
+    <TextView
+      android:id="@+id/tv_current_credit"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:layout_marginRight="12dp"
+      android:gravity="end|center_vertical"
+      android:text=""
+      android:textColor="@color/c191c61" />
+
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/tv_credit_list"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/white"
+    android:drawableRight="@mipmap/next_gray_2x_5"
+    android:gravity="center_vertical"
+    android:text="@string/credit_record_oone"
+    android:textColor="@color/c333"
+    android:textSize="14sp" />
+
+
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginLeft="15dp"
+    android:background="@color/cf6f6f6" />
+
+
+
+  <TextView
+    android:id="@+id/tv_train_system"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/white"
+    android:drawableRight="@mipmap/next_gray_2x_5"
+    android:gravity="center_vertical"
+    android:text="@string/train_system"
+    android:textColor="@color/c333"
+    android:textSize="14sp" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginLeft="15dp"
+    android:background="@color/cf6f6f6" />
+
+  <TextView
+    android:id="@+id/tv_always_problems"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/white"
+    android:drawableRight="@mipmap/next_gray_2x_5"
+    android:gravity="center_vertical"
+    android:text="@string/always_problems"
+    android:textColor="@color/c333"
+    android:textSize="14sp" />
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginLeft="15dp"
+    android:background="@color/cf6f6f6" />
+
+
+</LinearLayout>

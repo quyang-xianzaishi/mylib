@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white">
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp"
+    android:paddingLeft="17dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/order_code" />
+
+      <TextView
+        android:id="@+id/tv_order_id"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/apply_time" />
+
+      <TextView
+        android:id="@+id/tv_seed_count"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/seed_count" />
+
+      <TextView
+        android:id="@+id/tv_peisong_time"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/buy_vip" />
+
+      <TextView
+
+
+        android:id="@+id/tv_give_money_time"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/complete_time" />
+
+      <TextView
+        android:id="@+id/tv_receiver"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/order_status" />
+
+      <TextView
+        android:id="@+id/tv_get_pingfeng"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:orientation="horizontal">
+
+      <TextView
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/discuss_credit" />
+
+      <TextView
+        android:id="@+id/tv_give_pingfeng"
+        style="@style/home_page_lv_item_sty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <RelativeLayout
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+          android:id="@+id/one"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="5dp"
+          android:orientation="horizontal">
+
+          <TextView
+            style="@style/home_page_lv_item_sty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/give_credit" />
+
+
+          <TextView
+            android:id="@+id/tv_complete_time"
+            style="@style/home_page_lv_item_sty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+
+        </LinearLayout>
+
+
+      </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="1px"
+      android:layout_marginRight="12dp"
+      android:background="@color/transparency_light_black" />
+  </LinearLayout>
+
+</FrameLayout>

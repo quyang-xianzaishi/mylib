@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/apply_training_success_dialog_bg">
+
+  <TextView
+    android:id="@+id/member_state_reason_hint"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    android:text="@string/account"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:visibility="gone"
+    android:gravity="center_horizontal"/>
+
+  <TextView
+    android:id="@+id/member_state_reason"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    android:text="@string/account"
+    android:layout_marginTop="33dp"
+    android:layout_marginBottom="23dp"
+    android:gravity="center_horizontal"/>
+
+  <TextView
+    android:id="@+id/close"
+    android:layout_width="19dp"
+    android:layout_height="19dp"
+    android:textColor="@color/black"
+    android:textSize="14sp"
+    android:layout_marginBottom="32dp"
+    android:background="@mipmap/close_dialog"
+    android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="pwe_only_number">支付密码只能是数字</string>
+</resources>

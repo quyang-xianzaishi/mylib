@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="data">
+        <item>阿松</item>
+        <item>阿嗄</item>
+        <item>陈达哥</item>
+        <item>沉积电</item>
+        <item>嗲嗲地</item>
+        <item>凤飞飞</item>
+        <item>高规格</item>
+        <item>高高的</item>
+        <item>嘿嘿嘿</item>
+        <item>黑客</item>
+        <item>看看打</item>
+        <item>卡了得</item>
+        <item>张丹丹</item>
+        <item>丫的你</item>
+        <item>彼得森</item>
+        <item>的接口</item>
+        <item>王尼玛</item>
+        <item>王蜜桃</item>
+        <item>saber</item>
+        <item>archer</item>
+        <item>lancer</item>
+        <item>rider</item>
+        <item>Caster</item>
+        <item>Assassin</item>
+        <item>Berserker</item>
+        <item>Avenger</item>
+        <item>#78890</item>
+        <item>$123</item>
+        <item>~jdksjdk</item>
+        <item>!酒店快捷</item>
+        <item>火影忍者</item>
+        <item>海贼王</item>
+        <item>死神</item>
+        <item>全职猎人</item>
+        <item>龙珠</item>
+        <item>京阿尼</item>
+        <item>PAWORKS</item>
+        <item>节操社</item>
+        <item>英雄联盟</item>
+        <item>炉石传说</item>
+        <item>剑灵</item>
+        <item>暴走大事件</item>
+
+    </string-array>
+
+    <string-array name="head">
+        <item>群聊</item>
+        <item>新的朋友</item>
+    </string-array>
+
+    <string-array name="id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+
+    </string-array>
+
+</resources>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginBottom="10dp"
+  android:layout_marginLeft="12dp"
+  android:layout_marginRight="12dp"
+  android:background="@drawable/home_page_buy_shape">
+
+  <TextView
+    android:id="@+id/tip_text"
+    style="@style/home_page_buy_sell_sty"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:paddingTop="9dp"
+    android:paddingBottom="7dp"
+    android:paddingLeft="19dp"
+    android:text="@string/sell"
+    android:textSize="11sp" />
+
+  <TextView
+    android:id="@+id/line"
+    android:layout_width="match_parent"
+    android:layout_height="1px"
+    android:layout_marginBottom="16dp"
+    android:layout_marginLeft="18dp"
+    android:layout_marginRight="18dp"
+    android:layout_below="@+id/tip_text"
+    android:background="@color/transparency_light_black" />
+
+
+  <RadioGroup
+    android:id="@+id/rg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/line"
+    android:paddingBottom="15dp"
+    android:orientation="horizontal">
+
+    <FrameLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:paddingLeft="5dp"
+      android:layout_weight="1">
+
+      <RadioButton
+        android:id="@+id/rb_match"
+        style="@style/home_page_middle_sty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@null"
+        android:drawableTop="@mipmap/landing_2x"
+        android:text="@string/buy_text_one" />
+
+      <TextView
+        android:id="@+id/match_dot"
+        style="@style/home_page_red_dot_sty_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    </FrameLayout>
+
+    <FrameLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1">
+
+      <RadioButton
+        android:id="@+id/rb_no_money"
+        style="@style/home_page_middle_sty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@null"
+        android:drawableTop="@mipmap/no_money_2x"
+        android:text="@string/buy_receiver_two" />
+
+      <TextView
+        android:id="@+id/no_money_dot"
+        style="@style/home_page_red_dot_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    </FrameLayout>
+
+    <FrameLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1">
+
+      <RadioButton
+        android:id="@+id/rb_comfirm"
+        style="@style/home_page_middle_sty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@null"
+        android:drawableTop="@mipmap/no_comfirm_2x"
+        android:text="@string/buy_text_three" />
+
+      <TextView
+        android:id="@+id/confirm_dot"
+        style="@style/home_page_red_dot_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    </FrameLayout>
+
+    <FrameLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1">
+
+      <RadioButton
+        android:id="@+id/rb_evaluate"
+        style="@style/home_page_middle_sty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@null"
+        android:drawableTop="@mipmap/no_pjian_2x"
+        android:text="@string/buy_text_four" />
+
+      <TextView
+        android:id="@+id/evaluate_dot"
+        style="@style/home_page_red_dot_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    </FrameLayout>
+
+  </RadioGroup>
+
+</RelativeLayout>

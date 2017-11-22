@@ -1,0 +1,52 @@
+private void showSnackBar() {
+        //自动取消的点击事件
+        snackbar = Snackbar.make(bu, "ddd", Snackbar.LENGTH_INDEFINITE).setAction("ok", new View.OnClickListener() {
+
+            //自动取消的点击事件
+            @Override
+            public void onClick(View v) {
+                ToastUtil.showShort("oyes", getApplicationContext());
+            }
+        });
+
+        snackbar.getView().setBackgroundColor(Color.RED);
+        snackbar.setActionTextColor(Color.WHITE);
+//        Snackbar.SnackbarLayout view = (Snackbar.SnackbarLayout) snackbar.getView();
+//        View inflate = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item, null);
+//        view.addView(inflate);
+
+
+        snackbar.setCallback(new Snackbar.Callback(){
+            @Override
+            public void onDismissed(Snackbar transientBottomBar, int event) {
+                super.onDismissed(transientBottomBar, event);
+                ToastUtil.showShort("消失", getApplicationContext());
+            }
+
+            @Override
+            public void onShown(Snackbar sb) {
+                super.onShown(sb);
+                ToastUtil.showShort("出现", getApplicationContext());
+            }
+        });
+
+
+        snackbar.show();
+    }
+
+    private Snackbar snackbar;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (snackbar.isShown()) {
+                snackbar.dismiss();
+                return false;
+            } else {
+                return super.onKeyDown(keyCode, event);
+            }
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }

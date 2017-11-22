@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <ImageView
+    android:id="@+id/icon"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="12dp"
+    android:layout_centerVertical="true"
+    android:scaleType="centerCrop" />
+
+  <TextView
+    android:id="@+id/user_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_centerVertical="true"
+    android:layout_toRightOf="@+id/icon"
+    android:gravity="center_vertical"
+    android:lineSpacingMultiplier="1"
+    android:textColor="@color/white"
+    android:textSize="13sp" />
+
+
+  <LinearLayout
+    android:id="@+id/rl_finance"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_alignParentRight="true"
+    android:orientation="vertical">
+
+    <ImageView
+      android:id="@+id/iv_finance_center"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/money_center_2x"
+      android:layout_gravity="center_horizontal"/>
+
+    <TextView
+      android:id="@+id/tv_finance_center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/iv_finance_center"
+      android:gravity="center"
+      android:layout_marginTop="5dp"
+      android:text="@string/finance_center"
+      android:textColor="@color/white"
+      android:textSize="11sp" />
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginBottom="12dp"
+    android:layout_toLeftOf="@+id/rl_finance"
+    android:orientation="vertical">
+
+    <ImageView
+      android:id="@+id/iv_my_team"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/my_team2x"
+      android:layout_gravity="center_horizontal"/>
+
+    <TextView
+      android:id="@+id/tv_my_team"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/iv_my_team"
+      android:layout_marginTop="5dp"
+      android:gravity="center"
+      android:text="@string/my_team"
+      android:textColor="@color/white"
+      android:textSize="11sp" />
+
+  </LinearLayout>
+
+
+</RelativeLayout>

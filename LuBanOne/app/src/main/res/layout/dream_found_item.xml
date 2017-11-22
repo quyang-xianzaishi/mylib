@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:fresco="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingLeft="15dp"
+  android:paddingRight="15dp"
+  android:background="@color/white"
+  android:orientation="vertical">
+
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/cf6f6f6" />
+
+  <LinearLayout
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+      android:id="@+id/iv_icon"
+      android:layout_width="115dp"
+      android:layout_height="85dp"
+      fresco:actualImageScaleType="focusCrop"
+      fresco:roundBottomLeft="true"
+      fresco:roundBottomRight="true"
+      fresco:roundTopLeft="true"
+      fresco:roundTopRight="true"
+      fresco:roundedCornerRadius="6dp" />
+
+    <RelativeLayout
+      android:layout_width="0dp"
+      android:layout_height="85dp"
+      android:layout_weight="1"
+      android:layout_marginLeft="10dp"
+      android:layout_gravity="center_vertical"
+      android:paddingTop="3dp"
+      android:paddingBottom="3dp">
+
+      <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/c333"
+        android:textSize="12.5sp" />
+
+      <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tv_title"
+        android:paddingBottom="3dp"
+        android:gravity="bottom"
+        android:textColor="@color/cb6b6b6"
+        android:textSize="11sp" />
+    </RelativeLayout>
+  </LinearLayout>
+
+</LinearLayout>

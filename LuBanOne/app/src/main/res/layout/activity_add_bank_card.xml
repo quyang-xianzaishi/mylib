@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_register"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="25dp"
+    android:background="@color/cfff">
+    <TextView
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:gravity="center"
+      android:text="@string/add_bank_card"
+      android:textColor="@color/c333"
+      android:textSize="18sp" />
+
+    <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_gravity="center_vertical"
+      android:src="@mipmap/icon_back_gray" />
+
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="30dp"
+      android:layout_marginLeft="12dp"
+      android:layout_gravity="center_vertical"
+      android:visibility="gone" />
+
+  </FrameLayout>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    android:visibility="gone">
+    <LinearLayout
+      android:id="@+id/rl_add_count"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:paddingTop="80dp"
+      android:paddingLeft="38dp"
+      android:paddingRight="38dp"
+      android:background="@color/white"
+      android:orientation="vertical"
+      android:visibility="gone">
+
+      <LinearLayout
+        android:id="@+id/ll_user_name_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/names_space" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+
+        <TextView
+          android:id="@+id/user_name_input_account"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:background="@null" />
+
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/line_account"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_user_name_account"
+        android:background="@color/gray" />
+
+      <LinearLayout
+        android:id="@+id/ll_pwd_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_account"
+        android:orientation="horizontal">
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/bank_name" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+        <TextView
+          android:id="@+id/tv_choosen_bank_account"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:paddingRight="5dp"
+          android:background="@null"
+          android:drawableRight="@mipmap/down_2x_gray"
+          android:hint="@string/select_bank_name" />
+
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/line_two_account"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_pwd_account"
+        android:background="@color/gray" />
+
+      <LinearLayout
+        android:id="@+id/ll_phone_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/line_two_account"
+        android:orientation="horizontal">
+
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/account_bank" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+        <EditText
+          android:id="@+id/et_card_number_account"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:background="@null"
+          android:hint="请输入开户行名称" />
+
+      </LinearLayout>
+
+
+      <TextView
+        android:id="@+id/line_three_account"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_phone_account"
+        android:background="@color/gray" />
+
+      <LinearLayout
+        android:id="@+id/ll_check_code_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/line_three_account"
+        android:orientation="horizontal">
+
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/bank_account" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+        <EditText
+          android:id="@+id/user_check_code_input_account"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:background="@null"
+          android:hint="请输入银行账号" />
+      </LinearLayout>
+
+
+      <TextView
+        android:id="@+id/line_four_account"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_check_code_account"
+        android:background="@color/gray" />
+
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/btn_commit_account"
+        android:layout_below="@+id/line_four_account"
+        android:drawablePadding="4dp"
+        android:drawableTop="@mipmap/warm_color_2x"
+        android:gravity="center"
+        android:text="@string/complete_tips"
+        android:textColor="@color/cbbb"
+        android:textSize="11sp" />
+
+      <Button
+        android:id="@+id/btn_commit_account"
+        style="@style/btn_selector"
+        android:layout_width="130dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="@string/commit"
+        android:textSize="16sp" />
+
+    </LinearLayout>
+  </ScrollView>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+    <LinearLayout
+      android:id="@+id/rl_add_card"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:paddingTop="80dp"
+      android:paddingLeft="38dp"
+      android:paddingRight="38dp"
+      android:background="@color/white"
+      android:orientation="vertical"
+      android:visibility="visible">
+
+      <LinearLayout
+        android:id="@+id/ll_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/card_ownner" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+
+        <TextView
+          android:id="@+id/user_name_input"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:background="@null" />
+
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_user_name"
+        android:background="@color/gray" />
+
+      <LinearLayout
+        android:id="@+id/ll_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:orientation="horizontal">
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/card_bank_type" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+        <TextView
+          android:id="@+id/tv_choosen_bank"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:paddingRight="5dp"
+          android:background="@null"
+          android:drawableRight="@mipmap/down_2x_gray"
+          android:hint="@string/input_card_type" />
+
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/line_two"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_pwd"
+        android:background="@color/gray" />
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_account"
+        android:orientation="horizontal">
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/bank_name" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+        <TextView
+          android:id="@+id/tv_bank_account_add_card"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:paddingRight="5dp"
+          android:background="@null"
+          android:drawableRight="@mipmap/down_2x_gray"
+          android:hint="@string/select_bank_name" />
+
+      </LinearLayout>
+
+      <TextView
+        android:id="@+id/line_three1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_phone"
+        android:background="@color/gray" />
+
+
+      <LinearLayout
+        android:id="@+id/ll_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/line_two"
+        android:orientation="horizontal">
+
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/card_number" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+        <EditText
+          android:id="@+id/et_card_number"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:background="@null"
+          android:hint="请选择银行卡号" />
+
+      </LinearLayout>
+
+
+      <TextView
+        android:id="@+id/line_three"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_phone"
+        android:background="@color/gray" />
+
+
+      <LinearLayout
+        android:id="@+id/ll_open_bank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/line_three"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_marginRight="20dp"
+          android:text="开    户   行" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+        <EditText
+          android:id="@+id/et_open_bank"
+          style="@style/land_et_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:layout_marginLeft="4dp"
+          android:background="@null"
+          android:hint="@string/input_user_name" />
+
+      </LinearLayout>
+
+
+      <TextView
+        android:id="@+id/line_add"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_open_bank"
+        android:background="@color/gray"
+        android:visibility="gone" />
+
+
+      <LinearLayout
+        android:id="@+id/ll_check_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/line_add"
+        android:orientation="horizontal">
+
+
+        <TextView
+          style="@style/land_text_sty"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="7"
+          android:text="@string/card_limited_time" />
+
+        <TextView
+          android:layout_width="1px"
+          android:layout_height="match_parent"
+          android:background="@color/gray" />
+
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="17"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/user_check_code_input"
+            style="@style/land_et_sty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="请输入银行卡到期时间" />
+
+          <ImageView
+            android:id="@+id/iv_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:src="@mipmap/rili_2x"
+            android:text="@string/send_check_code"
+            android:textColor="@color/black_deep" />
+        </LinearLayout>
+
+
+      </LinearLayout>
+
+
+      <TextView
+        android:id="@+id/line_four"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll_check_code"
+        android:background="@color/gray" />
+
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/btn_commit"
+        android:layout_below="@+id/line_four"
+        android:drawablePadding="4dp"
+        android:drawableTop="@mipmap/warm_color_2x"
+        android:gravity="center"
+        android:text="@string/complete_tips"
+        android:textColor="@color/cbbb"
+        android:textSize="11sp" />
+
+      <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="130dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/round_blue"
+        android:gravity="center"
+        android:text="@string/commit"
+        android:textColor="@color/cfff"
+        android:textSize="16sp" />
+
+    </LinearLayout>
+  </ScrollView>
+
+
+</LinearLayout>

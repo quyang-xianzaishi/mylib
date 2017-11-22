@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/activity_buy_seed_process"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#F0F0F2"
+  android:orientation="vertical"
+  tools:context="com.example.administrator.lubanone.activity.home.BuySeedProcessActivity">
+
+  <TextView
+    android:id="@+id/textView2"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/chead" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/chead">
+
+
+    <ImageView
+      android:id="@+id/iv_back_click"
+      android:layout_width="22dp"
+      android:layout_height="18dp"
+      android:layout_marginLeft="15dp"
+      android:layout_centerVertical="true"
+      android:src="@mipmap/icon_back" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:text="@string/sell_order"
+      android:textColor="@color/white"
+      android:gravity="center"
+      android:textSize="18sp"
+      android:layout_height="match_parent" />
+
+  </RelativeLayout>
+
+
+  <TextView
+    android:id="@+id/textView5"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:paddingLeft="12dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:visibility="gone"
+    android:text="@string/buy"
+    android:textColor="@color/c000"
+    android:textSize="14sp" />
+
+  <com.example.qlibrary.view.TraingleIndicator
+    android:id="@+id/rg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center">
+
+      <FrameLayout
+        android:id="@+id/frameLayout_one"
+        android:layout_width="35dp"
+        android:layout_height="35dp">
+
+        <ImageView
+          android:id="@+id/rb_match"
+          android:layout_width="26dp"
+          android:layout_height="26dp"
+          android:layout_gravity="center" />
+
+        <TextView
+          android:id="@+id/match_dot"
+          style="@style/home_page_red_dot_sty_new"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+
+      </FrameLayout>
+
+      <TextView
+        android:id="@+id/tv_one"
+        style="@style/buy_sell_process_text_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout_one"
+        android:text="@string/buy_text_one" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center">
+
+      <FrameLayout
+        android:id="@+id/frameLayout_two"
+        android:layout_width="35dp"
+        android:layout_height="35dp">
+
+        <ImageView
+          android:id="@+id/rb_no_money"
+          android:layout_width="27dp"
+          android:layout_height="23dp"
+          android:layout_gravity="center" />
+
+        <TextView
+          android:id="@+id/no_money_dot"
+          style="@style/home_page_red_dot_sty_new"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+
+      </FrameLayout>
+
+      <TextView
+        android:id="@+id/tv_two"
+        style="@style/buy_sell_process_text_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout_two"
+        android:text="@string/buy_text_two" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center">
+
+      <FrameLayout
+        android:id="@+id/frameLayout_three"
+        android:layout_width="35dp"
+        android:layout_height="35dp">
+
+        <ImageView
+          android:id="@+id/rb_comfirm"
+          android:layout_width="32dp"
+          android:layout_height="23dp"
+          android:layout_gravity="center" />
+
+        <TextView
+          android:id="@+id/confirm_dot"
+          style="@style/home_page_red_dot_sty_new"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+
+      </FrameLayout>
+
+      <TextView
+        android:id="@+id/tv_three"
+        style="@style/buy_sell_process_text_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout_three"
+        android:text="@string/buy_text_three" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center">
+
+      <FrameLayout
+        android:id="@+id/frameLayout_four"
+        android:layout_width="35dp"
+        android:layout_height="35dp">
+
+        <ImageView
+          android:id="@+id/rb_evaluate"
+          android:layout_width="27.5dp"
+          android:layout_height="24.5dp"
+          android:layout_gravity="center" />
+
+        <TextView
+          android:id="@+id/evaluate_dot"
+          style="@style/home_page_red_dot_sty_new"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+
+      </FrameLayout>
+
+      <TextView
+        android:id="@+id/tv_four"
+        style="@style/buy_sell_process_text_sty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout_four"
+        android:text="@string/buy_text_four" />
+
+    </RelativeLayout>
+
+  </com.example.qlibrary.view.TraingleIndicator>
+
+  <android.support.v4.view.ViewPager
+    android:id="@+id/view_pager"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+  </android.support.v4.view.ViewPager>
+
+
+</LinearLayout>
