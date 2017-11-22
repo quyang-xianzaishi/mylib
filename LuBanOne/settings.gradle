@@ -1,2 +1,0 @@
-include ':app', ':qlibrary', ':pullToRefreshlibrary', ':IMLib', ':IMKit', ':photopicker', ':PhotoPicker1', ':pickerview'
-
