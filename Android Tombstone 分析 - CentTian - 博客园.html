@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://www.cnblogs.com/CoderTian/p/5980426.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android Tombstone 分析 - CentTian - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./Android Tombstone 分析 - CentTian - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./Android Tombstone 分析 - CentTian - 博客园_files/bundle-darkgreentrip.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./Android Tombstone 分析 - CentTian - 博客园_files/bundle-darkgreentrip-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/CoderTian/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/CoderTian/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/CoderTian/wlwmanifest.xml">
+<script async="" src="./Android Tombstone 分析 - CentTian - 博客园_files/analytics.js.下载"></script><script type="text/javascript" src="./Android Tombstone 分析 - CentTian - 博客园_files/encoder.js.下载"></script><script src="./Android Tombstone 分析 - CentTian - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+<script type="text/javascript">var currentBlogApp = 'CoderTian', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./Android Tombstone 分析 - CentTian - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/CoderTian/"><img id="blogLogo" src="./Android Tombstone 分析 - CentTian - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/CoderTian/">CrazyDiode</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li></li>
+<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/CoderTian/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/CentTian">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/CoderTian/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/CoderTian/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 129&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 18</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/CoderTian/p/5980426.html">Android Tombstone 分析</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><h1>1.什么是tombstone</h1>
+<p>当一个动态库（native 程序）开始执行时，系统会注册一些连接到&nbsp;debuggerd 的&nbsp;signal handlers，当系统 crash 的时候，会保存一个 tombstone 文件到/data/tombstones目录下（Logcat中也会有相应的信息），文件的确就像墓碑一样记录了死亡了的进程的基本信息（例如进程的进程号，线程号），死亡的地址（在哪个地址上发生了 Crash），死亡时的现场是什么样的（记录了一系列的堆栈调用信息）等等。&nbsp;</p>
+<h1>2.tombstone文件长什么样</h1>
+<p>一个tombstone文件大概包含以下信息</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>---------<span style="color: #000000"> beginning of crash
+F</span>/libc    (  <span style="color: #800080">244</span>): invalid address or address of corrupt block <span style="color: #800080">0xb82f54a0</span><span style="color: #000000"> passed to dlfree
+I</span>/libc    (  <span style="color: #800080">244</span>): debuggerd_signal_handler called: signal=<span style="color: #800080">11</span>, fn=<span style="color: #800080">0xb6fbdaa1</span><span style="color: #000000">
+F</span>/libc    (  <span style="color: #800080">244</span>): Fatal signal <span style="color: #800080">11</span> (SIGSEGV), code <span style="color: #800080">1</span>, fault addr <span style="color: #800080">0xdeadbaad</span> <span style="color: #0000ff">in</span> tid <span style="color: #800080">244</span><span style="color: #000000"> (mediaserver)
+I</span>/libc    (  <span style="color: #800080">244</span>): exit <span style="color: #0000ff">from</span><span style="color: #000000"> debuggerd_signal_handler
+W</span>/NativeCrashListener(  <span style="color: #800080">916</span>): Couldn<span style="color: #800000">'</span><span style="color: #800000">t find ProcessRecord for pid 244</span>
+I/DEBUG   (  <span style="color: #800080">241</span>): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***<span style="color: #000000">
+E</span>/DEBUG   (  <span style="color: #800080">241</span>): AM write failure (<span style="color: #800080">32</span> /<span style="color: #000000"> Broken pipe)
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">): Build fingerprint: XXXXXXXXX
+I</span>/DEBUG   (  <span style="color: #800080">241</span>): Revision: <span style="color: #800000">'</span><span style="color: #800000">0</span><span style="color: #800000">'</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>): ABI: <span style="color: #800000">'</span><span style="color: #800000">arm</span><span style="color: #800000">'</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>): pid: <span style="color: #800080">244</span>, tid: <span style="color: #800080">244</span>, name: mediaserver  &gt;&gt;&gt; /system/bin/mediaserver &lt;&lt;&lt;<span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>): signal <span style="color: #800080">11</span> (SIGSEGV), code <span style="color: #800080">1</span> (SEGV_MAPERR), fault addr <span style="color: #800080">0xdeadbaad</span><span style="color: #000000">
+I</span>/art     ( <span style="color: #800080">3078</span>): now dumpable=<span style="color: #800080">1</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>): Abort message: <span style="color: #800000">'</span><span style="color: #800000">invalid address or address of corrupt block 0xb82f54a0 passed to dlfree</span><span style="color: #800000">'</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     r0 <span style="color: #800080">00000000</span>  r1 b6f20dec  r2 deadbaad  r3 <span style="color: #800080">00000000</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     r4 b82f54a0  r5 b6f220f8  r6 <span style="color: #800080">00000000</span>  r7 <span style="color: #800080">42424242</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     r8 ffffffff  r9 b82f5460  sl <span style="color: #800080">00000030</span>  fp <span style="color: #800080">00000000</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     ip <span style="color: #800080">00000000</span><span style="color: #000000">  sp beb2c020  lr b6ef1fa7  pc b6ef1fa8  cpsr 600e0030
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d0  <span style="color: #800080">0000000000000000</span><span style="color: #000000">  d1  6f2073736572646c
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):     d2  707572726f632066  d3  206b636f6c622072
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d4  <span style="color: #800080">4242424242424242</span>  d5  <span style="color: #800080">4242424242424242</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d6  <span style="color: #800080">4242424242424242</span><span style="color: #000000">  d7  3ecccccd42424242
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d8  <span style="color: #800080">0000000000000000</span>  d9  <span style="color: #800080">0000000000000000</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d10 <span style="color: #800080">0000000000000000</span>  d11 <span style="color: #800080">0000000000000000</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d12 <span style="color: #800080">0000000000000000</span>  d13 <span style="color: #800080">0000000000000000</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d14 <span style="color: #800080">0000000000000000</span>  d15 <span style="color: #800080">0000000000000000</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d16 <span style="color: #800080">0000000000000000</span><span style="color: #000000">  d17 3ff0000000000000
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):     d18 7e37e43c8800759c  d19 bfd5f3f082400000
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):     d20 3e66376972bea4d0  d21 bf66b12699b6468f
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):     d22 3fc54aa75950670f  d23 bfd73498f0a5ef3a
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):     d24 3fe0000000000000  d25 bfaaf3ec933c988f
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     d26 <span style="color: #800080">0000000000000000</span>  d27 <span style="color: #800080">4000000000000000</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):     d28 4002e6931e14bde7  d29 3faaf3ec9198f99c
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):     d30 3ff0000000000000  d31 3fd29572efd86cee
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     scr <span style="color: #800080">20000010</span><span style="color: #000000">
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">): 
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">): backtrace:
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">00</span> pc 00028fa8  /system/lib/libc.so (dlfree+<span style="color: #800080">1239</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">01</span> pc 0000f2cb  /system/lib/libc.so (<span style="color: #0000ff">free</span>+<span style="color: #800080">10</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">02</span> pc 0000a1cb  /system/lib/libstagefright_foundation.so (_ZN7android7ABufferD2Ev+<span style="color: #800080">42</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">03</span> pc 0000a211  /system/lib/libstagefright_foundation.so (_ZN7android7ABufferD0Ev+<span style="color: #800080">4</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">04</span> pc 0000d68d  /system/lib/libutils.so (_ZNK7android7RefBase9decStrongEPKv+<span style="color: #800080">40</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">05</span> pc 0005adfd  /system/lib/libstagefright.so (_ZN7android2spINS_13GraphicBufferEED2Ev+<span style="color: #800080">10</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">06</span> pc 0007cd0f  /system/lib/libstagefright.so (_ZN7android14MPEG4Extractor10parseChunkEPxi+<span style="color: #800080">634</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">07</span> pc 0007d43d  /system/lib/libstagefright.so (_ZN7android14MPEG4Extractor10parseChunkEPxi+<span style="color: #800080">2472</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">08</span> pc 0007e873  /system/lib/libstagefright.so (_ZN7android14MPEG4Extractor12readMetaDataEv+<span style="color: #800080">58</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">09</span> pc 0007eaa1  /system/lib/libstagefright.so (_ZN7android14MPEG4Extractor11countTracksEv+<span style="color: #800080">4</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">10</span> pc 000acf9d  /system/lib/libstagefright.so (_ZN7android13ExtendedUtils29MediaExtractor_CreateIfNeededENS_2spINS_14MediaExtractorEEERKNS1_INS_10DataSourceEEEPKc+<span style="color: #800080">60</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">11</span> pc 0008e3f5  /system/lib/libstagefright.so (_ZN7android14MediaExtractor6CreateERKNS_2spINS_10DataSourceEEEPKc+<span style="color: #800080">624</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">12</span> pc 0006ace9  /system/lib/libstagefright.so (_ZN7android13AwesomePlayer15setDataSource_lERKNS_2spINS_10DataSourceEEE+<span style="color: #800080">12</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">13</span> pc 0006c0dd  /system/lib/libstagefright.so (_ZN7android13AwesomePlayer13setDataSourceEixx+<span style="color: #800080">228</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">14</span> pc 0003d647  /system/lib/libmediaplayerservice.so (_ZN7android18MediaPlayerService6Client13setDataSourceEixx+<span style="color: #800080">362</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">15</span> pc 0005ea03  /system/lib/libmedia.so (_ZN7android13BnMediaPlayer10onTransactEjRKNS_6ParcelEPS1_j+<span style="color: #800080">478</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">16</span> pc 00017fad  /system/lib/libbinder.so (_ZN7android7BBinder8transactEjRKNS_6ParcelEPS1_j+<span style="color: #800080">60</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">17</span> pc 0001cfdb  /system/lib/libbinder.so (_ZN7android14IPCThreadState14executeCommandEi+<span style="color: #800080">562</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">18</span> pc 0001d12f  /system/lib/libbinder.so (_ZN7android14IPCThreadState20getAndExecuteCommandEv+<span style="color: #800080">38</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">19</span> pc 0001d171  /system/lib/libbinder.so (_ZN7android14IPCThreadState14joinThreadPoolEb+<span style="color: #800080">48</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">20</span> pc <span style="color: #800080">00001721</span>  /system/bin/<span style="color: #000000">mediaserver
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">21</span> pc 0000f411  /system/lib/libc.so (__libc_init+<span style="color: #800080">44</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">22</span> pc <span style="color: #800080">00001998</span>  /system/bin/<span style="color: #000000">mediaserver
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">): 
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">): stack:
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2bfe0  <span style="color: #800080">00000000</span><span style="color: #000000">  
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):          beb2bfe4  29ec038f  
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):          beb2bfe8  0009eb34  
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):          beb2bfec  b82f54a0  [heap]
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):          beb2bff0  b6f220f8  
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2bff4  <span style="color: #800080">00000000</span><span style="color: #000000">  
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2bff8  <span style="color: #800080">42424242</span><span style="color: #000000">  
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2bffc  b6edb3d1  /system/lib/libc.so (__libc_fatal_no_abort+<span style="color: #800080">16</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2c000  b6f12f97  /system/lib/<span style="color: #000000">libc.so
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):          beb2c004  beb2c014  [stack]
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2c008  b6f167be  /system/lib/<span style="color: #000000">libc.so
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2c00c  b6ef1fa7  /system/lib/libc.so (dlfree+<span style="color: #800080">1238</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2c010  b6f12f97  /system/lib/<span style="color: #000000">libc.so
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):          beb2c014  b82f54a0  [heap]
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):          beb2c018  b6f167be  /system/lib/<span style="color: #000000">libc.so
+I</span>/DEBUG   (  <span style="color: #800080">241</span><span style="color: #000000">):          beb2c01c  b82f54b0  [heap]
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">00</span><span style="color: #000000">  beb2c020  b82f5460  [heap]
+......</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>它包含了发生问题的进程ID信息</p>
+<div class="cnblogs_code">
+<pre>I/DEBUG   (  <span style="color: #800080">241</span>): pid: <span style="color: #800080">244</span>, tid: <span style="color: #800080">244</span>, name: mediaserver  &gt;&gt;&gt; /system/bin/mediaserver &lt;&lt;&lt;</pre>
+</div>
+<p>当 tid == pid 时，问题发生在父进程，反之问题发生在子进程，从上面的日志信息可以看出发生问题的进程是mediaserver的子进程。</p>
+<p>Terminated signal 和 fault address 信息</p>
+<div class="cnblogs_code">
+<pre>F/libc    (  <span style="color: #800080">244</span>): Fatal signal <span style="color: #800080">11</span> (SIGSEGV), code <span style="color: #800080">1</span>, fault addr <span style="color: #800080">0xdeadbaad</span> <span style="color: #0000ff">in</span> tid <span style="color: #800080">244</span> (mediaserver)</pre>
+</div>
+<p>这里的信息说明出现进程 Crash 的原因是因为程序产生了段错误的信号，访问了非法的内存空间，而访问的非法地址是 0xdeadbaad。</p>
+<p>信号机制是 Linux 进程间通信的一种重要方式，Linux 信号一方面用于正常的进程间通信和同步，如任务控制(SIGINT, SIGTSTP,SIGKILL, SIGCONT，……)；另一方面，它还负责监控系统异常及中断。 当应用程序运行异常时， Linux 内核将产生错误信号并通知当前进程。 当前进程在接收到该错误信号后，可以有三种不同的处理方式。</p>
+<p>（1）忽略该信号。</p>
+<p>（2）捕捉该信号并执行对应的信号处理函数(signal handler)。</p>
+<p>（3）执行该信号的缺省操作(如 SIGSEGV， 其缺省操作是终止进程)。</p>
+<p>当 Linux 应用程序在执行时发生严重错误，一般会导致程序 crash。其中，Linux 专门提供了一类 crash 信号，在程序接收到此类信号时，缺省操作是将 crash 的现场信息记录到 core 文件，然后终止进程。</p>
+<p>crash 信号列表：&nbsp;</p>
+<table style="width: 619px">
+<thead>
+<tr class="firstRow"><th>Signal</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>SIGSEGV</td>
+<td>Invalid memory reference.</td>
+</tr>
+<tr>
+<td>SIGBUS</td>
+<td>Access to an undefined portion of a memory object.</td>
+</tr>
+<tr>
+<td>SIGFPE</td>
+<td>Arithmetic operation error, like divide by zero.</td>
+</tr>
+<tr>
+<td>SIGILL</td>
+<td>Illegal instruction, like execute garbage or a privileged instruction</td>
+</tr>
+<tr>
+<td>SIGSYS</td>
+<td>Bad system call.</td>
+</tr>
+<tr>
+<td>SIGXCPU</td>
+<td>CPU time limit exceeded.</td>
+</tr>
+<tr>
+<td>SIGXFSZ</td>
+<td>File size limit exceeded.<br><br></td>
+
+
+
+
+</tr>
+
+
+
+
+</tbody>
+
+
+
+</table>
+<p>定义在prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8/sysroot/usr/include/bits/signum.h</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008000">/*</span><span style="color: #008000"> Signals.  </span><span style="color: #008000">*/</span>
+<span style="color: #0000ff">#define</span> SIGHUP          1       /* Hangup (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGINT          2       /* Interrupt (ANSI).  */
+<span style="color: #0000ff">#define</span> SIGQUIT         3       /* Quit (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGILL          4       /* Illegal instruction (ANSI).  */
+<span style="color: #0000ff">#define</span> SIGTRAP         5       /* Trace trap (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGABRT         6       /* Abort (ANSI).  */
+<span style="color: #0000ff">#define</span> SIGIOT          6       /* IOT trap (4.2 BSD).  */
+<span style="color: #0000ff">#define</span> SIGBUS          7       /* BUS error (4.2 BSD).  */
+<span style="color: #0000ff">#define</span> SIGFPE          8       /* Floating-point exception (ANSI).  */
+<span style="color: #0000ff">#define</span> SIGKILL         9       /* Kill, unblockable (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGUSR1         10      /* User-defined signal 1 (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGSEGV         11      /* Segmentation violation (ANSI).  */
+<span style="color: #0000ff">#define</span> SIGUSR2         12      /* User-defined signal 2 (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGPIPE         13      /* Broken pipe (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGALRM         14      /* Alarm clock (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGTERM         15      /* Termination (ANSI).  */
+<span style="color: #0000ff">#define</span> SIGSTKFLT       16      /* Stack fault.  */
+<span style="color: #0000ff">#define</span> SIGCLD          SIGCHLD /* Same as SIGCHLD (System V).  */
+<span style="color: #0000ff">#define</span> SIGCHLD         17      /* Child status has changed (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGCONT         18      /* Continue (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGSTOP         19      /* Stop, unblockable (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGTSTP         20      /* Keyboard stop (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGTTIN         21      /* Background read from tty (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGTTOU         22      /* Background write to tty (POSIX).  */
+<span style="color: #0000ff">#define</span> SIGURG          23      /* Urgent condition on socket (4.2 BSD).  */
+<span style="color: #0000ff">#define</span> SIGXCPU         24      /* CPU limit exceeded (4.2 BSD).  */
+<span style="color: #0000ff">#define</span> SIGXFSZ         25      /* File size limit exceeded (4.2 BSD).  */
+<span style="color: #0000ff">#define</span> SIGVTALRM       26      /* Virtual alarm clock (4.2 BSD).  */
+<span style="color: #0000ff">#define</span> SIGPROF         27      /* Profiling alarm clock (4.2 BSD).  */
+<span style="color: #0000ff">#define</span> SIGWINCH        28      /* Window size change (4.3 BSD, Sun).  */
+<span style="color: #0000ff">#define</span> SIGPOLL         SIGIO   /* Pollable event occurred (System V).  */
+<span style="color: #0000ff">#define</span> SIGIO           29      /* I/O now possible (4.2 BSD).  */
+<span style="color: #0000ff">#define</span> SIGPWR          30      /* Power failure restart (System V).  */
+<span style="color: #0000ff">#define</span> SIGSYS          31      /* Bad system call.  */
+<span style="color: #0000ff">#define</span> SIGUNUSED       31
+
+<span style="color: #0000ff">#define</span> _NSIG           65      /* Biggest signal number + 1<span style="color: #000000">
+                                   (including real</span>-time signals).  */</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h1>3.怎么分析tombstone文件</h1>
+<p>我们主要关注 backtrace 下面的内容，它保存了发生 crash 时候的函数调用关系，但是需要注意的是它的调用顺序是从下向上执行的（#XX pc --&gt;#00 pc）,通过这些函数调用关系，我们就可以大概定位出问题发生的地方，在本次 tombstone 日志中，我们通过</p>
+<div class="cnblogs_code">
+<pre>I/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">00</span> pc 00028fa8  /system/lib/libc.so (dlfree+<span style="color: #800080">1239</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">01</span> pc 0000f2cb  /system/lib/libc.so (<span style="color: #0000ff">free</span>+<span style="color: #800080">10</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">02</span> pc 0000a1cb  /system/lib/libstagefright_foundation.so (_ZN7android7ABufferD2Ev+<span style="color: #800080">42</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">03</span> pc 0000a211  /system/lib/libstagefright_foundation.so (_ZN7android7ABufferD0Ev+<span style="color: #800080">4</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">04</span> pc 0000d68d  /system/lib/libutils.so (_ZNK7android7RefBase9decStrongEPKv+<span style="color: #800080">40</span>)</pre>
+</div>
+<p>可以分析出问题是在调用free函数时发生了指针错误，还可以看出问题发生的原因是libstagefright_foundation.so中释放了两次ABuffer引用,接着就去分析是谁谁释放的AUbffer强指针。</p>
+<div class="cnblogs_code">
+<pre>I/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">05</span> pc 0005adfd  /system/lib/libstagefright.so (_ZN7android2spINS_13GraphicBufferEED2Ev+<span style="color: #800080">10</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">06</span> pc 0007cd0f  /system/lib/libstagefright.so (_ZN7android14MPEG4Extractor10parseChunkEPxi+<span style="color: #800080">634</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">07</span> pc 0007d43d  /system/lib/libstagefright.so (_ZN7android14MPEG4Extractor10parseChunkEPxi+<span style="color: #800080">2472</span><span style="color: #000000">)
+I</span>/DEBUG   (  <span style="color: #800080">241</span>):     #<span style="color: #800080">08</span> pc 0007e873  /system/lib/libstagefright.so (_ZN7android14MPEG4Extractor12readMetaDataEv+<span style="color: #800080">58</span>)</pre>
+</div>
+<p>可以看出来在 libstagefright 动态库中的MPEG4Extractor.cpp 的 parseChunk函数出现的错误。</p>
+<p><span style="font-size: 2em; line-height: 1.5">4.一些分析工具</span></p>
+<p>虽然通过 tombstone 的日志文件我们就可以大致定位出引发 crash 的代码的位置，但是通过借助一些分析工具，可以大大的提高工作效率和准确性，下面就来介绍以下这些工具。</p>
+<p>（1）addr2line</p>
+<p>addr2line 是 用来获得指定动态链接库文件或者可执行文件中指定地址对应的源代码信息的工具</p>
+<p>它的各种参数如下所示（这个是google aosp android M 中带的）：</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>~/source/google_android/prebuilts/<span style="color: #0000ff">gcc</span>/linux-x86/x86/x86_64-linux-android-<span style="color: #800080">4.9</span>/bin$ ./x86_64-linux-android-addr2line -<span style="color: #000000">h
+Usage: .</span>/x86_64-linux-android-<span style="color: #000000">addr2line [option(s)] [addr(s)]
+ Convert addresses into line number</span>/<span style="color: #0000ff">file</span><span style="color: #000000"> name pairs.
+ If no addresses are specified on the command line, they will be read from stdin
+ The options are:
+  @</span>&lt;<span style="color: #0000ff">file</span>&gt;                Read options from &lt;<span style="color: #0000ff">file</span>&gt;
+  -a --<span style="color: #000000">addresses         Show addresses
+  </span>-b --target=&lt;bfdname&gt;  Set the binary <span style="color: #0000ff">file</span><span style="color: #000000"> format
+  </span>-e --exe=&lt;executable&gt;  Set the input <span style="color: #0000ff">file</span><span style="color: #000000"> name (default is a.out)
+  </span>-i --<span style="color: #000000">inlines           Unwind inlined functions
+  </span>-j --section=&lt;name&gt;    Read section-<span style="color: #000000">relative offsets instead of addresses
+  </span>-p --pretty-print      Make the output easier to read <span style="color: #0000ff">for</span><span style="color: #000000"> humans
+  </span>-s --<span style="color: #000000">basenames         Strip directory names
+  </span>-f --functions         Show <span style="color: #0000ff">function</span><span style="color: #000000"> names
+  </span>-C --demangle[=style]  Demangle <span style="color: #0000ff">function</span><span style="color: #000000"> names
+  </span>-h --<span style="color: #000000">help              Display this information
+  </span>-v --version           Display the program<span style="color: #800000">'</span><span style="color: #800000">s version</span>
+./x86_64-linux-android-addr2line: supported targets: elf64-x86-<span style="color: #800080">64</span> elf32-i386 elf32-x86-<span style="color: #800080">64</span> a.out-i386-linux pei-i386 pei-x86-<span style="color: #800080">64</span> elf64-l1om elf64-k1om elf64-little elf64-big elf32-little elf32-<span style="color: #000000">big plugin srec symbolsrec verilog tekhex binary ihex
+Report bugs to </span>&lt;http:<span style="color: #008000">//</span><span style="color: #008000">source.android.com/source/report-bugs.html&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>addr2line 的基本用法如下所示：</p>
+<div class="cnblogs_code">
+<pre>./prebuilts/<span style="color: #0000ff">gcc</span>/linux-x86/arm/arm-linux-androideabi-<span style="color: #800080">4.8</span>/bin/arm-linux-androideabi-addr2line -f -e out/debug/target/product/XXXX/symbols/system/lib/<span style="color: #000000">libstagefright.so  0007cd0f 
+_ZN7android14MPEG4Extractor10parseChunkEPxi
+</span>/home/XXX/source/XXX/LINUX/android/frameworks/av/media/libstagefright/MPEG4Extractor.<span style="color: #0000ff">cpp</span>:<span style="color: #800080">2180</span> (discriminator <span style="color: #800080">1</span>)</pre>
+</div>
+<p>这里需要注意的是不能直接使用out/debug/target/product/XXX/system/lib/libstagefright.so，会出现运行上面命令之后显示</p>
+<div class="cnblogs_code">
+<pre>??
+??:<span style="color: #800080">0</span></pre>
+</div>
+<p>因为这个动态库是最后要打包到最后生成的system.ing中的，所以它不包含调试符号信息。</p>
+<p>（2）ndk-stack</p>
+<p>Android NDK 自从版本 r6开始, 提供了一个工具 ndk-stack。这个工具能自动分析 tombstone 文件, 能将崩溃时的调用内存地址和 c++ 代码一行一行对应起来.</p>
+<p>它的使用方法为</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>./ndk-<span style="color: #000000">stack 
+Usage:
+   ndk</span>-stack -sym &lt;path&gt; [-dump &lt;path&gt;<span style="color: #000000">]
+      </span>-sym  Contains full path to the root directory <span style="color: #0000ff">for</span><span style="color: #000000"> symbols.
+      </span>-dump Contains full path to the <span style="color: #0000ff">file</span><span style="color: #000000"> containing the crash dump.
+            This is an optional parameter. If ommited, ndk</span>-<span style="color: #000000">stack will
+            read input data from stdin
+   See docs</span>/NDK-STACK.html <span style="color: #0000ff">in</span> your NDK installation tree <span style="color: #0000ff">for</span> <span style="color: #0000ff">more</span> details.</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>①dump 参数很容易理解, 即 dump 下来的 log 文本文件. ndk-stack会分析此文件。</p>
+<p>②sym 参数就是你android项目下，编译成功之后，obj目录下的文件（android系统源码o 中带有符号信息的文件）。</p>
+<p>我们可以使用它来分析我们的log文件</p>
+<div class="cnblogs_code">
+<pre>ndk-stack -sym xxx.so -dump logfile</pre>
+</div>
+<p>所以我们在调试android系统源码的时候也可以直接分析log中的crash信息。</p>
+<div class="cnblogs_code">
+<pre>adb shell logcat | ndk-stack -sym out/debug/target/product/XXXX/symbols/system/lib/xxx.so</pre>
+</div>
+<p>（3）stack.py</p>
+<p>stack.py工具就是要把backtrace通过addr2line工具一次性把addr对应到代码</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008000">#</span><span style="color: #008000">!/usr/bin/python2.4 -E</span>
+<span style="color: #0000ff">import</span><span style="color: #000000"> getopt
+</span><span style="color: #0000ff">import</span><span style="color: #000000"> os
+</span><span style="color: #0000ff">import</span><span style="color: #000000"> re
+</span><span style="color: #0000ff">import</span><span style="color: #000000"> string
+</span><span style="color: #0000ff">import</span><span style="color: #000000"> sys
+</span><span style="color: #0000ff">import</span><span style="color: #000000"> getpass
+</span><span style="color: #0000ff">import</span><span style="color: #000000"> urllib
+</span><span style="color: #0000ff">import</span><span style="color: #000000"> subprocess
+</span><span style="color: #0000ff">def</span><span style="color: #000000"> PrintUsage():
+  </span><span style="color: #0000ff">print</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">  usage: </span><span style="color: #800000">"</span> + sys.argv[0] + <span style="color: #800000">"</span><span style="color: #800000"> [options] [FILE]</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">  --symbols-dir=path</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">       the path to a symbols dir, such as =/tmp/out/target/product/dream/symbols</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">  --symbols-zip=path</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">       the path to a symbols zip file, such as =dream-symbols-12345.zip</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">  --auto</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">       attempt to:</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">         1) automatically find the build number in the crash</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">         2) if it's an official build, download the symbols </span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">            from the build server, and use them</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">  FILE should contain a stack trace in it somewhere</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">       the tool will find that and re-print it with</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">       source files and line numbers.  If you don't</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">       pass FILE, or if file is -, it reads from</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">       stdin.</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span><span style="color: #000000">
+  sys.exit(</span>1<span style="color: #000000">)
+</span><span style="color: #0000ff">def</span><span style="color: #000000"> FindSymbolsDir():
+  cmd </span>= <span style="color: #800000">"</span><span style="color: #800000">CALLED_FROM_SETUP=true make -f build/core/envsetup.mk </span><span style="color: #800000">"</span><span style="color: #000000"> \
+      </span>+ <span style="color: #800000">"</span><span style="color: #800000">dumpvar-abs-TARGET_OUT_UNSTRIPPED</span><span style="color: #800000">"</span><span style="color: #000000">
+  stream </span>=<span style="color: #000000"> os.popen(cmd)
+  str </span>=<span style="color: #000000"> stream.read()
+  stream.close()
+  </span><span style="color: #0000ff">return</span><span style="color: #000000"> str.strip()
+</span><span style="color: #008000">#</span><span style="color: #008000"> returns a list containing the function name and the file/lineno</span>
+<span style="color: #0000ff">def</span><span style="color: #000000"> CallAddr2Line(lib, addr):
+  uname </span>=<span style="color: #000000"> os.uname()[0]
+  </span><span style="color: #0000ff">if</span> uname == <span style="color: #800000">"</span><span style="color: #800000">Darwin</span><span style="color: #800000">"</span><span style="color: #000000">:
+    proc </span>= os.uname()[-1<span style="color: #000000">]
+    </span><span style="color: #0000ff">if</span> proc == <span style="color: #800000">"</span><span style="color: #800000">i386</span><span style="color: #800000">"</span><span style="color: #000000">:
+      uname </span>= <span style="color: #800000">"</span><span style="color: #800000">darwin-x86</span><span style="color: #800000">"</span>
+    <span style="color: #0000ff">else</span><span style="color: #000000">:
+      uname </span>= <span style="color: #800000">"</span><span style="color: #800000">darwin-ppc</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">if</span> lib != <span style="color: #800000">""</span><span style="color: #000000">:
+    </span><span style="color: #008000">#</span><span style="color: #008000">cmd = "./prebuilt/" + uname + "/toolchain-eabi-4.2.1/bin/arm-eabi-addr2line" \</span>
+    <span style="color: #008000">#</span><span style="color: #008000">cmd = "./prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-addr2line" \</span>
+    cmd = <span style="color: #800000">"</span><span style="color: #800000"> arm-eabi-addr2line</span><span style="color: #800000">"</span><span style="color: #000000"> \
+        </span>+ <span style="color: #800000">"</span><span style="color: #800000"> -f -e </span><span style="color: #800000">"</span> + SYMBOLS_DIR +<span style="color: #000000"> lib \
+        </span>+ <span style="color: #800000">"</span><span style="color: #800000"> 0x</span><span style="color: #800000">"</span> +<span style="color: #000000"> addr
+    stream </span>=<span style="color: #000000"> os.popen(cmd)
+    lines </span>=<span style="color: #000000"> stream.readlines()
+    list </span>=<span style="color: #000000"> map(string.strip, lines)
+  </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+    list </span>=<span style="color: #000000"> []
+  </span><span style="color: #0000ff">if</span> list !=<span style="color: #000000"> []:
+    </span><span style="color: #008000">#</span><span style="color: #008000"> Name like "move_forward_type&lt;JavaVMOption&gt;" causes troubles</span>
+    mangled_name = re.sub(<span style="color: #800000">'</span><span style="color: #800000">&lt;</span><span style="color: #800000">'</span>, <span style="color: #800000">'</span><span style="color: #800000">\&lt;</span><span style="color: #800000">'</span><span style="color: #000000">, list[0]);
+    mangled_name </span>= re.sub(<span style="color: #800000">'</span><span style="color: #800000">&gt;</span><span style="color: #800000">'</span>, <span style="color: #800000">'</span><span style="color: #800000">\&gt;</span><span style="color: #800000">'</span><span style="color: #000000">, mangled_name);
+    </span><span style="color: #008000">#</span><span style="color: #008000">cmd = "./prebuilt/" + uname + "/toolchain-eabi-4.2.1/bin/arm-eabi-c++filt "\</span>
+    cmd = <span style="color: #800000">"</span><span style="color: #800000">./prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-c++filt </span><span style="color: #800000">"</span><span style="color: #000000">\
+          </span>+<span style="color: #000000"> mangled_name
+    stream </span>=<span style="color: #000000"> os.popen(cmd)
+    list[0] </span>=<span style="color: #000000"> stream.readline()
+    stream.close()
+    list </span>=<span style="color: #000000"> map(string.strip, list)
+  </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+    list </span>= [ <span style="color: #800000">"</span><span style="color: #800000">(unknown)</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">(unknown)</span><span style="color: #800000">"</span><span style="color: #000000"> ]
+  </span><span style="color: #0000ff">return</span><span style="color: #000000"> list
+</span><span style="color: #0000ff">class</span><span style="color: #000000"> SSOCookie(object):
+  </span><span style="color: #800000">"""</span><span style="color: #800000">
+  creates a cookie file so we can download files from the build server
+  </span><span style="color: #800000">"""</span>
+  <span style="color: #0000ff">def</span> <span style="color: #800080">__init__</span>(self, cookiename=<span style="color: #800000">"</span><span style="color: #800000">.sso.cookie</span><span style="color: #800000">"</span>, keep=<span style="color: #000000">False):
+    self.sso_server </span>= <span style="color: #800000">"</span><span style="color: #800000">login.corp.google.com</span><span style="color: #800000">"</span><span style="color: #000000">
+    self.name </span>=<span style="color: #000000"> cookiename
+    self.keeper </span>=<span style="color: #000000"> keep
+    self.tmp_opts </span>= <span style="color: #800000">"</span><span style="color: #800000">.curl.options</span><span style="color: #800000">"</span>
+    <span style="color: #0000ff">if</span> <span style="color: #0000ff">not</span><span style="color: #000000"> os.path.exists(self.name):
+      user </span>= os.environ[<span style="color: #800000">'</span><span style="color: #800000">USER</span><span style="color: #800000">'</span><span style="color: #000000">]
+      </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">\n%s, to access the symbols, please enter your LDAP </span><span style="color: #800000">"</span> %<span style="color: #000000"> user,
+      password </span>=<span style="color: #000000"> getpass.getpass()
+      params </span>= urllib.urlencode({<span style="color: #800000">"</span><span style="color: #800000">u</span><span style="color: #800000">"</span>: user, <span style="color: #800000">"</span><span style="color: #800000">pw</span><span style="color: #800000">"</span><span style="color: #000000">: password})
+      fd </span>= os.open(self.tmp_opts, os.O_RDWR | os.O_CREAT, 0600<span style="color: #000000">)
+      os.write(fd, </span><span style="color: #800000">'</span><span style="color: #800000">-b "%s"\n</span><span style="color: #800000">'</span> %<span style="color: #000000"> self.name)
+      os.write(fd, </span><span style="color: #800000">'</span><span style="color: #800000">-c "%s"\n</span><span style="color: #800000">'</span> %<span style="color: #000000"> self.name)
+      os.write(fd, </span><span style="color: #800000">'</span><span style="color: #800000">-s"\n-L\n-d "%s"\n</span><span style="color: #800000">'</span> %<span style="color: #000000"> params)
+      os.write(fd, </span><span style="color: #800000">'</span><span style="color: #800000">url = "https://%s/login?ssoformat=CORP_SSO"\n</span><span style="color: #800000">'</span> %<span style="color: #000000"> 
+               self.sso_server)
+      </span><span style="color: #008000">#</span><span style="color: #008000"> login to SSO</span>
+      response = os.popen(<span style="color: #800000">"</span><span style="color: #800000">/usr/bin/curl -K %s</span><span style="color: #800000">"</span> %<span style="color: #000000"> self.tmp_opts)
+      response.close()
+      </span><span style="color: #0000ff">if</span><span style="color: #000000"> os.path.exists(self.tmp_opts):
+        os.remove(self.tmp_opts)
+      </span><span style="color: #0000ff">if</span><span style="color: #000000"> os.path.exists(self.name):
+        os.chmod(self.name, </span>0600<span style="color: #000000">)
+      </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+        </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">Could not log in to SSO</span><span style="color: #800000">"</span><span style="color: #000000">
+        sys.exit(</span>1<span style="color: #000000">)
+  </span><span style="color: #0000ff">def</span> <span style="color: #800080">__del__</span><span style="color: #000000">(self):
+      </span><span style="color: #800000">"""</span><span style="color: #800000">clean up</span><span style="color: #800000">"""</span>
+      <span style="color: #0000ff">if</span> <span style="color: #0000ff">not</span><span style="color: #000000"> self.keeper:
+        os.remove(self.name)
+</span><span style="color: #0000ff">class</span><span style="color: #000000"> NoBuildIDException(Exception):
+  </span><span style="color: #0000ff">pass</span>
+<span style="color: #0000ff">def</span><span style="color: #000000"> FindBuildFingerprint(lines):
+  </span><span style="color: #800000">"""</span><span style="color: #800000">
+  Searches the given file (array of lines) for the build fingerprint information
+  </span><span style="color: #800000">"""</span><span style="color: #000000">
+  fingerprint_regex </span>= re.compile(<span style="color: #800000">"</span><span style="color: #800000">^.*Build fingerprint:\s'(?P&lt;fingerprint&gt;.*)'</span><span style="color: #800000">"</span><span style="color: #000000">)
+  </span><span style="color: #0000ff">for</span> line <span style="color: #0000ff">in</span><span style="color: #000000"> lines:
+    fingerprint_search </span>=<span style="color: #000000"> fingerprint_regex.match(line.strip())
+    </span><span style="color: #0000ff">if</span><span style="color: #000000"> fingerprint_search:
+      </span><span style="color: #0000ff">return</span> fingerprint_search.group(<span style="color: #800000">'</span><span style="color: #800000">fingerprint</span><span style="color: #800000">'</span><span style="color: #000000">)
+      
+  </span><span style="color: #0000ff">return</span> None  <span style="color: #008000">#</span><span style="color: #008000"> didn't find the fingerprint string, so return none</span>
+  
+<span style="color: #0000ff">class</span><span style="color: #000000"> SymbolDownloadException(Exception):
+  </span><span style="color: #0000ff">pass</span><span style="color: #000000">
+DEFAULT_SYMROOT </span>= <span style="color: #800000">"</span><span style="color: #800000">/tmp/symbols</span><span style="color: #800000">"</span>
+<span style="color: #0000ff">def</span><span style="color: #000000"> DownloadSymbols(fingerprint, cookie):
+  </span><span style="color: #800000">"""</span><span style="color: #800000">
+  Attempts to download the symbols from the build server, extracts them,
+  and returns the path.  Takes the fingerprint from the pasted stack trace
+  and the SSOCookie
+  </span><span style="color: #800000">"""</span>
+  <span style="color: #0000ff">if</span> fingerprint <span style="color: #0000ff">is</span><span style="color: #000000"> None:
+    </span><span style="color: #0000ff">return</span><span style="color: #000000"> (None, None)
+  symdir </span>= <span style="color: #800000">"</span><span style="color: #800000">%s/%s</span><span style="color: #800000">"</span> %<span style="color: #000000"> (DEFAULT_SYMROOT, hash(fingerprint))
+  </span><span style="color: #0000ff">if</span> <span style="color: #0000ff">not</span><span style="color: #000000"> os.path.exists(symdir):
+    os.makedirs(symdir)
+  </span><span style="color: #008000">#</span><span style="color: #008000"> build server figures out the branch based on the CL</span>
+  params =<span style="color: #000000"> {
+              </span><span style="color: #800000">'</span><span style="color: #800000">op</span><span style="color: #800000">'</span>: <span style="color: #800000">"</span><span style="color: #800000">GET-SYMBOLS-LINK</span><span style="color: #800000">"</span><span style="color: #000000">,
+              </span><span style="color: #800000">'</span><span style="color: #800000">fingerprint</span><span style="color: #800000">'</span><span style="color: #000000">: fingerprint,
+           }
+  url </span>= urllib.urlopen(<span style="color: #800000">"</span><span style="color: #800000">http://android-build/buildbot-update?</span><span style="color: #800000">"</span><span style="color: #000000">,
+                            urllib.urlencode(params)).readlines()[0]
+  </span><span style="color: #0000ff">if</span> url == <span style="color: #800000">""</span><span style="color: #000000">:
+    </span><span style="color: #0000ff">raise</span> SymbolDownloadException, <span style="color: #800000">"</span><span style="color: #800000">Build server down? Failed to find syms...</span><span style="color: #800000">"</span><span style="color: #000000">
+  regex_str </span>= (r<span style="color: #800000">'</span><span style="color: #800000">(?P&lt;baseURL&gt;http\:\/\/android-build\/builds\/.*\/[0-9]+</span><span style="color: #800000">'</span> +<span style="color: #000000"> 
+           r</span><span style="color: #800000">'</span><span style="color: #800000">\/)(?P&lt;img&gt;.*)</span><span style="color: #800000">'</span><span style="color: #000000">)
+  url_regex </span>=<span style="color: #000000"> re.compile(regex_str)
+  url_match </span>=<span style="color: #000000"> url_regex.match(url)
+  </span><span style="color: #0000ff">if</span> url_match <span style="color: #0000ff">is</span><span style="color: #000000"> None:
+    </span><span style="color: #0000ff">raise</span> SymbolDownloadException, <span style="color: #800000">"</span><span style="color: #800000">Unexpected results from build server URL...</span><span style="color: #800000">"</span><span style="color: #000000">
+  
+  baseURL </span>= url_match.group(<span style="color: #800000">'</span><span style="color: #800000">baseURL</span><span style="color: #800000">'</span><span style="color: #000000">)
+  img </span>=  url_match.group(<span style="color: #800000">'</span><span style="color: #800000">img</span><span style="color: #800000">'</span><span style="color: #000000">)
+  symbolfile </span>= img.replace(<span style="color: #800000">"</span><span style="color: #800000">-img-</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">-symbols-</span><span style="color: #800000">"</span><span style="color: #000000">)
+  symurl </span>= baseURL +<span style="color: #000000"> symbolfile
+  localsyms </span>= symdir +<span style="color: #000000"> symbolfile
+  </span><span style="color: #0000ff">if</span> <span style="color: #0000ff">not</span><span style="color: #000000"> os.path.exists(localsyms):
+    </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">downloading %s ...</span><span style="color: #800000">"</span> %<span style="color: #000000"> symurl
+    curlcmd </span>= (<span style="color: #800000">"""</span><span style="color: #800000">/usr/bin/curl -b %s -sL -w %%{http_code} -o %s %s</span><span style="color: #800000">"""</span> %<span style="color: #000000"> 
+                          (cookie.name, localsyms, symurl))
+    (fi,fo,fe) </span>=<span style="color: #000000"> os.popen3(curlcmd)
+    fi.close()
+    code </span>=<span style="color: #000000"> fo.read()
+    err </span>=<span style="color: #000000"> fe.read()
+    </span><span style="color: #0000ff">if</span> err != <span style="color: #800000">""</span><span style="color: #000000">:
+      </span><span style="color: #0000ff">raise</span> SymbolDownloadException, <span style="color: #800000">"</span><span style="color: #800000">stderr from curl download: %s</span><span style="color: #800000">"</span> %<span style="color: #000000"> err
+    </span><span style="color: #0000ff">if</span> code != <span style="color: #800000">"</span><span style="color: #800000">200</span><span style="color: #800000">"</span><span style="color: #000000">:
+      </span><span style="color: #0000ff">raise</span> SymbolDownloadException, <span style="color: #800000">"</span><span style="color: #800000">Faied to download %s</span><span style="color: #800000">"</span> %<span style="color: #000000"> symurl
+  </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+    </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">using existing cache for symbols</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">extracting %s...</span><span style="color: #800000">"</span> %<span style="color: #000000"> symbolfile
+  saveddir </span>=<span style="color: #000000"> os.getcwd()
+  os.chdir(symdir)
+  unzipcode </span>= subprocess.call([<span style="color: #800000">"</span><span style="color: #800000">unzip</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">-qq</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">-o</span><span style="color: #800000">"</span><span style="color: #000000">, localsyms])
+  </span><span style="color: #0000ff">if</span> unzipcode &gt;<span style="color: #000000"> 0:
+    </span><span style="color: #0000ff">raise</span> SymbolDownloadException, (<span style="color: #800000">"</span><span style="color: #800000">failed to extract symbol files (%s).</span><span style="color: #800000">"</span> 
+                             %<span style="color: #000000"> localsyms)
+  os.chdir(saveddir)
+  
+  </span><span style="color: #0000ff">return</span> (symdir, <span style="color: #800000">"</span><span style="color: #800000">%s/out/target/product/dream/symbols</span><span style="color: #800000">"</span> %<span style="color: #000000"> symdir)
+</span><span style="color: #0000ff">def</span><span style="color: #000000"> UnzipSymbols(symbolfile):
+  </span><span style="color: #800000">"""</span><span style="color: #800000">Unzips a file to DEFAULT_SYMROOT and returns the unzipped location.
+  Args:
+    symbolfile: The .zip file to unzip
+  Returns:
+    A tuple containing (the directory into which the zip file was unzipped,
+    the path to the "symbols" directory in the unzipped file).  To clean
+    up, the caller can delete the first element of the tuple.
+  Raises:
+    SymbolDownloadException: When the unzip fails.
+  </span><span style="color: #800000">"""</span><span style="color: #000000">
+  symdir </span>= <span style="color: #800000">"</span><span style="color: #800000">%s/%s</span><span style="color: #800000">"</span> %<span style="color: #000000"> (DEFAULT_SYMROOT, hash(symbolfile))
+  </span><span style="color: #0000ff">if</span> <span style="color: #0000ff">not</span><span style="color: #000000"> os.path.exists(symdir):
+    os.makedirs(symdir)
+  </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">extracting %s...</span><span style="color: #800000">"</span> %<span style="color: #000000"> symbolfile
+  saveddir </span>=<span style="color: #000000"> os.getcwd()
+  os.chdir(symdir)
+  unzipcode </span>= subprocess.call([<span style="color: #800000">"</span><span style="color: #800000">unzip</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">-qq</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">-o</span><span style="color: #800000">"</span><span style="color: #000000">, symbolfile])
+  </span><span style="color: #0000ff">if</span> unzipcode &gt;<span style="color: #000000"> 0:
+    </span><span style="color: #0000ff">raise</span> SymbolDownloadException, (<span style="color: #800000">"</span><span style="color: #800000">failed to extract symbol files (%s).</span><span style="color: #800000">"</span> 
+                             %<span style="color: #000000"> symbolfile)
+  os.chdir(saveddir)
+  
+  </span><span style="color: #0000ff">return</span> (symdir, <span style="color: #800000">"</span><span style="color: #800000">%s/out/target/product/dream/symbols</span><span style="color: #800000">"</span> %<span style="color: #000000"> symdir)
+</span><span style="color: #0000ff">def</span><span style="color: #000000"> PrintTraceLines(traceLines):
+    maxlen </span>= max(map(<span style="color: #0000ff">lambda</span> tl: len(tl[1<span style="color: #000000">]), traceLines))
+    </span><span style="color: #0000ff">print</span>
+    <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">Stack Trace:</span><span style="color: #800000">"</span>
+    <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">  ADDR      </span><span style="color: #800000">"</span> + <span style="color: #800000">"</span><span style="color: #800000">FUNCTION</span><span style="color: #800000">"</span>.ljust(maxlen) + <span style="color: #800000">"</span><span style="color: #800000">  FILE:LINE</span><span style="color: #800000">"</span>
+    <span style="color: #0000ff">for</span> tl <span style="color: #0000ff">in</span><span style="color: #000000"> traceLines:
+      </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span>  <span style="color: #800000">"</span> + tl[0] + <span style="color: #800000">"</span>  <span style="color: #800000">"</span> + tl[1].ljust(maxlen) + <span style="color: #800000">"</span>  <span style="color: #800000">"</span> + tl[2<span style="color: #000000">]
+    </span><span style="color: #0000ff">return</span>
+<span style="color: #0000ff">def</span><span style="color: #000000"> PrintValueLines(valueLines):
+    </span><span style="color: #0000ff">print</span>
+    <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">Stack Data:</span><span style="color: #800000">"</span>
+    <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">  ADDR      VALUE     </span><span style="color: #800000">"</span> + <span style="color: #800000">"</span><span style="color: #800000">FILE:LINE/FUNCTION</span><span style="color: #800000">"</span>
+    <span style="color: #0000ff">for</span> vl <span style="color: #0000ff">in</span><span style="color: #000000"> valueLines:
+      </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span>  <span style="color: #800000">"</span> + vl[1] + <span style="color: #800000">"</span>  <span style="color: #800000">"</span> + vl[2] + <span style="color: #800000">"</span>  <span style="color: #800000">"</span> + vl[4<span style="color: #000000">]
+      </span><span style="color: #0000ff">if</span> vl[4] != <span style="color: #800000">""</span><span style="color: #000000">:
+        </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span>                      <span style="color: #800000">"</span> + vl[3<span style="color: #000000">]
+    </span><span style="color: #0000ff">return</span>
+<span style="color: #0000ff">def</span><span style="color: #000000"> ConvertTrace(lines):
+  PROCESS_INFO_LINE </span>= re.compile(<span style="color: #800000">"</span><span style="color: #800000">(pid: [0-9]+, tid: [0-9]+.*)</span><span style="color: #800000">"</span><span style="color: #000000">)
+  SIGNAL_LINE </span>= re.compile(<span style="color: #800000">"</span><span style="color: #800000">(signal [0-9]+ \(.*\).*)</span><span style="color: #800000">"</span><span style="color: #000000">)
+  REGISTER_LINE </span>= re.compile(<span style="color: #800000">"</span><span style="color: #800000">(([ ]*[0-9a-z]{2} [0-9a-f]{8}){4})</span><span style="color: #800000">"</span><span style="color: #000000">)
+  TRACE_LINE </span>= re.compile(<span style="color: #800000">"</span><span style="color: #800000">(.*)\#([0-9]+)  (..) ([0-9a-f]{3})([0-9a-f]{5})  ([^\r\n \t]*)</span><span style="color: #800000">"</span><span style="color: #000000">)
+  VALUE_LINE </span>= re.compile(<span style="color: #800000">"</span><span style="color: #800000">(.*)([0-9a-f]{2})([0-9a-f]{6})  ([0-9a-f]{3})([0-9a-f]{5})  ([^\r\n \t]*)</span><span style="color: #800000">"</span><span style="color: #000000">)
+  THREAD_LINE </span>= re.compile(<span style="color: #800000">"</span><span style="color: #800000">(.*)(\-\-\- ){15}\-\-\-</span><span style="color: #800000">"</span><span style="color: #000000">)
+  traceLines </span>=<span style="color: #000000"> []
+  valueLines </span>=<span style="color: #000000"> []
+  </span><span style="color: #0000ff">for</span> line <span style="color: #0000ff">in</span><span style="color: #000000"> lines:
+    header </span>=<span style="color: #000000"> PROCESS_INFO_LINE.search(line)
+    </span><span style="color: #0000ff">if</span><span style="color: #000000"> header:
+      </span><span style="color: #0000ff">print</span> header.group(1<span style="color: #000000">)
+      </span><span style="color: #0000ff">continue</span><span style="color: #000000">
+    header </span>=<span style="color: #000000"> SIGNAL_LINE.search(line)
+    </span><span style="color: #0000ff">if</span><span style="color: #000000"> header:
+      </span><span style="color: #0000ff">print</span> header.group(1<span style="color: #000000">)
+      </span><span style="color: #0000ff">continue</span><span style="color: #000000">
+    header </span>=<span style="color: #000000"> REGISTER_LINE.search(line)
+    </span><span style="color: #0000ff">if</span><span style="color: #000000"> header:
+      </span><span style="color: #0000ff">print</span> header.group(1<span style="color: #000000">)
+      </span><span style="color: #0000ff">continue</span>
+    <span style="color: #0000ff">if</span><span style="color: #000000"> TRACE_LINE.match(line):
+      match </span>=<span style="color: #000000"> TRACE_LINE.match(line)
+      groups </span>=<span style="color: #000000"> match.groups()
+      </span><span style="color: #0000ff">if</span> groups[5] == <span style="color: #800000">"</span><span style="color: #800000">&lt;unknown&gt;</span><span style="color: #800000">"</span> <span style="color: #0000ff">or</span> groups[5] == <span style="color: #800000">"</span><span style="color: #800000">[heap]</span><span style="color: #800000">"</span> <span style="color: #0000ff">or</span> groups[5] == <span style="color: #800000">"</span><span style="color: #800000">[stack]</span><span style="color: #800000">"</span><span style="color: #000000">:
+        traceLines.append((groups[</span>3]+groups[4], groups[5], groups[5<span style="color: #000000">]))
+      </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+        info </span>= CallAddr2Line(groups[5], groups[4<span style="color: #000000">])
+        traceLines.append((groups[</span>3]+groups[4], info[0], info[1<span style="color: #000000">]))
+    </span><span style="color: #0000ff">if</span><span style="color: #000000"> VALUE_LINE.match(line):
+      match </span>=<span style="color: #000000"> VALUE_LINE.match(line)
+      groups </span>=<span style="color: #000000"> match.groups()
+      </span><span style="color: #0000ff">if</span> groups[5] == <span style="color: #800000">"</span><span style="color: #800000">&lt;unknown&gt;</span><span style="color: #800000">"</span> <span style="color: #0000ff">or</span> groups[5] == <span style="color: #800000">"</span><span style="color: #800000">[heap]</span><span style="color: #800000">"</span> <span style="color: #0000ff">or</span> groups[5] == <span style="color: #800000">"</span><span style="color: #800000">[stack]</span><span style="color: #800000">"</span> <span style="color: #0000ff">or</span> groups[5] == <span style="color: #800000">""</span><span style="color: #000000">:
+        valueLines.append((groups[0], groups[</span>1]+groups[2], groups[3]+groups[4], groups[5], <span style="color: #800000">""</span><span style="color: #000000">))
+      </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+        info </span>= CallAddr2Line(groups[5], groups[4<span style="color: #000000">])
+        valueLines.append((groups[0], groups[</span>1]+groups[2], groups[3]+groups[4], info[0], info[1<span style="color: #000000">]))
+    header </span>=<span style="color: #000000"> THREAD_LINE.search(line)
+    </span><span style="color: #0000ff">if</span><span style="color: #000000"> header:
+      </span><span style="color: #0000ff">if</span> len(traceLines) &gt;<span style="color: #000000"> 0:
+        PrintTraceLines(traceLines)
+      </span><span style="color: #0000ff">if</span> len(valueLines) &gt;<span style="color: #000000"> 0:
+        PrintValueLines(valueLines)
+      traceLines </span>=<span style="color: #000000"> []
+      valueLines </span>=<span style="color: #000000"> []
+      </span><span style="color: #0000ff">print</span>
+      <span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">-----------------------------------------------------\n</span><span style="color: #800000">"</span>
+  <span style="color: #0000ff">if</span> len(traceLines) &gt;<span style="color: #000000"> 0:
+    PrintTraceLines(traceLines)
+  </span><span style="color: #0000ff">if</span> len(valueLines) &gt;<span style="color: #000000"> 0:
+    PrintValueLines(valueLines)
+SYMBOLS_DIR </span>=<span style="color: #000000"> FindSymbolsDir()
+</span><span style="color: #0000ff">if</span> <span style="color: #800080">__name__</span> == <span style="color: #800000">'</span><span style="color: #800000">__main__</span><span style="color: #800000">'</span><span style="color: #000000">:
+  </span><span style="color: #0000ff">try</span><span style="color: #000000">:
+    options, arguments </span>= getopt.getopt(sys.argv[1:], <span style="color: #800000">""</span><span style="color: #000000">,
+                             [</span><span style="color: #800000">"</span><span style="color: #800000">auto</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">symbols-dir=</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">symbols-zip=</span><span style="color: #800000">"</span>, <span style="color: #800000">"</span><span style="color: #800000">help</span><span style="color: #800000">"</span><span style="color: #000000">])
+  </span><span style="color: #0000ff">except</span><span style="color: #000000"> getopt.GetoptError, error:
+    PrintUsage()
+  
+  AUTO </span>=<span style="color: #000000"> False
+  zipArg </span>=<span style="color: #000000"> None
+  </span><span style="color: #0000ff">for</span> option, value <span style="color: #0000ff">in</span><span style="color: #000000"> options:
+    </span><span style="color: #0000ff">if</span> option == <span style="color: #800000">"</span><span style="color: #800000">--help</span><span style="color: #800000">"</span><span style="color: #000000">:
+      PrintUsage()
+    </span><span style="color: #0000ff">elif</span> option == <span style="color: #800000">"</span><span style="color: #800000">--symbols-dir</span><span style="color: #800000">"</span><span style="color: #000000">:
+      SYMBOLS_DIR </span>=<span style="color: #000000"> value
+    </span><span style="color: #0000ff">elif</span> option == <span style="color: #800000">"</span><span style="color: #800000">--symbols-zip</span><span style="color: #800000">"</span><span style="color: #000000">:
+      zipArg </span>=<span style="color: #000000"> value
+    </span><span style="color: #0000ff">elif</span> option == <span style="color: #800000">"</span><span style="color: #800000">--auto</span><span style="color: #800000">"</span><span style="color: #000000">:
+      AUTO </span>=<span style="color: #000000"> True
+  
+  </span><span style="color: #0000ff">if</span> len(arguments) &gt; 1<span style="color: #000000">:
+    PrintUsage()
+  </span><span style="color: #0000ff">if</span><span style="color: #000000"> AUTO:
+    cookie </span>= SSOCookie(<span style="color: #800000">"</span><span style="color: #800000">.symbols.cookie</span><span style="color: #800000">"</span><span style="color: #000000">)
+  
+  </span><span style="color: #0000ff">if</span> len(arguments) == 0 <span style="color: #0000ff">or</span> arguments[0] == <span style="color: #800000">"</span><span style="color: #800000">-</span><span style="color: #800000">"</span><span style="color: #000000">:
+    </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">Reading native crash info from stdin</span><span style="color: #800000">"</span><span style="color: #000000">
+    f </span>=<span style="color: #000000"> sys.stdin
+  </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+    </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">Searching for native crashes in %s</span><span style="color: #800000">"</span> %<span style="color: #000000"> arguments[0]
+    f </span>= open(arguments[0], <span style="color: #800000">"</span><span style="color: #800000">r</span><span style="color: #800000">"</span><span style="color: #000000">)
+  lines </span>=<span style="color: #000000"> f.readlines()
+  rootdir </span>=<span style="color: #000000"> None
+  </span><span style="color: #0000ff">if</span><span style="color: #000000"> AUTO:
+    fingerprint </span>=<span style="color: #000000"> FindBuildFingerprint(lines)
+    </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">fingerprint:</span><span style="color: #800000">"</span><span style="color: #000000">, fingerprint
+    rootdir, SYMBOLS_DIR </span>=<span style="color: #000000"> DownloadSymbols(fingerprint, cookie)
+  </span><span style="color: #0000ff">elif</span> zipArg <span style="color: #0000ff">is</span> <span style="color: #0000ff">not</span><span style="color: #000000"> None:
+    rootdir, SYMBOLS_DIR </span>=<span style="color: #000000"> UnzipSymbols(zipArg)
+  
+  </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">Reading symbols from</span><span style="color: #800000">"</span><span style="color: #000000">, SYMBOLS_DIR
+  lines </span>=<span style="color: #000000"> ConvertTrace(lines)
+  
+  </span><span style="color: #0000ff">if</span> rootdir <span style="color: #0000ff">is</span> <span style="color: #0000ff">not</span><span style="color: #000000"> None:
+    </span><span style="color: #008000">#</span><span style="color: #008000"> be a good citizen and clean up...os.rmdir and os.removedirs() don't work</span>
+    cmd = <span style="color: #800000">"</span><span style="color: #800000">rm -rf \"%s\"</span><span style="color: #800000">"</span> %<span style="color: #000000"> rootdir
+    </span><span style="color: #0000ff">print</span> <span style="color: #800000">"</span><span style="color: #800000">\ncleaning up (%s)</span><span style="color: #800000">"</span> %<span style="color: #000000"> cmd
+    os.system(cmd)
+  
+  </span><span style="color: #008000">#</span><span style="color: #008000"> vi: ts=2 sw=2</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>使用方法：</p>
+<div class="cnblogs_code">
+<pre>python stack.py --symbols-dir=out/target/profuct/XXX/sysbols/  tombstone-00(tombstone文件)</pre>
+</div>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/CoderTian/category/857749.html" target="_blank">Android学习随笔</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(5980426,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;806e041b-838e-e411-b908-9dcfd8948a71&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/CoderTian/" target="_blank"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/20141229093046.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/CoderTian/">CentTian</a><br>
+            <a href="http://home.cnblogs.com/u/CoderTian/followees">关注 - 0</a><br>
+            <a href="http://home.cnblogs.com/u/CoderTian/followers">粉丝 - 9</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;806e041b-838e-e411-b908-9dcfd8948a71&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(5980426,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">2</span>
+    </div>
+    <div class="buryit" onclick="votePost(5980426,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/CoderTian/p/5975991.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/CoderTian/p/5975991.html" title="发布于2016-10-19 09:09">Android CTS(frome google)</a><br><a href="http://www.cnblogs.com/CoderTian/p/5986188.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/CoderTian/p/5986188.html" title="发布于2016-10-21 21:58">Tiny4412 u-boot分析（1）u-boot配置流程分析</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2016-10-20 12:42</span> <a href="http://www.cnblogs.com/CoderTian/">CentTian</a> 阅读(<span id="post_view_count">12903</span>) 评论(<span id="post_comment_count">1</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=5980426" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/CoderTian/p/5980426.html#" onclick="AddToWz(5980426);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=210098,cb_entryId=5980426,cb_blogApp=currentBlogApp,cb_blogUserGuid='806e041b-838e-e411-b908-9dcfd8948a71',cb_entryCreatedDate='2016/10/20 12:42:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<br>
+<div class="feedback_area_title">评论列表</div>
+<div class="feedbackNoItems"></div>	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="https://www.cnblogs.com/CoderTian/p/5980426.html#3742515" class="layer">#1楼</a><a name="3742515" id="comment_anchor_3742515"></a><span id="comment-maxId" style="display:none;">3742515</span><span id="comment-maxDate" style="display:none;">2017/7/24 23:19:09</span>  <span class="comment_date">2017-07-24 23:19</span> <a id="a_comment_author_3742515" href="http://www.cnblogs.com/flapp-lin/" target="_blank">冇二哥</a> <a href="http://msg.cnblogs.com/send/%E5%86%87%E4%BA%8C%E5%93%A5" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3742515" class="blog_comment_body">写的很详细，感谢博主的分享</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3742515,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3742515,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3742515_avatar" style="display:none;">http://pic.cnblogs.com/face/771694/20150607170937.png</span>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/CoderTian/p/5980426.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/CoderTian/p/5980426.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br><a href="https://www.cnblogs.com/cmt/p/8525042.html" target="_blank">【活动】2050 大会 - 博客园程序员团聚 （5.25 杭州·云栖小镇）</a><br><a href="http://clickc.admaster.com.cn/c/a105960,b2436452,c1705,i0,m101,8a1,8b2,h" target="_blank">【推荐】0元免费体验华为云服务</a><br><a href="https://cloud.tencent.com/act/first_purchase?fromSource=gwzcw.919198.919198.919198" target="_blank">【活动】腾讯云云服务器新购特惠，5折上云</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C1&#39;);" href="https://cloud.tencent.com/act/event/cdbbasic.html?fromSource=gwzcw.919199.919199.919199" target="_blank"><img width="300" height="250" src="./Android Tombstone 分析 - CentTian - 博客园_files/24442-20180502205118653-1977595167.jpg" alt="腾讯云0502"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/595749/" target="_blank">小米能否撑起1000亿美元估值？</a><br> ·  <a href="https://news.cnblogs.com/n/595762/" target="_blank">GLitch利用GPU翻转比特成功入侵Android手机</a><br> ·  <a href="https://news.cnblogs.com/n/595761/" target="_blank">谷歌Assistant能控制5000多款智能设备 超越Alexa</a><br> ·  <a href="https://news.cnblogs.com/n/595760/" target="_blank">《旅行青蛙》中国版开启内测：蛙儿子能带回来北京特产</a><br> ·  <a href="https://news.cnblogs.com/n/595759/" target="_blank">QQ大数据发布《2018全国城市年轻指数》：贵阳力压深圳夺第一</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://click.aliyun.com/m/47501/" target="_blank"><img src="./Android Tombstone 分析 - CentTian - 博客园_files/TB1oiMKokyWBuNjy0FpXXassXXa-468-60.jpg" alt="" style="width: 468px; height: 60px;"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/578689/" target="_blank">如何成为优秀的程序员？</a><br> ·  <a href="http://kb.cnblogs.com/page/594930/" target="_blank">菜鸟工程师的超神之路 -- 从校园到职场</a><br> ·  <a href="http://kb.cnblogs.com/page/593985/" target="_blank">如何识别人的技术能力和水平？</a><br> ·  <a href="http://kb.cnblogs.com/page/575255/" target="_blank">写给自学者的入门指南</a><br> ·  <a href="http://kb.cnblogs.com/page/578690/" target="_blank">和程序员谈恋爱</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block"></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/CoderTian/category/857749.html">Android学习随笔(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/CoderTian/category/644634.html">C/C++基础(38)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/CoderTian/category/886834.html">C++设计模式</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/CoderTian/category/955003.html">FFMPEG学习笔记(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/CoderTian/category/646243.html">Git学习笔记(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/CoderTian/category/644633.html">Qt学习笔记(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/CoderTian/category/982071.html">webRTC学习笔记(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/CoderTian/category/858617.html">代码库(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/CoderTian/category/1131413.html">多媒体封装格式(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/CoderTian/category/955002.html">多媒体基础知识(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/CoderTian/category/1131606.html">嵌入式Linux/Android(23)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/CoderTian/category/976144.html">数据结构(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/CoderTian/category/1135933.html">新一代视频压缩编码标准H.264(7)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_scorerank" class="sidebar-block">
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	57890
+	</li>
+	<li class="liRank">
+		排名 -	6453
+	</li>
+</ul>
+</div>
+
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/CoderTian/p/6651343.html#3899378">1. Re:AndroidStudio 中使用FFMPEG</a></li>
+        <li class="recent_comment_body">@巳已己你是用的android M以上的版本吧。 这两个是运行时权限， 你要写代码适配或者直接手动在Settings里面打开。...</li>
+        <li class="recent_comment_author">--光着脚丫行一生</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/CoderTian/p/6651343.html#3887547">2. Re:AndroidStudio 中使用FFMPEG</a></li>
+        <li class="recent_comment_body">@LynnMin多谢指出问题，这个demo当时只是为了把流程走通所以没有深究，很抱歉带来误导，有空我会把这个demo改好更新。...</li>
+        <li class="recent_comment_author">--CentTian</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/CoderTian/p/6651343.html#3878377">3. Re:AndroidStudio 中使用FFMPEG</a></li>
+        <li class="recent_comment_body">程序可以运行成功，但是我发现提取出来的yuv视频好像有问题，得到的原始数据似乎不是完整的画面</li>
+        <li class="recent_comment_author">--LynnMin</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/CoderTian/p/6651343.html#3878376">4. Re:AndroidStudio 中使用FFMPEG</a></li>
+        <li class="recent_comment_body">@巳已己我也遇到了同样的问题，后来我采用下面的代码： int code=0; char *err_buf=(char*)av_malloc(32768); if( code=avforma......</li>
+        <li class="recent_comment_author">--LynnMin</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/CoderTian/p/7828926.html#3867428">5. Re:webRTC peerconnection_client demo创建VS工程</a></li>
+        <li class="recent_comment_body">@Cambrian要自己拷贝出来...</li>
+        <li class="recent_comment_author">--CentTian</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/CoderTian/p/5980426.html">1. Android Tombstone 分析(12903)</a></li><li><a href="http://www.cnblogs.com/CoderTian/p/6655568.html">2. FFmpeg在Linux下编译使用(8427)</a></li><li><a href="http://www.cnblogs.com/CoderTian/p/6651343.html">3. AndroidStudio 中使用FFMPEG(4831)</a></li><li><a href="http://www.cnblogs.com/CoderTian/p/6657844.html">4. 多媒体基础知识之PCM数据(4563)</a></li><li><a href="http://www.cnblogs.com/CoderTian/p/6791638.html">5. FFMPEG音视频解码(3807)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/CoderTian/p/6651343.html">1. AndroidStudio 中使用FFMPEG(9)</a></li><li><a href="http://www.cnblogs.com/CoderTian/p/7828926.html">2. webRTC peerconnection_client demo创建VS工程(2)</a></li><li><a href="http://www.cnblogs.com/CoderTian/p/5986188.html">3. Tiny4412 u-boot分析（1）u-boot配置流程分析(2)</a></li><li><a href="http://www.cnblogs.com/CoderTian/p/5980426.html">4. Android Tombstone 分析(1)</a></li><li><a href="http://www.cnblogs.com/CoderTian/p/5933045.html">5. Android.mk解析(1)</a></li></ul></div>
+</div>
+</div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 CentTian
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>
